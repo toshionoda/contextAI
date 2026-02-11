@@ -1,0 +1,24 @@
+# 環境・認証（リポジトリに含めない）
+.env
+token.json
+
+# Google OAuth クライアント秘密（context 直下）
+context/credentials*.json
+context/*client_secret*.json
+context/*.apps.googleusercontent.com.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+.venv/
+venv/
+.env.local
+
+# 出力・キャッシュ（必要なら外す）
+# mnt/
