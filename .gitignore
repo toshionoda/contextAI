@@ -1,8 +1,11 @@
 # 環境・認証（リポジトリに含めない）
 .env
-token.json
+.env.local
 
-# Google OAuth クライアント秘密（context 直下）
+# Google OAuth（ローカル用。CI では Secrets 経由で注入）
+token.json
+credentials.json
+*client_secret*.json
 context/credentials*.json
 context/*client_secret*.json
 context/*.apps.googleusercontent.com.json

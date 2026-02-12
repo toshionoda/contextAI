@@ -1,0 +1,123 @@
+name: Context Sync (Slack / Google Calendar / Notion)
+
+on:
+  schedule:
+    # 毎時0分に実行 (UTC) → JST では毎時9分ずれるが問題なし
+    - cron: "0 * * * *"
+  workflow_dispatch: # 手動実行も可能
+
+permissions:
+  contents: write
+
+env:
+  TZ: Asia/Tokyo
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # ─── チェックアウト ───
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ─── Python セットアップ ───
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # ─── Slack 同期 ───
+      - name: Sync Slack messages
+        if: ${{ env.SLACK_BOT_TOKEN != '' }}
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNELS: ${{ secrets.SLACK_CHANNELS }}
+        run: python scripts/slack_sync.py
+        continue-on-error: true
+
+      # ─── Google Calendar 同期 ───
+      - name: Prepare Google credentials
+        if: ${{ env.GOOGLE_CLIENT_SECRET != '' }}
+        env:
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_TOKEN_JSON: ${{ secrets.GOOGLE_TOKEN_JSON }}
+        run: |
+          echo "$GOOGLE_CLIENT_SECRET" > /tmp/credentials.json
+          echo "$GOOGLE_TOKEN_JSON" > token.json
+
+      - name: Sync Google Calendar
+        if: ${{ env.GOOGLE_CLIENT_SECRET != '' }}
+        env:
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_CREDENTIALS_PATH: /tmp/credentials.json
+        run: python scripts/calendar_sync.py
+        continue-on-error: true
+
+      - name: Update token.json if refreshed
+        if: ${{ env.GOOGLE_CLIENT_SECRET != '' }}
+        env:
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+        run: |
+          # トークンが更新された場合、次回のために保存
+          if [ -f token.json ]; then
+            echo "Token file exists, will be committed if changed"
+          fi
+        continue-on-error: true
+
+      # ─── Notion 同期 ───
+      - name: Sync Notion meetings
+        if: ${{ env.NOTION_API_TOKEN != '' }}
+        env:
+          NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
+          NOTION_MEETING_DB_ID: ${{ secrets.NOTION_MEETING_DB_ID }}
+        run: python scripts/notion_sync.py
+        continue-on-error: true
+
+      # ─── タスク抽出 ───
+      - name: Extract tasks from synced data
+        run: python scripts/task_extractor.py
+        continue-on-error: true
+
+      # ─── 同期ログ記録 ───
+      - name: Write sync log
+        run: |
+          mkdir -p context/daily
+          NOW=$(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M')
+          cat > context/daily/last_sync.md << EOF
+          # 最終同期: ${NOW} (JST)
+
+          | ソース | ステータス |
+          |--------|-----------|
+          | Slack | $([ -n "${{ secrets.SLACK_BOT_TOKEN }}" ] && echo "✅ 有効" || echo "⚠️ 未設定") |
+          | Google Calendar | $([ -n "${{ secrets.GOOGLE_CLIENT_SECRET }}" ] && echo "✅ 有効" || echo "⚠️ 未設定") |
+          | Notion | $([ -n "${{ secrets.NOTION_API_TOKEN }}" ] && echo "✅ 有効" || echo "⚠️ 未設定") |
+          EOF
+
+      # ─── コミット & プッシュ ───
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add -A context/ tasks/
+
+          # token.json が更新されていたら追加（.gitignore で除外されている場合はスキップ）
+          git add token.json 2>/dev/null || true
+
+          # 変更がある場合のみコミット
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            NOW=$(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M')
+            git commit -m "🔄 context sync: ${NOW} (JST)"
+            git push
+            echo "✅ Changes pushed"
+          fi
