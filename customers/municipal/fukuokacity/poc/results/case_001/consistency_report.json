@@ -1,0 +1,72 @@
+{
+  "case_id": "case_001",
+  "route": "429-2",
+  "method": "synonym_grouping",
+  "summary": {
+    "calc_length_items": 4,
+    "calc_clusters": 1,
+    "drawing_length_items": 1,
+    "matched": 1,
+    "recall": 1.0,
+    "precision": 1.0,
+    "f1": 1.0
+  },
+  "matches": [
+    {
+      "calc_cluster": {
+        "representative_value": 18.1,
+        "members": [
+          {
+            "L2": "管きょ更生工",
+            "L3": "既設管渠250mm",
+            "L4": "路線延長（φ250）",
+            "単位": "m",
+            "数量": 18.1,
+            "数量_num": 18.1
+          },
+          {
+            "L2": "管きょ更生工",
+            "L3": "既設管渠250mm",
+            "L4": "管きょ延長（φ250）",
+            "単位": "m",
+            "数量": 17.2,
+            "数量_num": 17.2
+          },
+          {
+            "L2": "管きょ更生工",
+            "L3": "既設管渠250mm",
+            "L4": "更生管材",
+            "規格": "更生自立管",
+            "単位": "m",
+            "数量": 18.1,
+            "数量_num": 18.1
+          },
+          {
+            "L2": "管きょ更生工",
+            "L3": "既設管渠250mm",
+            "L4": "内面更生工",
+            "規格": "反転・引込工 硬化・形成工",
+            "単位": "m",
+            "数量": 17.2,
+            "数量_num": 17.2
+          }
+        ],
+        "categories": [
+          "内面更生工",
+          "更生管材",
+          "管きょ延長（φ250）",
+          "路線延長（φ250）"
+        ]
+      },
+      "drawing": {
+        "category": "延長",
+        "value": "18.10",
+        "unit": "m",
+        "context": "L=18.10m",
+        "value_num": 18.1
+      }
+    }
+  ],
+  "unmatched_calc_clusters": [],
+  "unmatched_drawing": []
+}

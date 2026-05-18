@@ -18,18 +18,59 @@ echo ""
 # Git Pull
 [ -d .git ] && git pull --quiet 2>/dev/null || true
 
-# Slack同期
-echo "💬 Slack同期中..."
-if [ -n "$SLACK_BOT_TOKEN" ] && [ "$SLACK_BOT_TOKEN" != "xoxb-your-slack-bot-token" ]; then
-    python3 scripts/slack_sync.py 2>/dev/null && echo "✅ Slack同期完了" || echo "⚠️  スキップ"
-else
-    echo "⚠️  SLACK_BOT_TOKEN 未設定"
+# 朝8時の自動取得結果を表示（daily_morning.sh で取得済み）
+# 未取得の場合は始業時にキャッチアップで取得する（launchd が sleep 中で発火しなかった場合のフォールバック）
+mkdir -p context/daily
+
+NEED_DAILY_MORNING=0
+[ ! -f "context/news/${TODAY}.md" ] && NEED_DAILY_MORNING=1
+[ ! -f "context/slack_summary/${TODAY}.md" ] && NEED_DAILY_MORNING=1
+[ ! -f "context/notion/${TODAY}.md" ] && NEED_DAILY_MORNING=1
+[ ! -f "context/calendar/summary_${TODAY}.md" ] && NEED_DAILY_MORNING=1
+
+if [ "$NEED_DAILY_MORNING" = "1" ]; then
+    echo "=== 📡 本日分未取得 → daily_morning.sh をフォールバック実行（2〜5分）==="
+    echo "    ログ: context/daily/morning_${TODAY}.log"
+    bash scripts/daily_morning.sh > /dev/null 2>&1 || echo "    ⚠️  daily_morning.sh が一部失敗（ログ参照）"
+    echo ""
 fi
 
-# Calendar同期
-echo "📅 Calendar同期中..."
-[ -f "${GOOGLE_CREDENTIALS_PATH:-./credentials.json}" ] && \
-    python3 scripts/calendar_sync.py 2>/dev/null && echo "✅ Calendar同期完了" || echo "⚠️  スキップ"
+echo "=== 📰 本日のニュース ==="
+if [ -f "context/news/${TODAY}.md" ]; then
+    head -5 "context/news/${TODAY}.md"
+    echo "  ...全文: context/news/${TODAY}.md"
+else
+    echo "  未取得（取得失敗。ログ: context/daily/morning_${TODAY}.log）"
+fi
+echo ""
+
+echo "=== 📋 Slackサマリー ==="
+if [ -f "context/slack_summary/${TODAY}.md" ]; then
+    head -20 "context/slack_summary/${TODAY}.md"
+    echo "  ...全文: context/slack_summary/${TODAY}.md"
+else
+    echo "  未取得（8時の自動実行待ち or scripts/daily_morning.sh を手動実行）"
+fi
+
+echo ""
+
+echo "=== 📓 Notionサマリー ==="
+if [ -f "context/notion/${TODAY}.md" ]; then
+    head -20 "context/notion/${TODAY}.md"
+    echo "  ...全文: context/notion/${TODAY}.md"
+else
+    echo "  未取得（8時の自動実行待ち or scripts/daily_morning.sh を手動実行）"
+fi
+
+echo ""
+
+echo "=== 📅 Calendarサマリー ==="
+if [ -f "context/calendar/summary_${TODAY}.md" ]; then
+    head -30 "context/calendar/summary_${TODAY}.md"
+    echo "  ...全文: context/calendar/summary_${TODAY}.md"
+else
+    echo "  未取得（8時の自動実行待ち or scripts/daily_morning.sh を手動実行）"
+fi
 
 echo ""
 
@@ -85,6 +126,28 @@ done)
 ## 本日のMTG
 $(cat "context/calendar/schedule_${TODAY}.md" 2>/dev/null || echo "未同期")
 EOF
+
+# 案件集約レポート
+echo "=== 📊 案件集約 ==="
+CASES_FILE="context/cases/${TODAY}.md"
+if [ -f "$CASES_FILE" ]; then
+    head -50 "$CASES_FILE"
+    echo "  ...全文: $CASES_FILE"
+else
+    echo "  未生成（scripts/case_aggregator.py を実行、または8時の自動実行待ち）"
+fi
+
+echo ""
+
+# CRM Inbox処理
+echo "=== 📬 CRM Inbox ==="
+if python3 scripts/crm_inbox_processor.py 2>&1; then
+    :
+else
+    echo "  CRM Inbox処理をスキップ（環境変数未設定 or チャンネル未作成）"
+fi
+
+echo ""
 
 # タスク表示
 echo "=== 📋 タスク ==="

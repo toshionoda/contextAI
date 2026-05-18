@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/dwg-core",
+    "crates/dwg-cli",
+    # "crates/dwg-py",  # Phase A8 で有効化（maturin 側から）
+]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2021"
+rust-version = "1.75"
+authors = ["Malme / Toshio Noda <toshio.noda@malme.co.jp>"]
+license = "Apache-2.0 OR MIT"  # 最終決定は Phase A9
+repository = "internal"
+description = "Malme 独自の DWG パーサー（クリーンルーム実装）"
+
+[workspace.dependencies]
+byteorder = "1.5"
+bitvec = "1.0"
+flate2 = "1.0"
+thiserror = "1.0"
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.release]
+lto = true
+codegen-units = 1

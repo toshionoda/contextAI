@@ -1,0 +1,79 @@
+{
+  "route": "429-2",
+  "drawing_type": "平面・縦断・横断図",
+  "scale": "S=1:300(A1), V=1:100, H=1:300(A1)",
+  "detected_values": [
+    {
+      "category": "管種",
+      "value": "TP",
+      "unit": "",
+      "context": "既設管"
+    },
+    {
+      "category": "管径",
+      "value": "250",
+      "unit": "mm",
+      "context": "TPφ250"
+    },
+    {
+      "category": "勾配",
+      "value": "11.2",
+      "unit": "‰",
+      "context": "i=11.2‰"
+    },
+    {
+      "category": "延長",
+      "value": "18.10",
+      "unit": "m",
+      "context": "L=18.10m"
+    },
+    {
+      "category": "上流管底高",
+      "value": "9.605",
+      "unit": "m",
+      "context": "00241A-35側"
+    },
+    {
+      "category": "下流管底高",
+      "value": "9.402",
+      "unit": "m",
+      "context": "00241A-34側"
+    },
+    {
+      "category": "荷重区分",
+      "value": "T-14",
+      "unit": "",
+      "context": "管更生工法(T-14)自立管"
+    },
+    {
+      "category": "管更生工法",
+      "value": "自立管",
+      "unit": "",
+      "context": "管更生工法(T-14)自立管"
+    }
+  ],
+  "manholes": [
+    {
+      "id": "00241A-34",
+      "type": "1号人孔"
+    },
+    {
+      "id": "00241A-35",
+      "type": "1号人孔"
+    }
+  ],
+  "buried_utilities": [
+    {
+      "kind": "ガス管",
+      "diameter": "50"
+    },
+    {
+      "kind": "水道管",
+      "diameter": "75"
+    }
+  ],
+  "_meta": {
+    "model": "gemini-3-flash-preview",
+    "elapsed_s": 19.26
+  }
+}

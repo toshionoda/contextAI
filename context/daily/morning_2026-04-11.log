@@ -1,0 +1,98 @@
+=== Daily Morning Tasks: 2026-04-11 08:35 ===
+
+📰 ニュース取得中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+📰 ニュース取得開始 (2026-04-11)
+   対象期間: 過去1日
+
+📂 AI
+  - MIT Tech Review AI: 0件
+  - The Batch (deeplearning.ai): 0件
+  - OpenAI Blog: 0件
+  ✅ AI News (Google): 7件
+
+📂 スタートアップ
+  ✅ TechCrunch Startups: 3件
+  - BRIDGE (日本): 0件
+  - Y Combinator Blog: 0件
+
+📂 土木・建設
+  - 建設通信新聞: 0件
+  - 日経クロステック 建設: 0件
+  ✅ Construction Dive: 4件
+  - ENR (Engineering News-Record): 0件
+
+📂 米国建設スタートアップ
+  - ConTech (Google News): 0件
+  ✅ BuiltWorlds: 2件
+
+📂 BIM×AI
+  - BIM×AI (Google News): 0件
+  - BIM×AI 日本語: 0件
+  - Autodesk Blog: 0件
+
+🌐 日本語翻訳中...
+  ✅ 16件を翻訳
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/news/2026-04-11.md
+✅ ニュース取得完了
+
+📋 Slackサマリー生成中...
+📋 Slackサマリー生成開始 (2026-04-11)
+   対象期間: 過去1日 (after:2026-04-10)
+   方式: Claude Code CLI + Slack MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/slack_summary/2026-04-11.md
+✅ Slackサマリー完了
+
+📓 Notionサマリー生成中...
+📓 Notionサマリー生成開始 (2026-04-11)
+   対象期間: 過去1日 (after:2026-04-10)
+   方式: Claude Code CLI + Notion MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/notion/2026-04-11.md
+✅ Notionサマリー完了
+
+📅 Calendarサマリー生成中...
+📅 カレンダーサマリー生成開始 (2026-04-11)
+   方式: Claude Code CLI + Google Calendar MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/calendar/summary_2026-04-11.md
+✅ Calendarサマリー完了
+
+💬 Slack同期中...
+⚠️  SLACK_BOT_TOKEN 未設定
+
+📅 Calendar生データ同期中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:237: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+✅ Calendar同期完了: 20件（7日分）
+✅ Calendar同期完了
+
+📊 案件集約レポート生成中...
+📊 案件集約開始 (2026-04-11)
+   対象期間: 直近3日
+   方式: Claude Code CLI
+
+   📂 コンテキスト収集中...
+   📊 収集データ: 25,834文字
+   🤖 案件集約レポート生成中...
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/cases/2026-04-11.md
+
+✅ 案件集約完了
+✅ 案件集約完了
+
+=== 完了: 08:42 ===

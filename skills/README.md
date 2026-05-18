@@ -15,6 +15,8 @@ CiviLink CS × Civil Engineerとしての繰り返し業務を型化。
 | 06 | 顧客MTG準備 | MTG前のコンテキスト収集・アジェンダ作成 | MTG前 |
 | 07 | MTGサマリー | 議事録要約・タスク抽出 | MTG後 |
 | 08 | リリース案内作成 | 新機能・修正のリリース通知 | リリース時 |
+| 09 | アタック準備 | 攻略対象企業のブリーフィング作成 | 営業前 |
+| 10 | ディープリサーチ | テーマ別の多角的Web調査・レポート作成 | 随時 |
 
 ## スキルチェーン（連続実行）
 
@@ -26,4 +28,10 @@ CiviLink CS × Civil Engineerとしての繰り返し業務を型化。
 ### 課題解決フロー
 ```
 01-customer-inquiry → 05-technical-investigation → 04-feature-request（機能不足の場合）
+```
+
+### 市場・戦略調査フロー
+```
+10-deep-research → 09-attack-prep（営業展開の場合）
+10-deep-research → 04-feature-request（プロダクト方針の場合）
 ```

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Notion__notion-fetch",
+      "Bash(git -C /Users/nodatoshio/Documents/civilink-cs status)",
+      "Read(//Users/nodatoshio/Documents/mixpanel/**)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./.env.local)",
+      "Read(./.env.development)",
+      "Read(./.env.production)",
+      "Read(./secrets/**)",
+      "Read(**/.env*)",
+      "Read(./config/.env*)"
+    ]
+  }
+}

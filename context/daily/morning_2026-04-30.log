@@ -1,0 +1,153 @@
+=== Daily Morning Tasks: 2026-04-30 08:41 ===
+
+📰 ニュース取得中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+📰 ニュース取得開始 (2026-04-30)
+   対象期間: 過去1日
+
+📂 AI
+  - MIT Tech Review AI: 0件
+  - The Batch (deeplearning.ai): 0件
+  ✅ OpenAI Blog: 1件
+  ✅ AI News (Google): 7件
+  ✅ ITmedia AI+: 3件
+  ✅ AI News (Google JP): 5件
+
+📂 スタートアップ
+  ✅ TechCrunch Startups: 4件
+  - BRIDGE (日本): 0件
+  - Y Combinator Blog: 0件
+  ✅ スタートアップ (Google JP): 2件
+
+📂 土木・建設
+  - 建設通信新聞: 0件
+  - 日経クロステック 建設: 0件
+  ✅ Construction Dive: 6件
+  - ENR (Engineering News-Record): 0件
+  ✅ 建設業界 (Google JP): 7件
+
+📂 建設スタートアップ
+  - ConTech (Google News): 0件
+  ✅ BuiltWorlds: 2件
+  - 建設テック (Google JP): 0件
+
+📂 BIM×AI
+  - BIM×AI (Google News): 0件
+  - BIM×AI 日本語: 0件
+  - Autodesk Blog: 0件
+
+📂 行政・研究機関 (BIM/CIM/AI)
+  - 国交省 BIM/CIM/AI (Google JP): 0件
+  - 国総研 BIM/CIM/AI (Google JP): 0件
+  - 国交省動向 (Google JP): 0件
+  - i-Construction (Google JP): 0件
+
+🌐 日本語翻訳中...
+  ✅ 37件を翻訳
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/news/2026-04-30.md
+✅ ニュース取得完了
+
+📋 Slackサマリー生成中...
+📋 Slackサマリー生成開始 (2026-04-30)
+   対象期間: 過去1日 (after:2026-04-29)
+   方式: Claude Code CLI + Slack MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/slack_summary/2026-04-30.md
+🗑  古いサマリー削除: 2026-03-29.md
+🗑  古いサマリー削除: 2026-03-30.md
+✅ Slackサマリー完了
+
+📓 Notionサマリー生成中...
+📓 Notionサマリー生成開始 (2026-04-30)
+   対象期間: 過去1日 (after:2026-04-29)
+   方式: Claude Code CLI + Notion MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/notion/2026-04-30.md
+🗑  古いサマリー削除: 2026-03-29.md
+🗑  古いサマリー削除: 2026-03-30.md
+✅ Notionサマリー完了
+
+📅 Calendarサマリー生成中...
+📅 カレンダーサマリー生成開始 (2026-04-30)
+   方式: Claude Code CLI + Google Calendar MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/calendar/summary_2026-04-30.md
+🗑  古いサマリー削除: summary_2026-03-29.md
+🗑  古いサマリー削除: summary_2026-03-30.md
+✅ Calendarサマリー完了
+
+💬 Slack同期中...
+📡 組織全体のチャンネル: 137件
+✅ 1チャンネルに自動参加しました
+📨 メッセージ取得対象: 137チャンネル
+✅ #random: 3件
+✅ #営業: 12件
+✅ #general: 9件
+✅ #fondesk: 10件
+✅ #pjm_dynamo: 1件
+✅ #corp-bo窓口_bimcim: 3件
+✅ #corp-全体定例: 1件
+✅ #corp-労務総務窓口: 1件
+✅ #施工_見積り依頼: 1件
+✅ #corp-災害時連絡: 1件
+✅ #dp_083_パパシフィックコンサルタンツ_aipj: 1件
+✅ #proj-civilink: 7件
+✅ #growth新宿-受付通知: 3件
+✅ #alert-structuralengine: 2件
+✅ #dp_025-119_中央c東京_予備設計ai: 1件
+✅ #mail-civilink-cs: 33件
+✅ #corp-情シス窓口: 2件
+✅ #dev-civilink-backend-notification: 1件
+✅ #ask-civilink: 3件
+✅ #alert-civilink-mixpanel: 6件
+✅ #dev-civilink-report-findy-team: 3件
+✅ #team-ai-engineer: 1件
+✅ #開発-日報: 10件
+✅ #dp_090_パパシフィックコンサルタンツ_鉄道モデル自動化: 2件
+✅ #dev-照査ai: 2件
+✅ #dev-civilink-pr-diff: 17件
+✅ #dp_098_パパシフィックコンサルタンツ_線形省力化: 1件
+✅ #dp_111_ニ日本工営九州_河川設計省力化: 1件
+✅ #team-iconpj-sora-malme: 1件
+✅ #team-ai-tools-status: 44件
+✅ #dev-civilink-bug-bash: 5件
+✅ #tech定例: 1件
+✅ #t_技術部ハイブリッド出社: 14件
+
+📊 同期完了: 33/137 チャンネル（直近3日分）
+✅ Slack同期完了
+
+📅 Calendar生データ同期中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:237: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+✅ Calendar同期完了: 14件（7日分）
+✅ Calendar同期完了
+
+📊 案件集約レポート生成中...
+📊 案件集約開始 (2026-04-30)
+   対象期間: 直近3日
+   方式: Claude Code CLI
+
+   📂 コンテキスト収集中...
+   📊 収集データ: 27,059文字
+   🤖 案件集約レポート生成中...
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/cases/2026-04-30.md
+
+✅ 案件集約完了
+✅ 案件集約完了
+
+=== 完了: 08:50 ===

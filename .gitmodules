@@ -1,0 +1,9 @@
+[submodule "pmskills"]
+	path = pmskills
+	url = https://github.com/structuralengine/malme-pm-skills
+[submodule "civilink-cs"]
+	path = civilink-cs
+	url = https://github.com/toshionoda/civilink-cs.git
+[submodule "mixpanel"]
+	path = mixpanel
+	url = https://github.com/toshionoda/mixpanel.git

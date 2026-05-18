@@ -1,0 +1,54 @@
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+📰 ニュース取得開始 (2026-04-20)
+   対象期間: 過去1日
+
+📂 AI
+  - MIT Tech Review AI: 0件
+  - The Batch (deeplearning.ai): 0件
+  - OpenAI Blog: 0件
+  ✅ AI News (Google): 5件
+  ✅ ITmedia AI+: 1件
+  ✅ AI News (Google JP): 1件
+
+📂 スタートアップ
+  ✅ TechCrunch Startups: 1件
+  - BRIDGE (日本): 0件
+  - Y Combinator Blog: 0件
+  ✅ スタートアップ (Google JP): 1件
+
+📂 土木・建設
+  - 建設通信新聞: 0件
+  - 日経クロステック 建設: 0件
+  - Construction Dive: 0件
+  - ENR (Engineering News-Record): 0件
+  ✅ 建設業界 (Google JP): 7件
+
+📂 建設スタートアップ
+  - ConTech (Google News): 0件
+  ✅ BuiltWorlds: 2件
+  - 建設テック (Google JP): 0件
+
+📂 BIM×AI
+  - BIM×AI (Google News): 0件
+  - BIM×AI 日本語: 0件
+  - Autodesk Blog: 0件
+
+📂 行政・研究機関 (BIM/CIM/AI)
+  - 国交省 BIM/CIM/AI (Google JP): 0件
+  - 国総研 BIM/CIM/AI (Google JP): 0件
+  ✅ 国交省動向 (Google JP): 2件
+  ✅ i-Construction (Google JP): 1件
+
+🌐 日本語翻訳中...
+  ✅ 21件を翻訳
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/news/2026-04-20.md
+🗑  古いニュース削除: 2026-03-19.md
+🗑  古いニュース削除: 2026-03-20.md
+🗑  古いニュース削除: 2026-03-21.md

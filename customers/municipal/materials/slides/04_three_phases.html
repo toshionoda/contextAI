@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: 'Meiryo', Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #FFFFFF; padding: 12pt 30pt;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 3px solid #C2706B;
+}
+.header h2 { color: #3C3838; font-size: 22pt; margin: 0; font-weight: bold; }
+.logo { height: 28pt; }
+.content { margin: 18pt 30pt; flex: 1; display: flex; flex-direction: column; }
+h3 { color: #333333; font-size: 16pt; margin: 0 0 10pt 0; font-weight: bold; }
+.phases { display: flex; gap: 10pt; margin-bottom: 12pt; }
+.phase { flex: 1; background: #FFFFFF; border: 1pt solid #E0D8D8; padding: 0; }
+.phase-title-bar { background: #3C3838; padding: 5pt 10pt; }
+.phase-title-bar p { color: #FFFFFF; font-size: 12pt; font-weight: bold; margin: 0; }
+.phase-body { padding: 8pt 10pt; }
+.phase ul { font-size: 10pt; margin: 0; padding-left: 14pt; color: #333333; line-height: 1.4; }
+.phase li { margin-bottom: 3pt; }
+.problems { background: #F5F0F0; padding: 10pt 14pt; border-left: 4pt solid #C2706B; }
+.problems-label { font-size: 11pt; color: #3C3838; font-weight: bold; margin: 0 0 4pt 0; }
+.problems ul { font-size: 10pt; margin: 0; padding-left: 16pt; color: #333333; line-height: 1.4; }
+</style>
+</head>
+<body>
+<div class="header"><h2>3フェーズで発生するドキュメントと課題</h2><img class="logo" src="assets/malme-logo.png"></div>
+<div class="content">
+  <h3>橋梁1橋の維持管理サイクルで発生する主要ドキュメント</h3>
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-title-bar"><p>① 調査（点検）</p></div>
+      <div class="phase-body">
+        <ul>
+          <li>点検計画書、巡回ルート図</li>
+          <li>損傷写真（数百〜数千枚/橋）</li>
+          <li>損傷展開図、点検調書</li>
+          <li>自治体への点検報告書</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-title-bar"><p>② 設計（補修設計）</p></div>
+      <div class="phase-body">
+        <ul>
+          <li>補修設計図面（CAD）</li>
+          <li>数量計算書、設計計算書</li>
+          <li>自治体への照査依頼・回答</li>
+          <li>設計変更指示・回答</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-title-bar"><p>③ 施工（補修工事）</p></div>
+      <div class="phase-body">
+        <ul>
+          <li>施工計画書、特記仕様書</li>
+          <li>工事打合簿、段階確認、材料承認</li>
+          <li>出来形管理、品質管理書類</li>
+          <li>工事写真、電子納品成果物</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="problems">
+    <p class="problems-label">共通する3つの構造的問題</p>
+    <ul>
+      <li><b>書類が散在</b>：フォルダ・USB・紙キャビネット・メールに散らばる</li>
+      <li><b>やり取りが断絶</b>：自治体⇔施工会社⇔設計者の連絡がメール・FAX・電話・対面に分散</li>
+      <li><b>データが流れない</b>：調査データが設計に活きず、設計データが施工に活きない（毎フェーズで再入力）</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

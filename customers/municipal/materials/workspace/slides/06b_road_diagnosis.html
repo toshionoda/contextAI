@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja" style="width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;">
+<head>
+<meta charset="UTF-8">
+<style>
+  html {
+    width: 720pt;
+    height: 405pt;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  body {
+    width: 720pt;
+    height: 405pt;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Meiryo', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    color: #333333;
+  }
+  .header {
+    background: #FFFFFF;
+    padding: 10pt 30pt 4pt 30pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #2E7D32;
+  }
+  .header h2 {
+    color: #1B3A5C;
+    font-size: 20pt;
+    margin: 0;
+    font-weight: bold;
+  }
+  .content {
+    display: flex;
+    flex: 1;
+    padding: 10pt 30pt 6pt 30pt;
+    gap: 20pt;
+  }
+  .left-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .left-col h3 {
+    color: #1B3A5C;
+    font-size: 12pt;
+    margin: 0 0 5pt 0;
+    
+    padding-bottom: 3pt;
+  }
+  .left-col ul {
+    margin: 0;
+    padding-left: 16pt;
+    list-style-type: disc;
+  }
+  .left-col ul li {
+    font-size: 10pt;
+    line-height: 1.5;
+    margin-bottom: 3pt;
+  }
+  .right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .right-col h3 {
+    color: #1B3A5C;
+    font-size: 12pt;
+    margin: 0 0 6pt 0;
+    
+    padding-bottom: 3pt;
+  }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5pt;
+    margin-bottom: 8pt;
+  }
+  .step-box {
+    border-radius: 6pt;
+    padding: 7pt 6pt;
+    text-align: center;
+    flex: 1;
+    min-width: 75pt;
+    background: #F5F7FA;
+  }
+  .step-box.border-navy {
+    border: 2px solid #1B3A5C;
+  }
+  .step-box.border-green {
+    border: 2px solid #2E7D32;
+  }
+  .step-box .step-title {
+    font-size: 9pt;
+    font-weight: bold;
+    color: #1B3A5C;
+    margin: 0 0 2pt 0;
+  }
+  .step-box .step-desc {
+    font-size: 8pt;
+    color: #555555;
+    margin: 0;
+  }
+  .arrow {
+    font-size: 16pt;
+    color: #2E7D32;
+    font-weight: bold;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8pt;
+    margin-top: 2pt;
+  }
+  .comparison-table th {
+    background: #1B3A5C;
+    color: #FFFFFF;
+    padding: 4pt 6pt;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #1B3A5C;
+  }
+  .comparison-table td {
+    padding: 4pt 6pt;
+    border: 1px solid #DEE2E6;
+    text-align: center;
+  }
+  .comparison-table tr:nth-child(even) td {
+    background: #F5F7FA;
+  }
+  .comparison-table td:first-child {
+    background: #F5F7FA;
+    font-weight: bold;
+    color: #1B3A5C;
+  }
+  .comparison-table .highlight {
+    color: #2E7D32;
+    font-weight: bold;
+  }
+  .bottom-bar {
+    background: #1B3A5C;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8pt 30pt;
+    margin-bottom: 36pt;
+  }
+  .bottom-bar .item {
+    text-align: center;
+    flex: 1;
+  }
+  .bottom-bar .item p {
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+  .bottom-bar .item .label {
+    font-size: 8pt;
+    opacity: 0.8;
+    margin: 0 0 2pt 0;
+  }
+  .bottom-bar .item .value {
+    font-size: 9pt;
+    font-weight: bold;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h2>点検DX② 道路損傷の早期発見</h2>
+  </div>
+
+  <div class="content">
+    <div class="left-col">
+      <h3>概要</h3>
+      <ul>
+        <li>パトロール車のダッシュボードにスマートフォンを設置するだけで導入可能</li>
+        <li>走行中にAIが路面損傷（ポットホール・ひび割れ・わだち掘れ等）をリアルタイムで自動検出する</li>
+        <li>検出結果は地図上に自動マッピングされ、損傷の位置・種類・深刻度を一目で把握できる</li>
+        <li>国交省カタログ掲載技術。全国40以上の自治体で導入実績あり</li>
+      </ul>
+    </div>
+
+    <div class="right-col">
+      <h3>製品画面：RoadManager</h3>
+      <div style="display:flex;flex-direction:column;background:#F5F7FA;border:1px solid #DEE2E6;border-radius:4pt;padding:2pt;margin-bottom:4pt;">
+        <div style="display:flex;align-items:center;justify-content:center;">
+          <img src="captures/06b_roadmanager.png" style="width:144pt;height:90pt;" />
+        </div>
+        <p style="font-size:5pt;color:#888888;text-align:right;margin:1pt 0 0 0;line-height:1.1;">出典: https://urbanx-tech.com/services</p>
+      </div>
+
+      <table class="comparison-table">
+        <tr>
+          <th></th>
+          <th>従来の路面点検</th>
+          <th>AI路面診断</th>
+        </tr>
+        <tr>
+          <td>方法</td>
+          <td>専用車両（路面性状測定車）</td>
+          <td><p class="highlight">スマートフォン1台</p></td>
+        </tr>
+        <tr>
+          <td>コスト</td>
+          <td>100〜300万円/km</td>
+          <td><p class="highlight">専用車の約1/20</p></td>
+        </tr>
+        <tr>
+          <td>頻度</td>
+          <td>数年に1回（高コストのため）</td>
+          <td><p class="highlight">日常パトロールで毎回実施可能</p></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="item">
+      <p class="label">効果</p>
+      <p class="value">日常パトロールが自動的に路面診断に。専用車不要</p>
+    </div>
+    <div class="item">
+      <p class="label">コスト</p>
+      <p class="value">月額制（無料トライアルあり）</p>
+    </div>
+    <div class="item">
+      <p class="label">実績</p>
+      <p class="value">全国40+自治体導入済</p>
+    </div>
+  </div>
+</body>
+</html>

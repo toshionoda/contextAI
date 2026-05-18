@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja" style="width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;">
+<head>
+<meta charset="UTF-8">
+<style>
+html { width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;
+  font-family: 'Meiryo', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  color: #333333;
+}
+.header {
+  background: #FFFFFF; padding: 10pt 30pt 4pt 30pt;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 3px solid #2E7D32;
+}
+.header h2 { color: #1B3A5C; font-size: 20pt; margin: 0; font-weight: bold; }
+.content { padding: 10pt 30pt 0 30pt; flex: 1; display: flex; flex-direction: column; gap: 8pt; }
+.main-row { display: flex; gap: 14pt; flex: 1; }
+.left { flex: 1; display: flex; flex-direction: column; gap: 8pt; }
+.right { flex: 1; }
+.section-title {
+  border-bottom: 1.5pt solid #2E7D32; padding-bottom: 2pt; margin-bottom: 4pt;
+}
+.section-title h3 {
+  color: #1B3A5C; font-size: 12pt; margin: 0; font-weight: bold;
+}
+table { width: 100%; border-collapse: collapse; }
+th {
+  background: #1B3A5C; color: #FFFFFF; font-size: 9pt;
+  padding: 3pt 6pt; text-align: left; font-weight: bold;
+}
+td {
+  font-size: 9pt; padding: 3pt 6pt; border-bottom: 1px solid #DEE2E6;
+  line-height: 1.35; vertical-align: top;
+}
+td.label { background: #F5F7FA; font-weight: bold; color: #1B3A5C; width: 32%; }
+tr:nth-child(even) td:not(.label) { background: #F5F7FA; }
+.timeline-card {
+  background: #F5F7FA; border-left: 4px solid #2E7D32;
+  padding: 6pt 10pt; margin-bottom: 5pt; border-radius: 3pt;
+}
+.timeline-card p { margin: 0; font-size: 9pt; line-height: 1.4; color: #333333; }
+.timeline-card p.period { color: #2E7D32; font-weight: bold; font-size: 9.5pt; margin-bottom: 1pt; }
+.footer-bar {
+  background: #2E7D32; color: #FFFFFF; padding: 6pt 14pt;
+  border-radius: 4pt; margin-top: 4pt;
+}
+.footer-bar p { font-size: 10pt; margin: 0; text-align: center; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h2>POC計画：1橋で3者一気通貫を実証</h2>
+</div>
+<div class="content">
+  <div class="main-row">
+    <div class="left">
+      <div>
+        <div class="section-title"><h3>POC概要</h3></div>
+        <table>
+          <tr><td class="label">期間</td><td>2026年5月〜2027年3月（11ヶ月）</td></tr>
+          <tr><td class="label">対象</td><td>地場建設会社 1〜2社</td></tr>
+          <tr><td class="label">対象橋梁</td><td>補修工事予定の橋梁 数橋（市側で選定）</td></tr>
+          <tr><td class="label">導入構成</td><td>写真アプリ ＋ チャット ＋ AI点検 ＋ CiviLink</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="section-title"><h3>KPI</h3></div>
+        <table>
+          <tr><th style="width:22%">領域</th><th style="width:48%">指標</th><th style="width:30%">目標</th></tr>
+          <tr><td>点検効率</td><td>調書作成時間</td><td>50%削減</td></tr>
+          <tr><td>設計効率</td><td>照査やり取り日数</td><td>30%削減</td></tr>
+          <tr><td>施工効率</td><td>打合簿の往復時間</td><td>70%削減</td></tr>
+          <tr><td>全体</td><td>残業時間</td><td>月20h削減</td></tr>
+          <tr><td>自治体</td><td>監督員チェック時間</td><td>30%削減</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="right">
+      <div class="section-title"><h3>段階的な実証スケジュール</h3></div>
+      <div class="timeline-card">
+        <p class="period">2026年5〜6月</p>
+        <p>既存ツールパッケージ導入<br>（チャット・写真アプリ・クラウド）</p>
+      </div>
+      <div class="timeline-card">
+        <p class="period">2026年7〜9月</p>
+        <p>点検フェーズでCiviLink活用<br>（損傷記録の図面紐付けテスト）</p>
+      </div>
+      <div class="timeline-card">
+        <p class="period">2026年10〜12月</p>
+        <p>設計フェーズで照査WF実証<br>（デジタル照査・履歴チェックテスト）</p>
+      </div>
+      <div class="timeline-card">
+        <p class="period">2027年1〜3月</p>
+        <p>施工フェーズで打合簿デジタル化<br>（承認WF・段階確認、電子納品自動構成テスト）</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <p>2027年4月〜 包括委託開始 ⇒ POC成果を全契約建設会社に展開</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja" style="width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;">
+<head>
+<meta charset="UTF-8">
+<style>
+html { width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;
+  font-family: 'Meiryo', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  color: #333333;
+}
+.header {
+  background: #FFFFFF; padding: 10pt 30pt 4pt 30pt;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 3px solid #2E7D32;
+}
+.header h2 { color: #1B3A5C; font-size: 20pt; margin: 0; font-weight: bold; }
+.content { padding: 8pt 30pt 0 30pt; flex: 1; display: flex; gap: 16pt; }
+.left { flex: 1; display: flex; flex-direction: column; gap: 8pt; }
+.right { flex: 0.9; }
+h3.section { color: #1B3A5C; font-size: 11pt; margin: 0 0 4pt 0; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; }
+th {
+  background: #1B3A5C; color: #FFFFFF; font-size: 9pt;
+  padding: 3pt 5pt; text-align: left; font-weight: bold;
+}
+td {
+  font-size: 9pt; padding: 3pt 5pt; border-bottom: 1px solid #DEE2E6;
+  line-height: 1.3; vertical-align: top;
+}
+tr:nth-child(even) td { background: #F5F7FA; }
+.sim-card {
+  background: #EFF5EF; border: 2px solid #2E7D32;
+  padding: 10pt 12pt; border-radius: 4pt;
+}
+.sim-card h3 { color: #2E7D32; font-size: 12pt; margin: 0 0 6pt 0; font-weight: bold; }
+.sim-card ul { margin: 0; padding-left: 16pt; }
+.sim-card ul li { font-size: 10pt; line-height: 1.6; }
+.sim-card p.highlight { font-size: 10pt; margin: 6pt 0 0 0; color: #2E7D32; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h2>所要経費と財源</h2>
+</div>
+<div class="content">
+  <div class="left">
+    <div>
+      <h3 class="section">3年間の事業費</h3>
+      <table>
+        <tr><th>年度</th><th>取組内容</th><th>事業費</th></tr>
+        <tr><td>R8</td><td>POC: 建設会社1〜2社＋橋梁数橋で3者連携実証</td><td>○○万円</td></tr>
+        <tr><td>R9</td><td>横展開: 対象企業拡大＋道路・下水道分野展開</td><td>○○万円</td></tr>
+        <tr><td>R10</td><td>定着: 包括委託の標準業務フローにDX基盤組込み</td><td>○○万円</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3 class="section">活用可能な財源</h3>
+      <table>
+        <tr><th>財源</th><th>補助率</th><th>対象</th></tr>
+        <tr><td>国: デジタル化・AI導入補助金</td><td>1/2〜4/5</td><td>クラウド利用料（最大2年分）</td></tr>
+        <tr><td>国: ものづくり補助金</td><td>1/2〜2/3</td><td>ICT設備</td></tr>
+        <tr><td>県: 佐賀県建設DX加速化補助金</td><td>2/3</td><td>ICT建機・機器</td></tr>
+        <tr><td>市: 一般財源</td><td>-</td><td>伴走支援費等</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="right">
+    <div class="sim-card">
+      <h3>1社あたりの導入コスト（初年度）</h3>
+      <ul>
+        <li>基本パッケージ: 月額約15,000円（チャット・写真・施工管理）</li>
+        <li>図面データ基盤: 利用料（別途）</li>
+        <li>橋梁AI点検: 1〜2万円/橋（従量課金）</li>
+        <li>品質管理アプリ: 年額13,200円</li>
+      </ul>
+      <p class="highlight">→ 国・県の補助金を重ね打ちすれば、企業の実質負担は年間数十万円レベル</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CiviLink MRR停滞の構造分析とペルソナ戦略</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --accent-soft: #dbeafe;
+    --border: #e5e7eb;
+    --success: #059669;
+    --warning: #d97706;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+                 "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+  }
+
+  .deck {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    padding: 80px 100px 100px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .slide.active { display: flex; }
+
+  .slide-header {
+    position: absolute;
+    top: 32px;
+    left: 100px;
+    right: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+  .slide-header .label {
+    text-transform: uppercase;
+  }
+  .slide-header .pager {
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--accent);
+  }
+
+  p, li { font-size: 20px; line-height: 1.7; color: var(--text); }
+  .lead { font-size: 24px; line-height: 1.6; color: var(--muted); }
+  .caption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+
+  ul { list-style: none; }
+  ul li { padding-left: 28px; position: relative; margin-bottom: 12px; }
+  ul li::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 13px;
+    width: 10px; height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  .accent { color: var(--accent); font-weight: 700; }
+  .big-number { font-size: 72px; font-weight: 700; color: var(--accent); line-height: 1; }
+  .label-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 24px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 24px;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .card {
+    background: #fafbfc;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+  .card .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .card .card-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .card .card-sub {
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  .card.persona {
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+  }
+  .card.persona .persona-label {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .card.persona .persona-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .card.persona .persona-desc {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .card.persona.muted { border-left-color: var(--muted); }
+  .card.persona.muted .persona-label { color: var(--muted); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 17px;
+  }
+  th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: #f9fafb;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  td.num { font-variant-numeric: tabular-nums; font-weight: 600; }
+  td.accent { color: var(--accent); }
+
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-top: 24px;
+  }
+  .before-after .arrow {
+    font-size: 32px;
+    color: var(--accent);
+  }
+  .before-after .box {
+    background: #fafbfc;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+  .before-after .box.highlight {
+    background: #f0f9ff;
+    border-color: var(--accent);
+  }
+  .before-after .box .title {
+    font-size: 14px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+
+  .bar-chart {
+    margin-top: 24px;
+  }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 180px 1fr 80px;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .bar-label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .bar-track {
+    height: 28px;
+    background: #f3f4f6;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 4px;
+    transition: width 0.5s;
+  }
+  .bar-fill.muted { background: #9ca3af; }
+  .bar-value {
+    font-size: 16px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+
+  .quote-block {
+    border-left: 4px solid var(--accent);
+    padding: 16px 24px;
+    background: #fafbfc;
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 24px;
+    font-size: 19px;
+    line-height: 1.6;
+  }
+
+  .footnote {
+    position: absolute;
+    bottom: 32px;
+    left: 100px;
+    right: 100px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* Navigation */
+  .nav {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 100;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+  }
+  .nav:hover { opacity: 1; }
+  .nav button {
+    background: var(--text);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav button:hover { background: var(--accent); }
+  .nav .progress {
+    font-size: 14px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    min-width: 60px;
+    text-align: center;
+  }
+
+  /* Title slide */
+  .slide-title {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .slide-title h1 {
+    font-size: 64px;
+    margin-bottom: 24px;
+  }
+  .slide-title .subtitle {
+    font-size: 22px;
+    color: var(--muted);
+    margin-bottom: 48px;
+  }
+  .slide-title .meta {
+    font-size: 15px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* Closing slide */
+  .slide-close {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .slide-close h1 {
+    font-size: 56px;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  /* Keyboard hint */
+  .hint {
+    position: fixed;
+    bottom: 24px;
+    right: 32px;
+    font-size: 12px;
+    color: var(--muted);
+    opacity: 0.6;
+  }
+
+  @media print {
+    .nav, .hint { display: none; }
+    .slide { display: flex !important; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+  <!-- Slide 1: Title -->
+  <section class="slide slide-title active">
+    <div class="slide-header">
+      <span class="label">CiviLink Strategy Brief</span>
+      <span class="pager">01 / 12</span>
+    </div>
+    <h1>CiviLink MRR停滞の<br>構造分析とペルソナ戦略</h1>
+    <p class="subtitle">なぜMRRは積み上がらないのか、データから導いた答え</p>
+    <div class="meta">2026-04-15 ・ CSチーム向け戦略ブリーフ ・ 野田</div>
+  </section>
+
+  <!-- Slide 2: Question -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="label">Framing</span>
+      <span class="pager">02 / 12</span>
+    </div>
+    <span class="label-tag">本日の問い</span>
+    <h1>なぜCiviLinkの<br><span class="accent">MRRは積み上がらない</span>のか？</h1>
+    <p class="lead" style="margin-top:32px">
+      トライアル数は増えている。デモも良い反応をもらっている。<br>
+      しかし有償化が進まない。何が起きているのか。
+    </p>
+    <div class="quote-block">
+      結論を先に言うと、<strong>私たちは見るべき数字を見ていなかった</strong>。
+      営業リソースは死に案件に向かい、潜在有望顧客は野放しになっていた。
+    </div>
+  </section>
+
+  <!-- Slide 3: Finding 1 - 19 orgs missed -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="label">Finding 1</span>
+      <span class="pager">03 / 12</span>
+    </div>
+    <span class="label-tag">発見1</span>
+    <h2>5日間データで<br><span class="accent">19社の高活動顧客を見逃していた</span></h2>
+    <div class="before-after">
+      <div class="box">
+        <div class="title">前回分析 (2026-03-19)</div>
+        <div class="big-number" style="font-size:54px">5<span style="font-size:24px">日</span></div>
+        <p style="margin-top:8px; color:var(--muted)">2/4〜2/8 のMixpanelデータ<br>42社が "unknown" として放置</p>
+      </div>
+      <div class="arrow">→</div>
+      <div class="box highlight">
+        <div class="title">今回分析 (2026-04-15)</div>
+        <div class="big-number" style="font-size:54px">90<span style="font-size:24px">日</span></div>
+        <p style="margin-top:8px; color:var(--muted)">1/2〜4/2 の1,037ユーザーの活動<br><strong>19社がHOT候補として顕在化</strong></p>
+      </div>
+    </div>
+    <p class="caption" style="margin-top:32px">データソース: mixpanel/data/output/active_score_analysis.csv</p>
+  </section>
+
+  <!-- Slide 4: Scale of what was missed -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="label">Finding 1 (cont.)</span>
+      <span class="pager">04 / 12</span>
+    </div>
+    <h2>埋もれていた規模</h2>
+    <p class="lead">"unknown"の中にいた、トップ3社だけで──</p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title">四国建設コンサルタント</div>
+        <div class="card-number">49<span style="font-size:20px">名</span></div>
+        <div class="card-sub">本社水工・環境部 / 徳島<br>90日で 9,720 events</div>
+      </div>
+      <div class="card">
+        <div class="card-title">トーニチコンサルタント</div>
+        <div class="card-number">46<span style="font-size:20px">名</span></div>
+        <div class="card-sub">建設コンサル / 東京<br>90日で 9,951 events</div>
+      </div>
+      <div class="card">
+        <div class="card-title">オリエンタル白石</div>
+        <div class="card-number">38<span style="font-size:20px">名</span></div>
+        <div class="card-sub">ゼネコン / 福岡<br>90日で 10,171 events</div>
+      </div>
+    </div>
+    <div class="kpi-row">
+      <div>
+        <div class="card-title">合計アクティブ</div>
+        <div class="big-number">133名</div>
+      </div>
+      <div>
+        <div class="card-title">仮に全員有償化した場合のARR</div>
+        <div class="big-number">¥4,800万</div>
+      </div>
+      <div>
+        <div class="card-title">10%有償化でも上積み</div>
+        <div class="big-number">¥480万</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 5: Finding 2 - Team size -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="label">Finding 2</span>
+      <span class="pager">05 / 12</span>
+    </div>
+    <span class="label-tag">発見2</span>
+    <h2>ユーザー数が<br><span class="accent">勝敗を決める最強の予測因子</span></h2>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">Paid (受注済み)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:47%"></div></div>
+        <div class="bar-value">4.7人</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Hot (進行中)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:52%"></div></div>
+        <div class="bar-value">5.2人</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Warm (トライアル中)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:60%"></div></div>
+        <div class="bar-value">6.0人</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Cold (停滞)</div>
+        <div class="bar-track"><div class="bar-fill muted" style="width:26%"></div></div>
+        <div class="bar-value">2.6人</div>
+      </div>
+    </div>
+    <div class="quote-block">
+      <strong>2人以下の契約はほぼcold化する。</strong>
+      ネットワーク効果が成立しないまま孤立利用者になる。
+      "チーム単位" という導入原則が守られていなかった。
+    </div>
+  </section>
+
+  <!-- Slide 6: Finding 3 - Department -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="label">Finding 3</span>
+      <span class="pager">06 / 12</span>
+    </div>
+    <span class="label-tag">発見3</span>
+    <h2>部署名が<br><span class="accent">「図面接触頻度」を可視化する</span></h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>勝ち筋の部署</h3>
+        <p style="margin-bottom:12px; color:var(--muted)">paid + hot 顧客の部署に頻出</p>
+        <ul>
+          <li><strong>設計</strong> × 8</li>
+          <li><strong>DX推進</strong> × 7</li>
+          <li><strong>水工</strong> × 6</li>
+          <li>構造・道路・橋梁・河川・交通</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--muted)">負け筋の部署</h3>
+        <p style="margin-bottom:12px; color:var(--muted)">cold 顧客の部署に頻出</p>
+        <ul>
+          <li><strong>技術</strong> × 5</li>
+          <li><strong>品質</strong> × 3</li>
+          <li>(総務的な横断部署)</li>
+          <li>部署名未記載</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:32px">
+      図面を<strong class="accent">毎日触る現場部署</strong>では勝ち、<strong>横断管理部署</strong>では負ける。
+      元々のセールスストーリーの原則と一致 ── つまり <strong>ターゲティングがズレている</strong>。
+    </p>
+  </section>
+
+  <!-- Slide 7: Finding 4 - General contractor -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="label">Finding 4</span>
+      <span class="pager">07 / 12</span>
+    </div>
+    <span class="label-tag">発見4</span>
+    <h2>ゼネコンは「未検証」ではなく<br><span class="accent">放置されていた</span></h2>
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-title">青木あすなろ建設</div>
+        <div class="card-number" style="font-size:32px">16名</div>
+        <div class="card-sub">大阪 / 10,932ev</div>
+      </div>
+      <div class="card">
+        <div class="card-title">オリエンタル白石</div>
+        <div class="card-number" style="font-size:32px">38名</div>
+        <div class="card-sub">福岡 / 10,171ev</div>
+      </div>
+      <div class="card">
+        <div class="card-title">伊藤組土建</div>
+        <div class="card-number" style="font-size:32px">12名</div>
+        <div class="card-sub">北海道 / 1,943ev</div>
+      </div>
+      <div class="card">
+        <div class="card-title">川田工業 橋梁事業部</div>
+        <div class="card-number" style="font-size:32px">10名</div>
+        <div class="card-sub">大阪 / 1,195ev</div>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:32px">
+      <strong>ゼネコン21社中7社</strong>が HOT候補（他に大進・草野作工・不動テトラ）。<br>
+      "検証未遂" の認識は誤り。<strong class="accent">使われているのに売り込みをかけていない</strong>が正しい。
+    </p>
+  </section>
+
+  <!-- Slide 8: 4 Personas -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="label">Framework</span>
+      <span class="pager">08 / 12</span>
+    </div>
+    <span class="label-tag">戦略</span>
+    <h2>4つのペルソナに分けて攻略する</h2>
+    <div class="grid-2" style="margin-top:32px">
+      <div class="card persona">
+        <div class="persona-label">PERSONA A ・ 主戦場</div>
+        <div class="persona-title">建設コンサル<br>「設計/水工の中核エンジニア」型</div>
+        <div class="persona-desc">
+          設計部・水工部・構造部の現場エンジニア。毎日図面でやり取り。<br>
+          Day 1 Utility が最も刺さるコア層。
+        </div>
+      </div>
+      <div class="card persona muted">
+        <div class="persona-label">PERSONA B ・ Bridge役</div>
+        <div class="persona-title">DX推進/品質保証<br>管理職型</div>
+        <div class="persona-desc">
+          決裁権はあるが、図面接触は低頻度。単独では刺さらない。<br>
+          ペルソナAへの橋渡しとして扱う。
+        </div>
+      </div>
+      <div class="card persona">
+        <div class="persona-label">PERSONA C ・ 戸田建設型</div>
+        <div class="persona-title">ゼネコン<br>「現場×設計部署」型</div>
+        <div class="persona-desc">
+          設計部と施工現場が毎日図面で対話。<br>
+          戸田建設で実証、同型7社がデータで発見。
+        </div>
+      </div>
+      <div class="card persona muted">
+        <div class="persona-label">PERSONA D ・ 売らない</div>
+        <div class="persona-title">Individual Contributor型<br>(1〜2人契約)</div>
+        <div class="persona-desc">
+          コミュニケーションツールとして構造的に成立しない。<br>
+          Phase 1スクリーニングで弾く。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 9: Persona A detail -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="label">Persona A</span>
+      <span class="pager">09 / 12</span>
+    </div>
+    <span class="label-tag" style="background:#dbeafe;color:#2563eb">ペルソナA ・ 主戦場</span>
+    <h2>建設コンサル「設計/水工の中核エンジニア」</h2>
+    <div class="grid-2" style="margin-top:16px">
+      <div>
+        <h3>典型ペイン (Phase 2)</h3>
+        <ul>
+          <li>協力会社との「電話で『あそこ』問題」</li>
+          <li>照査指摘の紙回覧・スキャン往復</li>
+          <li>修正履歴がメールに埋もれる</li>
+          <li>版管理の混乱</li>
+        </ul>
+        <h3 style="margin-top:24px">Day 1 Utility (Phase 3)</h3>
+        <ul>
+          <li>図面への直接コメント</li>
+          <li>版差分のハイライト表示</li>
+        </ul>
+      </div>
+      <div>
+        <h3>勝ち筋実証済みの顧客</h3>
+        <ul>
+          <li>西日本技術開発 水工部 (18名)</li>
+          <li>芙蓉コンサルタント 設計部第1G (17名)</li>
+          <li>中央コンサルタンツ 設計1部 (87名)</li>
+          <li>建設技術研究所 水工部 (56名)</li>
+        </ul>
+        <h3 style="margin-top:24px">🔥 未攻略の最優先候補</h3>
+        <ul>
+          <li><strong>四国建設コンサル 水工・環境部</strong></li>
+          <li><strong>日本水工設計</strong> (水工専業)</li>
+          <li><strong>コサカ技研 / 東急設計 / いであ</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 10: Persona C detail -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="label">Persona C</span>
+      <span class="pager">10 / 12</span>
+    </div>
+    <span class="label-tag" style="background:#dbeafe;color:#2563eb">ペルソナC ・ 戸田建設型</span>
+    <h2>ゼネコン「現場×設計部署」型</h2>
+    <div class="grid-2" style="margin-top:16px">
+      <div>
+        <h3>典型ペイン (Phase 2)</h3>
+        <ul>
+          <li>現場から1日何本もの突発電話</li>
+          <li>「上から3本目の鉄筋が…」口頭説明の消耗</li>
+          <li>現場からの変更依頼の反映サイクルが遅い</li>
+          <li>対応履歴が個人メールに閉じる (属人化)</li>
+        </ul>
+        <h3 style="margin-top:24px">Day 1 Utility (Phase 3)</h3>
+        <ul>
+          <li>図面への直接コメントで現場即応</li>
+          <li>現場写真と図面の紐付け</li>
+        </ul>
+      </div>
+      <div>
+        <h3>基軸事例 (最強の武器)</h3>
+        <div class="card" style="margin-bottom:16px">
+          <div class="card-title">戸田建設 土木設計技術3部</div>
+          <div class="card-number">45名</div>
+          <div class="card-sub">90日で 25,824 events<br>4/1契約開始、6か月サブスク</div>
+        </div>
+        <h3>🔥 未攻略の最優先候補</h3>
+        <ul>
+          <li><strong>オリエンタル白石</strong> (38名、福岡)</li>
+          <li><strong>青木あすなろ建設</strong> (16名、大阪)</li>
+          <li><strong>伊藤組土建</strong> (12名、北海道)</li>
+          <li><strong>川田工業 橋梁事業部</strong> (10名、大阪)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 11: Action -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="label">Action</span>
+      <span class="pager">11 / 12</span>
+    </div>
+    <span class="label-tag">今週・今月のアクション</span>
+    <h2>やることは3つ</h2>
+    <div class="grid-3" style="margin-top:32px">
+      <div class="card">
+        <div class="card-title">①  今週中</div>
+        <div class="card-number" style="font-size:32px; line-height:1.2">HOT19社に<br>営業開始</div>
+        <div class="card-sub" style="margin-top:16px">ペルソナA/Cで担当割り当て。最優先5社から順次アプローチ。</div>
+      </div>
+      <div class="card">
+        <div class="card-title">②  今月中</div>
+        <div class="card-number" style="font-size:32px; line-height:1.2">ペルソナD<br>スクリーニング</div>
+        <div class="card-sub" style="margin-top:16px">1-2人契約を Phase 1で弾く運用を標準化。cold入り防止。</div>
+      </div>
+      <div class="card">
+        <div class="card-title">③  継続</div>
+        <div class="card-number" style="font-size:32px; line-height:1.2">paid_status<br>再構築</div>
+        <div class="card-sub" style="margin-top:16px">90日データで全面書き換え。Mazrica フェーズも実態に同期。</div>
+      </div>
+    </div>
+    <div class="quote-block">
+      営業リソースを <strong>死に案件から潜在HOT19社に付け替える</strong> だけで、
+      MRRの曲線は変わる。これは新機能でも新プロダクトでもなく、
+      <strong>見るべき数字を見る</strong> ことで得られる成果。
+    </div>
+  </section>
+
+  <!-- Slide 12: Closing -->
+  <section class="slide slide-close">
+    <div class="slide-header">
+      <span class="label">Closing</span>
+      <span class="pager">12 / 12</span>
+    </div>
+    <h1>まず見るべき数字を見る。<br>次に売るべき顧客に売る。</h1>
+    <p class="lead" style="margin-top:32px">
+      新機能を待つ必要はない。今あるデータと今あるプロダクトで、MRRは動かせる。
+    </p>
+    <p class="caption" style="margin-top:64px">
+      参考資料:<br>
+      customers/unknown_bucket_triage_2026-04-15.md<br>
+      customers/persona_hypotheses_2026-04-15.md<br>
+      customers/persona_story_A.md / persona_story_C.md
+    </p>
+  </section>
+
+</div>
+
+<!-- Navigation -->
+<div class="nav">
+  <button id="prev" aria-label="前のスライド">‹</button>
+  <span class="progress" id="progress">1 / 12</span>
+  <button id="next" aria-label="次のスライド">›</button>
+</div>
+
+<div class="hint">← → キーで移動</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const progress = document.getElementById('progress');
+  let current = 0;
+
+  function show(i) {
+    if (i < 0 || i >= slides.length) return;
+    slides[current].classList.remove('active');
+    current = i;
+    slides[current].classList.add('active');
+    progress.textContent = (current + 1) + ' / ' + slides.length;
+    location.hash = current + 1;
+  }
+
+  document.getElementById('next').addEventListener('click', () => show(current + 1));
+  document.getElementById('prev').addEventListener('click', () => show(current - 1));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'j' || e.key === 'l') show(current + 1);
+    if (e.key === 'ArrowLeft' || e.key === 'h' || e.key === 'k') show(current - 1);
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+
+  // Support deep link via hash
+  const startFrom = parseInt(location.hash.replace('#', ''), 10);
+  if (!isNaN(startFrom) && startFrom >= 1 && startFrom <= slides.length) {
+    show(startFrom - 1);
+  }
+</script>
+
+</body>
+</html>

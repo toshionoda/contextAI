@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja" style="width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;">
+<head>
+<meta charset="UTF-8">
+<style>
+html { width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;
+  font-family: 'Meiryo', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  color: #333333;
+}
+.header {
+  background: #FFFFFF; padding: 10pt 30pt 4pt 30pt;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 3px solid #2E7D32;
+}
+.header h2 { color: #1B3A5C; font-size: 20pt; margin: 0; font-weight: bold; }
+.content { padding: 6pt 30pt 0 30pt; flex: 1; display: flex; flex-direction: column; gap: 5pt; }
+h3.section { color: #1B3A5C; font-size: 11pt; margin: 0; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; }
+th {
+  background: #1B3A5C; color: #FFFFFF; font-size: 8pt;
+  padding: 3pt 4pt; text-align: left; font-weight: bold;
+}
+td {
+  font-size: 8pt; padding: 3pt 4pt; border-bottom: 1px solid #DEE2E6;
+  line-height: 1.3; vertical-align: top;
+}
+tr:nth-child(even) td { background: #F5F7FA; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h2>取組①: DXツール導入支援の具体内容</h2>
+</div>
+<div class="content">
+  <h3 class="section">点検業務のDX化</h3>
+  <table>
+    <tr><th style="width:22%">取組</th><th style="width:30%">活用技術</th><th style="width:30%">効果</th><th style="width:18%">コスト</th></tr>
+    <tr><td>橋梁点検の直営化支援</td><td>アレリオ橋梁点検（Agency Soft／NETIS登録）</td><td>外注費20万円/橋→約1〜2万円/橋</td><td>従量課金（初期費用なし）</td></tr>
+    <tr><td>道路損傷の早期発見</td><td>RoadManager（UrbanX／国交省カタログ掲載）</td><td>スマホを載せるだけで路面損傷を自動検出</td><td>月額制（無料トライアルあり）</td></tr>
+    <tr><td>ひび割れ検出の自動化</td><td>ひびみっけ（富士フイルム／国交省カタログ掲載）</td><td>点検調書作成時間を50%削減</td><td>従量課金（1枚数百円〜）</td></tr>
+  </table>
+
+  <h3 class="section">施工業務のDX化</h3>
+  <table>
+    <tr><th style="width:22%">取組</th><th style="width:30%">活用技術</th><th style="width:30%">効果</th><th style="width:18%">コスト</th></tr>
+    <tr><td>施工計画書の自動生成</td><td>NITACO 施工計画書AI（29業種対応）</td><td>1〜2週間→30分に短縮</td><td>無料〜月額3万円</td></tr>
+    <tr><td>工事写真台帳の自動化</td><td>Cheez（AI-OCR黒板読取＋台帳自動生成）</td><td>台帳作成時間を93%削減</td><td>月額制</td></tr>
+    <tr><td>打合簿・段階確認のデジタル化</td><td>現場Plus（福井コンピュータ／クラウド施工管理）</td><td>往復時間を70%削減</td><td>月額1万円（60人まで）</td></tr>
+  </table>
+
+  <h3 class="section">品質管理のDX化</h3>
+  <table>
+    <tr><th style="width:22%">取組</th><th style="width:30%">活用技術</th><th style="width:30%">効果</th><th style="width:18%">コスト</th></tr>
+    <tr><td>出来形・品質データの電子化</td><td>SiteBox（KENTEM／NETIS登録）</td><td>現場で直接入力→事務所転記が不要</td><td>年額13,200円</td></tr>
+    <tr><td>配筋検査の省力化</td><td>Modely（DataLabs／NETIS-VE）</td><td>鉄筋径・ピッチ自動計測。80%省力化</td><td>従量課金</td></tr>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: 'Meiryo', Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #FFFFFF; padding: 12pt 30pt;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 3px solid #C2706B;
+}
+.header h2 { color: #3C3838; font-size: 22pt; margin: 0; font-weight: bold; }
+.logo { height: 28pt; }
+.content { margin: 14pt 30pt; flex: 1; display: flex; flex-direction: column; }
+h3 { color: #333333; font-size: 14pt; margin: 0 0 8pt 0; font-weight: bold; }
+.cols { display: flex; gap: 14pt; margin-bottom: 10pt; }
+.col { flex: 1; }
+.subtitle-bar { border-bottom: 1pt solid #C2706B; padding-bottom: 3pt; margin-bottom: 6pt; }
+.subtitle-bar p { color: #C2706B; font-size: 12pt; font-weight: bold; margin: 0; }
+.col table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+.col table td { padding: 4pt 6pt; border-bottom: 1px solid #E0D8D8; color: #333333; vertical-align: top; }
+.col table td.label { font-weight: bold; color: #3C3838; width: 38%; background: #F5F0F0; }
+.timeline { background: #F5F0F0; padding: 8pt 14pt; }
+.timeline-label { margin: 0 0 4pt 0; color: #3C3838; font-size: 11pt; font-weight: bold; }
+.timeline ul { font-size: 9.5pt; margin: 0; padding-left: 16pt; color: #333333; line-height: 1.45; }
+.timeline li b { color: #C2706B; }
+</style>
+</head>
+<body>
+<div class="header"><h2>POC計画：佐賀市で何を実証するか</h2><img class="logo" src="assets/malme-logo.png"></div>
+<div class="content">
+  <h3>包括委託開始（2027/4）までの約11ヶ月間で実証する</h3>
+  <div class="cols">
+    <div class="col">
+      <div class="subtitle-bar"><p>POCスコープ案</p></div>
+      <table>
+        <tr><td class="label">対象</td><td>Cランク以下の地場建設会社 1〜2社</td></tr>
+        <tr><td class="label">対象橋梁</td><td>補修工事予定の橋梁 数橋（市側で選定）</td></tr>
+        <tr><td class="label">対象業務</td><td>橋梁の点検 → 補修設計 → 補修工事の一気通貫</td></tr>
+        <tr><td class="label">導入ツール</td><td>写真アプリ + チャット + AI橋梁点検 + CiviLink</td></tr>
+        <tr><td class="label">資金源</td><td>マルメ無償／補助金活用／伊藤忠出資 のいずれか</td></tr>
+      </table>
+    </div>
+    <div class="col">
+      <div class="subtitle-bar"><p>想定KPI</p></div>
+      <table>
+        <tr><td class="label">点検効率</td><td>1橋あたり調書作成時間 50%削減</td></tr>
+        <tr><td class="label">設計効率</td><td>照査やり取り日数 30%削減</td></tr>
+        <tr><td class="label">施工効率</td><td>打合簿の往復時間 70%削減</td></tr>
+        <tr><td class="label">残業</td><td>月20時間削減</td></tr>
+        <tr><td class="label">自治体</td><td>監督員のチェック対応時間 30%削減</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="timeline">
+    <p class="timeline-label">段階的な実証スケジュール</p>
+    <ul>
+      <li><b>2026年5〜6月</b>：既存ツールパッケージの導入支援（チャット・写真・クラウド）</li>
+      <li><b>2026年7〜9月</b>：橋梁点検フェーズでCiviLink活用（損傷記録の図面紐付け）</li>
+      <li><b>2026年10〜12月</b>：補修設計フェーズで照査ワークフロー実証</li>
+      <li><b>2027年1〜3月</b>：補修工事フェーズで打合簿・段階確認のデジタル化</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

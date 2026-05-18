@@ -1,0 +1,65 @@
+{
+  "case_id": "case_001",
+  "route": "429-2",
+  "construction_type": "管きょ更生工 既設管渠250mm",
+  "schema_version": "0.1-draft",
+  "note": "Phase A Day 3 ドラフト。野田レビュー要。bboxは未アノテーション（PoC初期はsymbol-based検出のみ）。",
+  "detected_items": [
+    {
+      "symbol": "L_route_429-2",
+      "value": "18.10",
+      "unit": "m",
+      "category": "路線延長 φ250",
+      "bbox": null
+    },
+    {
+      "symbol": "L_pipe_429-2",
+      "value": "17.20",
+      "unit": "m",
+      "category": "管きょ延長 φ250",
+      "bbox": null
+    },
+    {
+      "symbol": "ST001_429-2",
+      "value": "18.10",
+      "unit": "m",
+      "category": "更生管材 φ250",
+      "bbox": null
+    },
+    {
+      "symbol": "ST003_429-2",
+      "value": "17.20",
+      "unit": "m",
+      "category": "内面更生工 反転・引込・硬化・形成",
+      "bbox": null
+    },
+    {
+      "symbol": "ST004_429-2",
+      "value": "1",
+      "unit": "回",
+      "category": "仮設備設置・撤去工",
+      "bbox": null
+    },
+    {
+      "symbol": "ST005_429-2",
+      "value": "2",
+      "unit": "箇所",
+      "category": "本管口仕上工",
+      "bbox": null
+    },
+    {
+      "symbol": "ST006_429-2",
+      "value": "3",
+      "unit": "箇所",
+      "category": "取付管口せん孔仕上工",
+      "bbox": null
+    }
+  ],
+  "mappings": [
+    {"item_type": "管更生工 φ250 更生管材", "item_type_id": "ST001", "symbol_detected": "ST001_429-2"},
+    {"item_type": "内面更生工 反転・引込工 硬化・形成工", "item_type_id": "ST003", "symbol_detected": "ST003_429-2"},
+    {"item_type": "更生付帯工 仮設備設置・撤去工", "item_type_id": "ST004", "symbol_detected": "ST004_429-2"},
+    {"item_type": "更生付帯工 本管口仕上工", "item_type_id": "ST005", "symbol_detected": "ST005_429-2"},
+    {"item_type": "更生付帯工 取付管口せん孔仕上工", "item_type_id": "ST006", "symbol_detected": "ST006_429-2"}
+  ]
+}

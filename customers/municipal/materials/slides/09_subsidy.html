@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: 'Meiryo', Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #FFFFFF; padding: 12pt 30pt;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 3px solid #C2706B;
+}
+.header h2 { color: #3C3838; font-size: 22pt; margin: 0; font-weight: bold; }
+.logo { height: 28pt; }
+.content { margin: 14pt 30pt; flex: 1; display: flex; flex-direction: column; }
+h3 { color: #333333; font-size: 14pt; margin: 0 0 8pt 0; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; font-size: 11pt; margin-bottom: 12pt; }
+th { background: #3C3838; color: #FFFFFF; padding: 6pt 8pt; text-align: left; font-weight: bold; }
+td { padding: 5pt 8pt; border-bottom: 1px solid #E0D8D8; color: #333333; }
+tr:nth-child(even) td { background: #F5F0F0; }
+td.subsidy { font-weight: bold; color: #C2706B; }
+.example { background: #F5F0F0; padding: 10pt 14pt; border-left: 4pt solid #C2706B; }
+.example p.title { color: #3C3838; font-size: 12pt; margin: 0 0 6pt 0; font-weight: bold; }
+.example .row { display: flex; gap: 10pt; }
+.example .item { flex: 1; }
+.example .item p { margin: 0 0 2pt 0; font-size: 10pt; color: #666666; }
+.example .item .val { font-size: 14pt; color: #3C3838; font-weight: bold; }
+.example .item .val.accent { color: #C2706B; }
+</style>
+</head>
+<body>
+<div class="header"><h2>投資とリターン：補助金で実質負担を最小化</h2><img class="logo" src="assets/malme-logo.png"></div>
+<div class="content">
+  <h3>活用可能な補助金</h3>
+  <table>
+    <tr>
+      <th style="width: 35%;">補助金</th>
+      <th style="width: 15%;">補助率</th>
+      <th style="width: 22%;">上限額</th>
+      <th style="width: 28%;">対象</th>
+    </tr>
+    <tr><td class="subsidy">佐賀県建設DX加速化事業費補助金</td><td>2/3</td><td>ICT建機600万 / 機器300万</td><td>県内建設業者</td></tr>
+    <tr><td class="subsidy">佐賀市DX推進支援事業補助金</td><td>要確認</td><td>要確認</td><td>市内中小企業</td></tr>
+    <tr><td class="subsidy">デジタル化・AI導入補助金</td><td>1/2〜4/5</td><td>最大450万円</td><td>クラウド利用料も対象</td></tr>
+    <tr><td class="subsidy">ものづくり補助金</td><td>1/2〜2/3</td><td>最大750〜1,250万円</td><td>ICT設備（ドローン等）</td></tr>
+  </table>
+  <div class="example">
+    <p class="title">活用シミュレーション例：パッケージB（点検・測量強化）</p>
+    <div class="row">
+      <div class="item"><p>初期投資</p><p class="val">380 万円</p></div>
+      <div class="item"><p>佐賀県DX補助金（2/3）</p><p class="val">▲ 253 万円</p></div>
+      <div class="item"><p>自己負担</p><p class="val accent">127 万円</p></div>
+      <div class="item"><p>i-Con受注力UPで早期回収</p><p class="val">2年以内</p></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

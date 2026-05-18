@@ -1,0 +1,701 @@
+=== Daily Morning Tasks: 2026-05-12 07:10 ===
+
+📰 ニュース取得中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+📰 ニュース取得開始 (2026-05-12)
+   対象期間: 過去1日
+
+📂 AI
+  ✅ MIT Tech Review AI: 3件
+  - The Batch (deeplearning.ai): 0件
+  ✅ OpenAI Blog: 3件
+  ✅ AI News (Google): 10件
+  ✅ ITmedia AI+: 5件
+  ✅ AI News (Google JP): 9件
+
+📂 スタートアップ
+  ✅ TechCrunch Startups: 1件
+  - BRIDGE (日本): 0件
+  - Y Combinator Blog: 0件
+  - スタートアップ (Google JP): 0件
+
+📂 土木・建設
+  - 建設通信新聞: 0件
+  - 日経クロステック 建設: 0件
+  ✅ Construction Dive: 3件
+  - ENR (Engineering News-Record): 0件
+  ✅ 建設業界 (Google JP): 5件
+
+📂 建設スタートアップ
+  - ConTech (Google News): 0件
+  ✅ BuiltWorlds: 2件
+  - 建設テック (Google JP): 0件
+
+📂 BIM×AI
+  - BIM×AI (Google News): 0件
+  - BIM×AI 日本語: 0件
+  - Autodesk Blog: 0件
+
+📂 行政・研究機関 (BIM/CIM/AI)
+  - 国交省 BIM/CIM/AI (Google JP): 0件
+  - 国総研 BIM/CIM/AI (Google JP): 0件
+  - 国交省動向 (Google JP): 0件
+  ✅ i-Construction (Google JP): 2件
+
+🌐 日本語翻訳中...
+  ✅ 43件を翻訳
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/news/2026-05-12.md
+✅ ニュース取得完了
+
+📋 Slackサマリー生成中...
+📋 Slackサマリー生成開始 (2026-05-12)
+   対象期間: 過去1日 (after:2026-05-11)
+   方式: Claude Code CLI + Slack MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Slackサマリースキップ
+
+📓 Notionサマリー生成中...
+📓 Notionサマリー生成開始 (2026-05-12)
+   対象期間: 過去1日 (after:2026-05-11)
+   方式: Claude Code CLI + Notion MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Notionサマリースキップ
+
+📅 Calendarサマリー生成中...
+📅 カレンダーサマリー生成開始 (2026-05-12)
+   方式: Claude Code CLI + Google Calendar MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Calendarサマリースキップ
+
+💬 Slack同期中...
+📡 組織全体のチャンネル: 137件
+📨 メッセージ取得対象: 137チャンネル
+✅ #営業: 4件
+✅ #fondesk: 8件
+✅ #corp-bo窓口_bimcim: 1件
+✅ #設計_見積り依頼: 3件
+✅ #dp_083_パパシフィックコンサルタンツ_aipj: 1件
+✅ #proj-civilink: 2件
+✅ #hr-採用マーケ: 2件
+✅ #alert-structuralengine: 2件
+✅ #mail-civilink-cs: 13件
+✅ #corp-情シス窓口: 1件
+✅ #dp_078_ニ日本工営_dynamo開発: 1件
+✅ #team-webapp-sora-malme: 1件
+✅ #dp_080_ト東北開発c_設計省力化: 1件
+✅ #ask-civilink: 1件
+✅ #alert-civilink-mixpanel: 6件
+✅ #dev-civilink-report-findy-team: 2件
+✅ #開発-日報: 8件
+✅ #dev-照査ai: 1件
+✅ #mixpanel-hook: 1件
+✅ #dev-civilink-pr-diff: 12件
+✅ #バイブコーディング選手権: 1件
+✅ #dp_098_パパシフィックコンサルタンツ_線形省力化: 11件
+✅ #dp_115_応用地質_土質データ活用: 1件
+✅ #dp_121_中央c_技術提案書生成ai: 1件
+✅ #team-ai-tools-status: 15件
+✅ #tech定例: 1件
+✅ #t_技術部ハイブリッド出社: 5件
+
+📊 同期完了: 27/137 チャンネル（直近3日分）
+✅ Slack同期完了
+
+📅 Calendar生データ同期中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:237: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+✅ Calendar同期完了: 17件（7日分）
+✅ Calendar同期完了
+
+📊 案件集約レポート生成中...
+📊 案件集約開始 (2026-05-12)
+   対象期間: 直近3日
+   方式: Claude Code CLI
+
+   📂 コンテキスト収集中...
+   📊 収集データ: 19,421文字
+   🤖 案件集約レポート生成中...
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+❌ レポート生成失敗
+✅ 案件集約完了
+
+=== 完了: 07:12 ===
+=== Daily Morning Tasks: 2026-05-12 07:14 ===
+
+📰 ニュース取得中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+📰 ニュース取得開始 (2026-05-12)
+   対象期間: 過去1日
+
+📂 AI
+  ✅ MIT Tech Review AI: 3件
+  - The Batch (deeplearning.ai): 0件
+  ✅ OpenAI Blog: 3件
+  ✅ AI News (Google): 10件
+  ✅ ITmedia AI+: 5件
+  ✅ AI News (Google JP): 9件
+
+📂 スタートアップ
+  ✅ TechCrunch Startups: 1件
+  - BRIDGE (日本): 0件
+  - Y Combinator Blog: 0件
+  - スタートアップ (Google JP): 0件
+
+📂 土木・建設
+  - 建設通信新聞: 0件
+  - 日経クロステック 建設: 0件
+  ✅ Construction Dive: 3件
+  - ENR (Engineering News-Record): 0件
+  ✅ 建設業界 (Google JP): 5件
+
+📂 建設スタートアップ
+  - ConTech (Google News): 0件
+  ✅ BuiltWorlds: 2件
+  - 建設テック (Google JP): 0件
+
+📂 BIM×AI
+  - BIM×AI (Google News): 0件
+  - BIM×AI 日本語: 0件
+  - Autodesk Blog: 0件
+
+📂 行政・研究機関 (BIM/CIM/AI)
+  - 国交省 BIM/CIM/AI (Google JP): 0件
+  - 国総研 BIM/CIM/AI (Google JP): 0件
+  - 国交省動向 (Google JP): 0件
+  ✅ i-Construction (Google JP): 2件
+
+🌐 日本語翻訳中...
+  ✅ 43件を翻訳
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/news/2026-05-12.md
+✅ ニュース取得完了
+
+📋 Slackサマリー生成中...
+📋 Slackサマリー生成開始 (2026-05-12)
+   対象期間: 過去1日 (after:2026-05-11)
+   方式: Claude Code CLI + Slack MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Slackサマリースキップ
+
+📓 Notionサマリー生成中...
+📓 Notionサマリー生成開始 (2026-05-12)
+   対象期間: 過去1日 (after:2026-05-11)
+   方式: Claude Code CLI + Notion MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Notionサマリースキップ
+
+📅 Calendarサマリー生成中...
+📅 カレンダーサマリー生成開始 (2026-05-12)
+   方式: Claude Code CLI + Google Calendar MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Calendarサマリースキップ
+
+💬 Slack同期中...
+📡 組織全体のチャンネル: 137件
+📨 メッセージ取得対象: 137チャンネル
+✅ #営業: 4件
+✅ #fondesk: 8件
+✅ #corp-bo窓口_bimcim: 1件
+✅ #設計_見積り依頼: 3件
+✅ #dp_083_パパシフィックコンサルタンツ_aipj: 1件
+✅ #proj-civilink: 2件
+✅ #hr-採用マーケ: 2件
+✅ #alert-structuralengine: 2件
+✅ #mail-civilink-cs: 13件
+✅ #corp-情シス窓口: 1件
+✅ #dp_078_ニ日本工営_dynamo開発: 1件
+✅ #team-webapp-sora-malme: 1件
+✅ #dp_080_ト東北開発c_設計省力化: 1件
+✅ #ask-civilink: 1件
+✅ #alert-civilink-mixpanel: 6件
+✅ #dev-civilink-report-findy-team: 2件
+✅ #開発-日報: 8件
+✅ #dev-照査ai: 1件
+✅ #mixpanel-hook: 1件
+✅ #dev-civilink-pr-diff: 12件
+✅ #バイブコーディング選手権: 1件
+✅ #dp_098_パパシフィックコンサルタンツ_線形省力化: 11件
+✅ #dp_115_応用地質_土質データ活用: 1件
+✅ #dp_121_中央c_技術提案書生成ai: 1件
+✅ #team-ai-tools-status: 15件
+✅ #tech定例: 1件
+✅ #t_技術部ハイブリッド出社: 5件
+
+📊 同期完了: 27/137 チャンネル（直近3日分）
+✅ Slack同期完了
+
+📅 Calendar生データ同期中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:237: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+✅ Calendar同期完了: 17件（7日分）
+✅ Calendar同期完了
+
+📊 案件集約レポート生成中...
+📊 案件集約開始 (2026-05-12)
+   対象期間: 直近3日
+   方式: Claude Code CLI
+
+   📂 コンテキスト収集中...
+   📊 収集データ: 19,421文字
+   🤖 案件集約レポート生成中...
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+❌ レポート生成失敗
+✅ 案件集約完了
+
+=== 完了: 07:15 ===
+=== Daily Morning Tasks: 2026-05-12 07:22 ===
+
+📰 ニュース取得中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+📰 ニュース取得開始 (2026-05-12)
+   対象期間: 過去1日
+
+📂 AI
+  ✅ MIT Tech Review AI: 3件
+  - The Batch (deeplearning.ai): 0件
+  ✅ OpenAI Blog: 3件
+  ✅ AI News (Google): 10件
+  ✅ ITmedia AI+: 5件
+  ✅ AI News (Google JP): 9件
+
+📂 スタートアップ
+  ✅ TechCrunch Startups: 1件
+  - BRIDGE (日本): 0件
+  - Y Combinator Blog: 0件
+  - スタートアップ (Google JP): 0件
+
+📂 土木・建設
+  - 建設通信新聞: 0件
+  - 日経クロステック 建設: 0件
+  ✅ Construction Dive: 3件
+  - ENR (Engineering News-Record): 0件
+  ✅ 建設業界 (Google JP): 5件
+
+📂 建設スタートアップ
+  - ConTech (Google News): 0件
+  ✅ BuiltWorlds: 2件
+  - 建設テック (Google JP): 0件
+
+📂 BIM×AI
+  - BIM×AI (Google News): 0件
+  - BIM×AI 日本語: 0件
+  - Autodesk Blog: 0件
+
+📂 行政・研究機関 (BIM/CIM/AI)
+  - 国交省 BIM/CIM/AI (Google JP): 0件
+  - 国総研 BIM/CIM/AI (Google JP): 0件
+  - 国交省動向 (Google JP): 0件
+  ✅ i-Construction (Google JP): 2件
+
+🌐 日本語翻訳中...
+  ✅ 43件を翻訳
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/news/2026-05-12.md
+✅ ニュース取得完了
+
+📋 Slackサマリー生成中...
+📋 Slackサマリー生成開始 (2026-05-12)
+   対象期間: 過去1日 (after:2026-05-11)
+   方式: Claude Code CLI + Slack MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Slackサマリースキップ
+
+📓 Notionサマリー生成中...
+📓 Notionサマリー生成開始 (2026-05-12)
+   対象期間: 過去1日 (after:2026-05-11)
+   方式: Claude Code CLI + Notion MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Notionサマリースキップ
+
+📅 Calendarサマリー生成中...
+📅 カレンダーサマリー生成開始 (2026-05-12)
+   方式: Claude Code CLI + Google Calendar MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Calendarサマリースキップ
+
+💬 Slack同期中...
+📡 組織全体のチャンネル: 137件
+📨 メッセージ取得対象: 137チャンネル
+✅ #営業: 4件
+✅ #fondesk: 8件
+✅ #corp-bo窓口_bimcim: 1件
+✅ #設計_見積り依頼: 3件
+✅ #dp_083_パパシフィックコンサルタンツ_aipj: 1件
+✅ #proj-civilink: 2件
+✅ #hr-採用マーケ: 2件
+✅ #alert-structuralengine: 2件
+✅ #mail-civilink-cs: 13件
+✅ #corp-情シス窓口: 1件
+✅ #dp_078_ニ日本工営_dynamo開発: 1件
+✅ #team-webapp-sora-malme: 1件
+✅ #dp_080_ト東北開発c_設計省力化: 1件
+✅ #ask-civilink: 1件
+✅ #alert-civilink-mixpanel: 6件
+✅ #dev-civilink-report-findy-team: 2件
+✅ #開発-日報: 8件
+✅ #dev-照査ai: 1件
+✅ #mixpanel-hook: 1件
+✅ #dev-civilink-pr-diff: 12件
+✅ #バイブコーディング選手権: 1件
+✅ #dp_098_パパシフィックコンサルタンツ_線形省力化: 11件
+✅ #dp_115_応用地質_土質データ活用: 1件
+✅ #dp_121_中央c_技術提案書生成ai: 1件
+✅ #team-ai-tools-status: 15件
+✅ #tech定例: 1件
+✅ #t_技術部ハイブリッド出社: 5件
+
+📊 同期完了: 27/137 チャンネル（直近3日分）
+✅ Slack同期完了
+
+📅 Calendar生データ同期中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:237: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+✅ Calendar同期完了: 17件（7日分）
+✅ Calendar同期完了
+
+📊 案件集約レポート生成中...
+📊 案件集約開始 (2026-05-12)
+   対象期間: 直近3日
+   方式: Claude Code CLI
+
+   📂 コンテキスト収集中...
+   📊 収集データ: 19,421文字
+   🤖 案件集約レポート生成中...
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+❌ レポート生成失敗
+✅ 案件集約完了
+
+=== 完了: 07:24 ===
+=== Daily Morning Tasks: 2026-05-12 13:19 ===
+
+📰 ニュース取得中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+📰 ニュース取得開始 (2026-05-12)
+   対象期間: 過去1日
+
+📂 AI
+  ✅ MIT Tech Review AI: 2件
+  - The Batch (deeplearning.ai): 0件
+  ✅ OpenAI Blog: 1件
+  ✅ AI News (Google): 8件
+  ✅ ITmedia AI+: 5件
+  ✅ AI News (Google JP): 8件
+
+📂 スタートアップ
+  ✅ TechCrunch Startups: 1件
+  - BRIDGE (日本): 0件
+  - Y Combinator Blog: 0件
+  ✅ スタートアップ (Google JP): 6件
+
+📂 土木・建設
+  - 建設通信新聞: 0件
+  - 日経クロステック 建設: 0件
+  ✅ Construction Dive: 2件
+  - ENR (Engineering News-Record): 0件
+  ✅ 建設業界 (Google JP): 8件
+
+📂 建設スタートアップ
+  - ConTech (Google News): 0件
+  ✅ BuiltWorlds: 2件
+  - 建設テック (Google JP): 0件
+
+📂 BIM×AI
+  - BIM×AI (Google News): 0件
+  - BIM×AI 日本語: 0件
+  - Autodesk Blog: 0件
+
+📂 行政・研究機関 (BIM/CIM/AI)
+  - 国交省 BIM/CIM/AI (Google JP): 0件
+  - 国総研 BIM/CIM/AI (Google JP): 0件
+  - 国交省動向 (Google JP): 0件
+  - i-Construction (Google JP): 0件
+
+🌐 日本語翻訳中...
+  ✅ 43件を翻訳
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/news/2026-05-12.md
+✅ ニュース取得完了
+
+📋 Slackサマリー生成中...
+📋 Slackサマリー生成開始 (2026-05-12)
+   対象期間: 過去1日 (after:2026-05-11)
+   方式: Claude Code CLI + Slack MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Slackサマリースキップ
+
+📓 Notionサマリー生成中...
+📓 Notionサマリー生成開始 (2026-05-12)
+   対象期間: 過去1日 (after:2026-05-11)
+   方式: Claude Code CLI + Notion MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Notionサマリースキップ
+
+📅 Calendarサマリー生成中...
+📅 カレンダーサマリー生成開始 (2026-05-12)
+   方式: Claude Code CLI + Google Calendar MCP
+
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+⚠️  Calendarサマリースキップ
+
+💬 Slack同期中...
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1346, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1257, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1303, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1252, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1012, in _send_output
+    self.send(msg)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 952, in send
+    self.connect()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1419, in connect
+    super().connect()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 923, in connect
+    self.sock = self._create_connection(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 843, in create_connection
+    raise err
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 831, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nodatoshio/Documents/contextAI/scripts/slack_sync.py", line 157, in <module>
+    sync_slack()
+  File "/Users/nodatoshio/Documents/contextAI/scripts/slack_sync.py", line 109, in sync_slack
+    channels = resolve_channels(client)
+  File "/Users/nodatoshio/Documents/contextAI/scripts/slack_sync.py", line 79, in resolve_channels
+    return get_all_channels(client)
+  File "/Users/nodatoshio/Documents/contextAI/scripts/slack_sync.py", line 42, in get_all_channels
+    result = client.conversations_list(**kwargs)
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/client.py", line 3344, in conversations_list
+    return self.api_call("conversations.list", http_verb="GET", params=kwargs)
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 169, in api_call
+    return self._sync_send(api_url=api_url, req_args=req_args)
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 200, in _sync_send
+    return self._urllib_api_call(
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 307, in _urllib_api_call
+    response = self._perform_urllib_http_request(url=url, args=request_args)  # type: ignore[arg-type]
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 511, in _perform_urllib_http_request
+    raise err
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 410, in _perform_urllib_http_request
+    resp = self._perform_urllib_http_request_internal(url, req)
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 540, in _perform_urllib_http_request_internal
+    resp = urlopen(req, context=self.ssl, timeout=self.timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 517, in open
+    response = self._open(req, data)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 534, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 494, in _call_chain
+    result = func(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1389, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1349, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+⚠️  Slack同期スキップ
+
+📅 Calendar生データ同期中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:237: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+Traceback (most recent call last):
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x108fca340>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x108fca340>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/transport/requests.py", line 188, in __call__
+    response = self.session.request(
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x108fca340>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/nodatoshio/Documents/contextAI/scripts/calendar_sync.py", line 95, in <module>
+    sync_calendar()
+  File "/Users/nodatoshio/Documents/contextAI/scripts/calendar_sync.py", line 46, in sync_calendar
+    service = get_calendar_service()
+  File "/Users/nodatoshio/Documents/contextAI/scripts/calendar_sync.py", line 32, in get_calendar_service
+    creds.refresh(Request())
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/credentials.py", line 412, in refresh
+    ) = reauth.refresh_grant(
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/reauth.py", line 337, in refresh_grant
+    ) = _client._token_endpoint_request_no_throw(
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/transport/requests.py", line 195, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x108fca340>: Failed to resolve 'oauth2.googleapis.com' ([Errno 8] nodename nor servname provided, or not known)"))
+⚠️  Calendar同期スキップ
+
+📊 案件集約レポート生成中...
+📊 案件集約開始 (2026-05-12)
+   対象期間: 直近3日
+   方式: Claude Code CLI
+
+   📂 コンテキスト収集中...
+   📊 収集データ: 19,421文字
+   🤖 案件集約レポート生成中...
+❌ claude CLI エラー (code 1)
+   stdout:
+Credit balance is too low
+
+❌ レポート生成失敗
+✅ 案件集約完了
+
+=== 完了: 13:24 ===

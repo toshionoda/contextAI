@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ja" style="width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;">
+<head>
+<meta charset="UTF-8">
+<style>
+  html {
+    width: 720pt;
+    height: 405pt;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  body {
+    width: 720pt;
+    height: 405pt;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Meiryo', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    color: #333333;
+  }
+  .header {
+    background: #FFFFFF;
+    padding: 10pt 30pt 4pt 30pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #2E7D32;
+  }
+  .header h2 {
+    color: #1B3A5C;
+    font-size: 20pt;
+    margin: 0;
+    font-weight: bold;
+  }
+  .content {
+    display: flex;
+    flex: 1;
+    padding: 10pt 30pt 6pt 30pt;
+    gap: 20pt;
+  }
+  .left-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6pt;
+  }
+  .before-box {
+    background: #FFF3E0;
+    border-left: 4px solid #E65100;
+    border-radius: 4pt;
+    padding: 6pt 10pt;
+  }
+  .before-box h3 {
+    color: #E65100;
+    font-size: 12pt;
+    margin: 0 0 4pt 0;
+  }
+  .before-box ul {
+    margin: 0;
+    padding-left: 14pt;
+    list-style-type: disc;
+  }
+  .before-box ul li {
+    font-size: 10pt;
+    line-height: 1.5;
+    margin-bottom: 2pt;
+  }
+  .after-box {
+    background: #EFF5EF;
+    border-left: 4px solid #2E7D32;
+    border-radius: 4pt;
+    padding: 6pt 10pt;
+  }
+  .after-box h3 {
+    color: #2E7D32;
+    font-size: 12pt;
+    margin: 0 0 4pt 0;
+  }
+  .after-box ul {
+    margin: 0;
+    padding-left: 14pt;
+    list-style-type: disc;
+  }
+  .after-box ul li {
+    font-size: 10pt;
+    line-height: 1.5;
+    margin-bottom: 2pt;
+  }
+  .right-col {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+  }
+  .right-col h3 {
+    color: #1B3A5C;
+    font-size: 12pt;
+    margin: 0 0 8pt 0;
+    
+    padding-bottom: 4pt;
+  }
+  .flow-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4pt;
+    flex: 1;
+  }
+  .flow-box {
+    border-radius: 6pt;
+    padding: 10pt 12pt;
+    text-align: center;
+    width: 85%;
+  }
+  .flow-box-top {
+    background: #F5F7FA;
+    border: 1px solid #1B3A5C;
+  }
+  .flow-box-mid {
+    background: #1B3A5C;
+    color: #FFFFFF;
+  }
+  .flow-box-bottom {
+    background: #F5F7FA;
+    border: 1px solid #2E7D32;
+  }
+  .flow-box p {
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.5;
+  }
+  .flow-box p:first-child {
+    font-weight: bold;
+    font-size: 10pt;
+  }
+  .flow-box-mid p {
+    color: #FFFFFF;
+  }
+  .arrow-down {
+    font-size: 14pt;
+    color: #2E7D32;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+  }
+  .bottom-bar {
+    background: #1B3A5C;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8pt 30pt;
+    margin-bottom: 36pt;
+  }
+  .bottom-bar .item {
+    text-align: center;
+    flex: 1;
+  }
+  .bottom-bar .item p {
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+  .bottom-bar .item .label {
+    font-size: 8pt;
+    opacity: 0.8;
+    margin: 0 0 2pt 0;
+  }
+  .bottom-bar .item .value {
+    font-size: 9pt;
+    font-weight: bold;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h2>施工DX③ 打合簿・段階確認のデジタル化</h2>
+  </div>
+
+  <div class="content">
+    <div class="left-col">
+      <div class="before-box">
+        <h3>Before（現状）</h3>
+        <ul>
+          <li>打合簿をメール添付で往復。修正のたびにファイルが増殖</li>
+          <li>段階確認は電話で日程調整→現場立会→紙に署名</li>
+          <li>「最新版はどれか」「承認は終わったのか」が常に曖昧</li>
+        </ul>
+      </div>
+      <div class="after-box">
+        <h3>After（クラウド化後）</h3>
+        <ul>
+          <li>クラウド上で打合簿を作成→自治体担当者に即時通知→画面上で承認</li>
+          <li>段階確認もクラウド上で写真＋記録を共有。移動時間を大幅削減</li>
+          <li>全てのやり取りが自動記録され、監査証跡として蓄積</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="right-col">
+      <h3>製品画面：現場Plus</h3>
+      <div style="display:flex;flex-direction:column;background:#F5F7FA;border:1px solid #DEE2E6;border-radius:4pt;padding:6pt;flex:1;">
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+          <img src="captures/06f_genbaplus.png" style="width:240pt;height:150pt;" />
+        </div>
+        <p style="font-size:6pt;color:#888888;text-align:right;margin:2pt 0 0 0;line-height:1.2;">出典: https://archi.fukuicompu.co.jp/products/genba/</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="item">
+      <p class="label">効果</p>
+      <p class="value">打合簿往復時間 3〜5日 → 即日〜1日（▲70%削減）</p>
+    </div>
+    <div class="item">
+      <p class="label">コスト</p>
+      <p class="value">月額1万円（60人まで利用可能）</p>
+    </div>
+    <div class="item">
+      <p class="label">メリット</p>
+      <p class="value">全やり取りが自動記録。「言った言わない」を解消</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+=== Daily Morning Tasks: 2026-05-08 09:33 ===
+
+📰 ニュース取得中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+📰 ニュース取得開始 (2026-05-08)
+   対象期間: 過去1日
+
+📂 AI
+  - MIT Tech Review AI: 0件
+  - The Batch (deeplearning.ai): 0件
+  ✅ OpenAI Blog: 3件
+  ✅ AI News (Google): 7件
+  ✅ ITmedia AI+: 8件
+  ✅ AI News (Google JP): 7件
+
+📂 スタートアップ
+  ✅ TechCrunch Startups: 10件
+  - BRIDGE (日本): 0件
+  - Y Combinator Blog: 0件
+  ✅ スタートアップ (Google JP): 2件
+
+📂 土木・建設
+  - 建設通信新聞: 0件
+  - 日経クロステック 建設: 0件
+  ✅ Construction Dive: 2件
+  - ENR (Engineering News-Record): 0件
+  ✅ 建設業界 (Google JP): 6件
+
+📂 建設スタートアップ
+  - ConTech (Google News): 0件
+  ✅ BuiltWorlds: 2件
+  - 建設テック (Google JP): 0件
+
+📂 BIM×AI
+  - BIM×AI (Google News): 0件
+  - BIM×AI 日本語: 0件
+  - Autodesk Blog: 0件
+
+📂 行政・研究機関 (BIM/CIM/AI)
+  - 国交省 BIM/CIM/AI (Google JP): 0件
+  - 国総研 BIM/CIM/AI (Google JP): 0件
+  - 国交省動向 (Google JP): 0件
+  - i-Construction (Google JP): 0件
+
+🌐 日本語翻訳中...
+  ✅ 47件を翻訳
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/news/2026-05-08.md
+✅ ニュース取得完了
+
+📋 Slackサマリー生成中...
+📋 Slackサマリー生成開始 (2026-05-08)
+   対象期間: 過去1日 (after:2026-05-07)
+   方式: Claude Code CLI + Slack MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/slack_summary/2026-05-08.md
+✅ Slackサマリー完了
+
+📓 Notionサマリー生成中...
+📓 Notionサマリー生成開始 (2026-05-08)
+   対象期間: 過去1日 (after:2026-05-07)
+   方式: Claude Code CLI + Notion MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/notion/2026-05-08.md
+✅ Notionサマリー完了
+
+📅 Calendarサマリー生成中...
+📅 カレンダーサマリー生成開始 (2026-05-08)
+   方式: Claude Code CLI + Google Calendar MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/calendar/summary_2026-05-08.md
+✅ Calendarサマリー完了
+
+💬 Slack同期中...
+📡 組織全体のチャンネル: 137件
+📨 メッセージ取得対象: 137チャンネル
+✅ #random: 1件
+✅ #営業: 4件
+✅ #general: 3件
+✅ #fondesk: 9件
+✅ #corp-bo窓口_bimcim: 1件
+✅ #corp-労務総務窓口: 1件
+✅ #dp_083_パパシフィックコンサルタンツ_aipj: 2件
+✅ #proj-civilink: 4件
+✅ #mail-civilink-cs: 9件
+✅ #corp-情シス窓口: 3件
+✅ #dev-civilink-backend-notification: 7件
+✅ #dp_071_チ中央c_土量算出dynamo: 1件
+✅ #dp_078_ニ日本工営_dynamo開発: 1件
+✅ #ask-civilink: 3件
+✅ #alert-civilink-mixpanel: 6件
+✅ #dev-civilink-report-findy-team: 3件
+✅ #erp内製pj: 1件
+✅ #開発-日報: 9件
+Traceback (most recent call last):
+  File "/Users/nodatoshio/Documents/contextAI/scripts/slack_sync.py", line 157, in <module>
+    sync_slack()
+  File "/Users/nodatoshio/Documents/contextAI/scripts/slack_sync.py", line 127, in sync_slack
+    result = client.conversations_history(**kwargs)
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/client.py", line 3213, in conversations_history
+    return self.api_call("conversations.history", http_verb="GET", params=kwargs)
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 169, in api_call
+    return self._sync_send(api_url=api_url, req_args=req_args)
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 200, in _sync_send
+    return self._urllib_api_call(
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 307, in _urllib_api_call
+    response = self._perform_urllib_http_request(url=url, args=request_args)  # type: ignore[arg-type]
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 511, in _perform_urllib_http_request
+    raise err
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 410, in _perform_urllib_http_request
+    resp = self._perform_urllib_http_request_internal(url, req)
+  File "/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/slack_sdk/web/base_client.py", line 540, in _perform_urllib_http_request_internal
+    resp = urlopen(req, context=self.ssl, timeout=self.timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 517, in open
+    response = self._open(req, data)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 534, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 494, in _call_chain
+    result = func(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1389, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1350, in do_open
+    r = h.getresponse()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/ssl.py", line 1241, in recv_into
+    return self.read(nbytes, buffer)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/ssl.py", line 1099, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+⚠️  Slack同期スキップ
+
+📅 Calendar生データ同期中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:237: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+✅ Calendar同期完了: 18件（7日分）
+✅ Calendar同期完了
+
+📊 案件集約レポート生成中...
+📊 案件集約開始 (2026-05-08)
+   対象期間: 直近3日
+   方式: Claude Code CLI
+
+   📂 コンテキスト収集中...
+   📊 収集データ: 21,137文字
+   🤖 案件集約レポート生成中...
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/cases/2026-05-08.md
+🗑  古いレポート削除: 2026-04-24.md
+
+✅ 案件集約完了
+✅ 案件集約完了
+
+=== 完了: 09:39 ===

@@ -1,0 +1,66 @@
+{
+  "case_id": "case_002",
+  "route": "430-3",
+  "construction_type": "管きょ更生工 既設管渠300mm",
+  "schema_version": "0.1-draft",
+  "note": "Phase A Day 3 ドラフト。野田レビュー要。bboxは未アノテーション。",
+  "detected_items": [
+    {
+      "symbol": "L_route_430-3",
+      "value": "62.80",
+      "unit": "m",
+      "category": "路線延長 φ300（路線430-3 + 410-1-3 合計）",
+      "bbox": null,
+      "note": "数量総括表では路線延長 φ300 として 62.80 が一括記載。case_002単体の延長は 34.80m"
+    },
+    {
+      "symbol": "L_pipe_430-3",
+      "value": "33.90",
+      "unit": "m",
+      "category": "管きょ延長 φ300（430-3 単体）",
+      "bbox": null
+    },
+    {
+      "symbol": "ST002_430-3",
+      "value": "34.80",
+      "unit": "m",
+      "category": "更生管材 φ300（430-3）",
+      "bbox": null
+    },
+    {
+      "symbol": "ST003_430-3",
+      "value": "33.90",
+      "unit": "m",
+      "category": "内面更生工 反転・引込・硬化・形成",
+      "bbox": null
+    },
+    {
+      "symbol": "ST004_430-3",
+      "value": "1",
+      "unit": "回",
+      "category": "仮設備設置・撤去工",
+      "bbox": null
+    },
+    {
+      "symbol": "ST005_430-3",
+      "value": "2",
+      "unit": "箇所",
+      "category": "本管口仕上工",
+      "bbox": null
+    },
+    {
+      "symbol": "ST006_430-3",
+      "value": "5",
+      "unit": "箇所",
+      "category": "取付管口せん孔仕上工",
+      "bbox": null
+    }
+  ],
+  "mappings": [
+    {"item_type": "管更生工 φ300 更生管材", "item_type_id": "ST002", "symbol_detected": "ST002_430-3"},
+    {"item_type": "内面更生工 反転・引込工 硬化・形成工", "item_type_id": "ST003", "symbol_detected": "ST003_430-3"},
+    {"item_type": "更生付帯工 仮設備設置・撤去工", "item_type_id": "ST004", "symbol_detected": "ST004_430-3"},
+    {"item_type": "更生付帯工 本管口仕上工", "item_type_id": "ST005", "symbol_detected": "ST005_430-3"},
+    {"item_type": "更生付帯工 取付管口せん孔仕上工", "item_type_id": "ST006", "symbol_detected": "ST006_430-3"}
+  ]
+}

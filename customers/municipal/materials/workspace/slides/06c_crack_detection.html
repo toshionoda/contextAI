@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja" style="width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;">
+<head>
+<meta charset="UTF-8">
+<style>
+  html {
+    width: 720pt;
+    height: 405pt;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  body {
+    width: 720pt;
+    height: 405pt;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Meiryo', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    color: #333333;
+  }
+  .header {
+    background: #FFFFFF;
+    padding: 10pt 30pt 4pt 30pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #2E7D32;
+  }
+  .header h2 {
+    color: #1B3A5C;
+    font-size: 20pt;
+    margin: 0;
+    font-weight: bold;
+  }
+  .content {
+    display: flex;
+    flex: 1;
+    padding: 12pt 30pt 8pt 30pt;
+    gap: 20pt;
+  }
+  .left-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .left-col h3 {
+    color: #1B3A5C;
+    font-size: 12pt;
+    margin: 0 0 6pt 0;
+    
+    padding-bottom: 4pt;
+  }
+  .left-col ul {
+    margin: 0;
+    padding-left: 16pt;
+    list-style-type: disc;
+  }
+  .left-col ul li {
+    font-size: 10pt;
+    line-height: 1.6;
+    margin-bottom: 4pt;
+  }
+  .right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .right-col h3 {
+    color: #1B3A5C;
+    font-size: 12pt;
+    margin: 0 0 8pt 0;
+    
+    padding-bottom: 4pt;
+  }
+  .flow-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4pt;
+    flex: 1;
+    justify-content: center;
+  }
+  .vstep-box {
+    background: #F5F7FA;
+    border: 1px solid #DEE2E6;
+    border-radius: 6pt;
+    padding: 8pt 12pt;
+    text-align: center;
+    width: 85%;
+  }
+  .vstep-box.green-bg {
+    background: #EFF5EF;
+    border: 1px solid #C8E6C9;
+  }
+  .vstep-box.green-accent {
+    background: #EFF5EF;
+    border-left: 4px solid #2E7D32;
+    border-top: 1px solid #C8E6C9;
+    border-right: 1px solid #C8E6C9;
+    border-bottom: 1px solid #C8E6C9;
+  }
+  .vstep-box .step-label {
+    font-size: 9pt;
+    font-weight: bold;
+    color: #2E7D32;
+    margin: 0 0 2pt 0;
+  }
+  .vstep-box .step-desc {
+    font-size: 9pt;
+    color: #555555;
+    margin: 0;
+  }
+  .arrow-down {
+    font-size: 14pt;
+    color: #2E7D32;
+    font-weight: bold;
+    margin: 0;
+  }
+  .bottom-bar {
+    background: #1B3A5C;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8pt 30pt;
+    margin-bottom: 36pt;
+  }
+  .bottom-bar .item {
+    text-align: center;
+    flex: 1;
+  }
+  .bottom-bar .item p {
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+  .bottom-bar .item .label {
+    font-size: 8pt;
+    opacity: 0.8;
+    margin: 0 0 2pt 0;
+  }
+  .bottom-bar .item .value {
+    font-size: 9pt;
+    font-weight: bold;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h2>点検DX③ ひび割れ検出の自動化</h2>
+  </div>
+
+  <div class="content">
+    <div class="left-col">
+      <h3>概要</h3>
+      <ul>
+        <li>コンクリート構造物（橋梁・トンネル等）の写真をアップロードするだけでAIがひび割れを自動検出</li>
+        <li>ひび割れの幅（0.1mm単位）・長さを自動計測し、損傷図を生成</li>
+        <li>熟練技術者と同等の検出精度を実現。国交省の点検支援技術性能カタログにも掲載</li>
+        <li>撮影は一般的なデジタルカメラやスマートフォンで可能</li>
+      </ul>
+    </div>
+
+    <div class="right-col">
+      <h3>製品画面：ひびみっけ</h3>
+      <div style="display:flex;flex-direction:column;background:#F5F7FA;border:1px solid #DEE2E6;border-radius:4pt;padding:6pt;flex:1;">
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+          <img src="captures/06c_hibimikke.png" style="width:280pt;height:175pt;" />
+        </div>
+        <p style="font-size:6pt;color:#888888;text-align:right;margin:2pt 0 0 0;line-height:1.2;">出典: https://www.fujifilm.com/jp/ja/business/inspection/infraservice/hibimikke/</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="item">
+      <p class="label">効果</p>
+      <p class="value">点検調書作成時間を50%削減。損傷図を自動生成</p>
+    </div>
+    <div class="item">
+      <p class="label">コスト</p>
+      <p class="value">従量課金（1枚数百円〜。初期費用・月額固定費なし）</p>
+    </div>
+    <div class="item">
+      <p class="label">認定</p>
+      <p class="value">国交省 点検支援技術性能カタログ掲載</p>
+    </div>
+  </div>
+</body>
+</html>

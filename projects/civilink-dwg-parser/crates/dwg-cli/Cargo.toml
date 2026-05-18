@@ -1,0 +1,21 @@
+[package]
+name = "dwg-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "CLI for inspecting and extracting DWG files"
+
+[[bin]]
+name = "dwg-inspect"
+path = "src/inspect.rs"
+
+[[bin]]
+name = "dwg-extract"
+path = "src/extract.rs"
+
+[dependencies]
+dwg-core = { path = "../dwg-core", features = ["serde"] }
+clap.workspace = true
+serde_json.workspace = true

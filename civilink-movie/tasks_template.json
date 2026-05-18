@@ -1,0 +1,29 @@
+{
+  "_comment": "CiviLinkユーザビリティテストのタスク定義テンプレート。テストごとにコピーして編集する。",
+  "testers": [
+    {
+      "name": "テスター名",
+      "role": "指摘者（設計者役）/ 修正者（施工者役）/ 管理者（承認者役）",
+      "experience": "CiviLink初見 / 基本操作のみ経験あり / 日常的に利用"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "name": "タスク名",
+      "tester": "テスター名",
+      "description": "タスクの概要説明",
+      "expected_steps": [
+        "理想的な操作手順1",
+        "理想的な操作手順2",
+        "理想的な操作手順3"
+      ],
+      "success_criteria": "このタスクが成功したと言える条件"
+    }
+  ],
+  "conditions": {
+    "guided": "ガイドあり / なし（Think Aloud法）/ 一定時間後にヒント提供",
+    "environment": "本番 / STG（ステージング）",
+    "notes": "その他の条件や備考"
+  }
+}

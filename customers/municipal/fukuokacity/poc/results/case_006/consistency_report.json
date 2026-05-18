@@ -1,0 +1,6 @@
+{
+  "case_id": "case_006",
+  "route": "452-5",
+  "skipped": true,
+  "reason": "extracted_calc_book.json or extracted_drawing.json missing"
+}

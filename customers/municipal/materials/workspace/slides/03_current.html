@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja" style="width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;">
+<head>
+<meta charset="UTF-8">
+<style>
+html { width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;
+  font-family: 'Meiryo', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  color: #333333;
+}
+.header {
+  background: #FFFFFF; padding: 10pt 30pt 4pt 30pt;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 3px solid #2E7D32;
+}
+.header h2 { color: #1B3A5C; font-size: 20pt; margin: 0; font-weight: bold; }
+.content { padding: 10pt 30pt 0 30pt; flex: 1; display: flex; gap: 16pt; }
+.left { flex: 1; }
+.left h3 { color: #1B3A5C; font-size: 11pt; margin: 0 0 6pt 0; font-weight: bold; }
+.left ol { margin: 0; padding-left: 16pt; }
+.left ol li { font-size: 10pt; line-height: 1.5; margin-bottom: 4pt; color: #333333; }
+.right { flex: 1; }
+.right h3 { color: #1B3A5C; font-size: 11pt; margin: 0 0 6pt 0; font-weight: bold; }
+.issue-cards { display: flex; flex-direction: column; gap: 6pt; }
+.issue-card {
+  background: #F5F7FA; border-left: 3px solid #1B3A5C;
+  padding: 6pt 8pt; border-radius: 2pt;
+}
+.issue-card h4 { color: #1B3A5C; font-size: 10pt; margin: 0 0 2pt 0; font-weight: bold; }
+.issue-card p { font-size: 9pt; margin: 0; line-height: 1.4; color: #333333; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h2>地場建設会社の現状と課題</h2>
+</div>
+<div class="content">
+  <div class="left">
+    <h3>現状の業務フロー（橋梁補修工事の例）</h3>
+    <ol>
+      <li>設計図面をメールで受領、社内サーバーに保管</li>
+      <li>施工計画書をExcel/Wordで作成（過去書類をコピー＆修正、1〜2週間）</li>
+      <li>工事写真を数千枚撮影→PCに手動転送→フォルダで手動仕分け</li>
+      <li>打合簿をメール添付で往復→修正のたびにバージョンが増殖</li>
+      <li>段階確認は日程調整に時間がかかり、自治体担当者の現場立会を待つ</li>
+      <li>完成図書・電子納品を工事完了後にまとめて作成→形式エラー・抜け漏れ多発</li>
+    </ol>
+  </div>
+  <div class="right">
+    <h3>構造的な課題</h3>
+    <div class="issue-cards">
+      <div class="issue-card">
+        <h4>書類が散在</h4>
+        <p>図面・写真・帳票がPC・サーバー・メールに分散。「最新版はどれか」が日常</p>
+      </div>
+      <div class="issue-card">
+        <h4>やり取りが非効率</h4>
+        <p>メール添付のバージョン管理ができず、承認に数日〜数週間</p>
+      </div>
+      <div class="issue-card">
+        <h4>データが流れない</h4>
+        <p>点検→設計→施工で毎フェーズ再入力・転記が発生</p>
+      </div>
+      <div class="issue-card">
+        <h4>何から始めればいいか分からない</h4>
+        <p>DXツールは多数あるが、自社に合うものを選ぶ知見がない</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

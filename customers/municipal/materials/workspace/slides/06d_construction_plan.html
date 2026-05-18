@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja" style="width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;">
+<head>
+<meta charset="UTF-8">
+<style>
+  html {
+    width: 720pt;
+    height: 405pt;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  body {
+    width: 720pt;
+    height: 405pt;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Meiryo', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    color: #333333;
+  }
+  .header {
+    background: #FFFFFF;
+    padding: 10pt 30pt 4pt 30pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #2E7D32;
+  }
+  .header h2 {
+    color: #1B3A5C;
+    font-size: 20pt;
+    margin: 0;
+    font-weight: bold;
+  }
+  .content {
+    display: flex;
+    flex: 1;
+    padding: 10pt 30pt 6pt 30pt;
+    gap: 16pt;
+  }
+  .left-col {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 6pt;
+  }
+  .ba-box {
+    border-radius: 6pt;
+    padding: 7pt 10pt;
+    flex: 1;
+  }
+  .ba-box.before {
+    background: #FFF3E0;
+    border-left: 4px solid #E65100;
+  }
+  .ba-box.after {
+    background: #EFF5EF;
+    border-left: 4px solid #2E7D32;
+  }
+  .ba-box h3 {
+    font-size: 10pt;
+    margin: 0 0 4pt 0;
+  }
+  .ba-box.before h3 {
+    color: #E65100;
+  }
+  .ba-box.after h3 {
+    color: #2E7D32;
+  }
+  .ba-box ul {
+    margin: 0;
+    padding-left: 14pt;
+    list-style-type: disc;
+  }
+  .ba-box ul li {
+    font-size: 9pt;
+    line-height: 1.5;
+    margin-bottom: 2pt;
+  }
+  .right-col {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+  }
+  .right-col h3 {
+    color: #1B3A5C;
+    font-size: 12pt;
+    margin: 0 0 8pt 0;
+    
+    padding-bottom: 4pt;
+  }
+  .flow-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6pt;
+  }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6pt;
+    width: 100%;
+  }
+  .fbox {
+    border-radius: 6pt;
+    padding: 10pt 8pt;
+    text-align: center;
+    flex: 1;
+  }
+  .fbox.light {
+    background: #F5F7FA;
+    border: 1px solid #DEE2E6;
+  }
+  .fbox.dark {
+    background: #1B3A5C;
+    color: #FFFFFF;
+  }
+  .fbox.green {
+    background: #EFF5EF;
+    border: 1px solid #C8E6C9;
+  }
+  .fbox .fbox-title {
+    font-size: 10pt;
+    font-weight: bold;
+    margin: 0 0 2pt 0;
+  }
+  .fbox.dark .fbox-title {
+    color: #FFFFFF;
+  }
+  .fbox .fbox-desc {
+    font-size: 9pt;
+    margin: 0;
+  }
+  .fbox.dark .fbox-desc {
+    color: #C8E6C9;
+  }
+  .arrow {
+    font-size: 16pt;
+    color: #2E7D32;
+    font-weight: bold;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .flow-note {
+    font-size: 9pt;
+    color: #1B3A5C;
+    text-align: center;
+    font-weight: bold;
+    margin: 4pt 0 0 0;
+  }
+  .bottom-bar {
+    background: #1B3A5C;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8pt 30pt;
+    margin-bottom: 36pt;
+  }
+  .bottom-bar .item {
+    text-align: center;
+    flex: 1;
+  }
+  .bottom-bar .item p {
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+  .bottom-bar .item .label {
+    font-size: 8pt;
+    opacity: 0.8;
+    margin: 0 0 2pt 0;
+  }
+  .bottom-bar .item .value {
+    font-size: 9pt;
+    font-weight: bold;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h2>施工DX① 施工計画書の自動生成</h2>
+  </div>
+
+  <div class="content">
+    <div class="left-col">
+      <div class="ba-box before">
+        <h3>Before（現状）</h3>
+        <ul>
+          <li>過去の施工計画書をコピーし、Excel/Wordで1〜2週間かけて修正</li>
+          <li>工事ごとに記載すべき項目が異なり、抜け漏れが発生しやすい</li>
+          <li>ベテランの書き方を真似るが、経験が浅いと品質にバラつき</li>
+        </ul>
+      </div>
+      <div class="ba-box after">
+        <h3>After（AI導入後）</h3>
+        <ul>
+          <li>設計図書（PDF）をアップロードするだけでAIが初稿を自動生成</li>
+          <li>工種に応じた必須記載事項を自動で網羅。抜け漏れを防止</li>
+          <li>生成時間は最短30分。人間は内容の確認・修正に集中</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="right-col">
+      <h3>製品画面：NITACO 施工計画書AI</h3>
+      <div style="display:flex;flex-direction:column;background:#F5F7FA;border:1px solid #DEE2E6;border-radius:4pt;padding:6pt;flex:1;">
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+          <img src="captures/06d_nitaco.png" style="width:260pt;height:162pt;" />
+        </div>
+        <p style="font-size:6pt;color:#888888;text-align:right;margin:2pt 0 0 0;line-height:1.2;">出典: https://tsukunobi.com/</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="item">
+      <p class="label">効果</p>
+      <p class="value">作成期間 1〜2週間 → 最短30分（▲90%以上）</p>
+    </div>
+    <div class="item">
+      <p class="label">コスト</p>
+      <p class="value">無料（ベータ版）〜 月額3万円</p>
+    </div>
+    <div class="item">
+      <p class="label">対応</p>
+      <p class="value">全29業種の施工計画書に対応</p>
+    </div>
+  </div>
+</body>
+</html>

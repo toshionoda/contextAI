@@ -1,0 +1,59 @@
+{
+  "_comment": "CiviLinkオンボーディング動画のセグメント定義テンプレート。顧客ごとにコピーして編集する。",
+  "product_name": "CiviLink（建設図面レビューツール）",
+  "customer": "顧客名をここに記入",
+  "date": "YYYY-MM-DD",
+  "segments": [
+    {
+      "_comment": "前半: ユーザーが操作するデモ部分。ワークフローのタイムスタンプは動画を見て記入",
+      "label": "Part 1: 基本操作デモ",
+      "start_sec": 0,
+      "end_sec": 900,
+      "workflows": [
+        "WF-01 指摘作成 (MM:SS〜MM:SS)",
+        "WF-02 送信・未送信管理 (MM:SS〜MM:SS)",
+        "WF-03 メンション機能 (MM:SS〜MM:SS)",
+        "WF-04 通知確認 (MM:SS〜MM:SS)",
+        "WF-05 メールからの図面遷移 (MM:SS〜MM:SS)",
+        "WF-06 進捗管理 (MM:SS〜MM:SS)",
+        "WF-07 指摘でのやり取り (MM:SS〜MM:SS)"
+      ]
+    },
+    {
+      "_comment": "中盤: ファイル操作。D&Dの摩擦が出やすい",
+      "label": "Part 2: ファイルアップロード",
+      "start_sec": 900,
+      "end_sec": 1500,
+      "workflows": [
+        "WF-08 ファイルDL→修正→アップロード (MM:SS〜MM:SS)"
+      ],
+      "extra_friction_points": "\n- ドラッグ&ドロップの試行と失敗の詳細（タイムスタンプ）\n- PDFがブラウザで開いてしまう問題の発生タイミング\n- アップロード方法の迷い（何回試行したか）"
+    },
+    {
+      "_comment": "中盤〜後半: 差分比較。ヒーロー機能",
+      "label": "Part 3: 差分比較 + 指摘管理",
+      "start_sec": 1440,
+      "end_sec": 2220,
+      "workflows": [
+        "WF-09 差分比較・自動 (MM:SS〜MM:SS)",
+        "WF-11 指摘管理一覧 (MM:SS〜MM:SS)"
+      ]
+    },
+    {
+      "_comment": "後半: 部分比較デモ",
+      "label": "Part 4: 部分比較",
+      "start_sec": 2220,
+      "end_sec": 3000,
+      "workflows": [
+        "WF-10 部分比較・手動 (MM:SS〜MM:SS)"
+      ]
+    },
+    {
+      "_comment": "最後: 質疑応答。顧客の要望・導入意欲を抽出",
+      "label": "Part 5: 質疑応答・クロージング",
+      "start_sec": 3000,
+      "end_sec": 3600,
+      "type": "qa"
+    }
+  ]
+}

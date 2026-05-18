@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+samples/
+output/
+knowledge/*.pdf
+knowledge/*.PDF
+knowledge/dtd/
+knowledge/sample_specs/
+**/.DS_Store

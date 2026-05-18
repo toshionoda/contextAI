@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja" style="width: 720pt; height: 405pt; margin: 0; padding: 0; overflow: hidden;">
+<head>
+<meta charset="UTF-8">
+<style>
+  html {
+    width: 720pt;
+    height: 405pt;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  body {
+    width: 720pt;
+    height: 405pt;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Meiryo', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    color: #333333;
+  }
+  .header {
+    background: #FFFFFF;
+    padding: 10pt 30pt 4pt 30pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #2E7D32;
+  }
+  .header h2 {
+    color: #1B3A5C;
+    font-size: 20pt;
+    margin: 0;
+    font-weight: bold;
+  }
+  .content {
+    display: flex;
+    flex: 1;
+    padding: 12pt 30pt 8pt 30pt;
+    gap: 20pt;
+  }
+  .left-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .left-col h3 {
+    color: #1B3A5C;
+    font-size: 12pt;
+    margin: 0 0 6pt 0;
+    
+    padding-bottom: 4pt;
+  }
+  .left-col ul {
+    margin: 0;
+    padding-left: 16pt;
+    list-style-type: disc;
+  }
+  .left-col ul li {
+    font-size: 10pt;
+    line-height: 1.6;
+    margin-bottom: 4pt;
+  }
+  .right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .right-col h3 {
+    color: #1B3A5C;
+    font-size: 12pt;
+    margin: 0 0 8pt 0;
+    
+    padding-bottom: 4pt;
+  }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6pt;
+    flex: 1;
+  }
+  .step-box {
+    border-radius: 6pt;
+    padding: 8pt 6pt;
+    text-align: center;
+    flex: 1;
+    min-width: 80pt;
+  }
+  .step-box .step-label {
+    font-size: 8pt;
+    color: #2E7D32;
+    font-weight: bold;
+    margin: 0 0 4pt 0;
+  }
+  .step-box .step-title {
+    font-size: 9pt;
+    font-weight: bold;
+    color: #1B3A5C;
+    margin: 0 0 2pt 0;
+  }
+  .step-box .step-desc {
+    font-size: 9pt;
+    color: #555555;
+    margin: 0;
+  }
+  .step-1 {
+    background: #F5F7FA;
+    border: 1px solid #DEE2E6;
+  }
+  .step-2 {
+    background: #EFF5EF;
+    border: 1px solid #2E7D32;
+  }
+  .step-3 {
+    background: #EFF5EF;
+    border: 2px solid #2E7D32;
+  }
+  .arrow {
+    font-size: 16pt;
+    color: #2E7D32;
+    font-weight: bold;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .bottom-bar {
+    background: #1B3A5C;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8pt 30pt;
+    margin-bottom: 36pt;
+  }
+  .bottom-bar .item {
+    text-align: center;
+    flex: 1;
+  }
+  .bottom-bar .item p {
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.4;
+  }
+  .bottom-bar .item .label {
+    font-size: 8pt;
+    opacity: 0.8;
+    margin: 0 0 2pt 0;
+  }
+  .bottom-bar .item .value {
+    font-size: 9pt;
+    font-weight: bold;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h2>施工DX② 工事写真台帳の自動化</h2>
+  </div>
+
+  <div class="content">
+    <div class="left-col">
+      <h3>概要</h3>
+      <ul>
+        <li>工事現場で撮影した写真（黒板含む）をアプリに取り込むだけで台帳を自動生成</li>
+        <li>AI-OCRが黒板の手書き文字をほぼ100%の精度で読み取り</li>
+        <li>写真の工種・撮影箇所・撮影者を自動分類し、台帳の正しい位置に自動配置</li>
+        <li>従来は1工事あたり数日かかっていた台帳作成が数時間で完了</li>
+      </ul>
+    </div>
+
+    <div class="right-col">
+      <h3>製品画面：Cheez</h3>
+      <div style="display:flex;flex-direction:column;background:#F5F7FA;border:1px solid #DEE2E6;border-radius:4pt;padding:6pt;flex:1;">
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+          <img src="captures/06e_cheez.png" style="width:280pt;height:175pt;" />
+        </div>
+        <p style="font-size:6pt;color:#888888;text-align:right;margin:2pt 0 0 0;line-height:1.2;">出典: https://cheez.ai/</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <div class="item">
+      <p class="label">効果</p>
+      <p class="value">台帳作成時間 数日 → 数時間（▲93%削減）</p>
+    </div>
+    <div class="item">
+      <p class="label">コスト</p>
+      <p class="value">月額制</p>
+    </div>
+    <div class="item">
+      <p class="label">技術</p>
+      <p class="value">AI-OCR黒板読取（読取精度ほぼ100%）</p>
+    </div>
+  </div>
+</body>
+</html>

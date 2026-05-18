@@ -1,0 +1,11 @@
+target/
+Cargo.lock
+samples/**/*.dwg
+samples/**/*.dxf
+samples/**/*.DWG
+samples/**/*.DXF
+references/ODA_spec/*.pdf
+references/ODA_spec/*.PDF
+references/sample_inspections/*.json
+references/sample_inspections/*.JSON
+**/.DS_Store

@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>佐賀市 橋梁維持管理DX提案 | マルメ × 伊藤忠商事</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap');
+
+  :root {
+    --primary: #1a365d;
+    --primary-light: #2b6cb0;
+    --accent: #dd6b20;
+    --accent-light: #ed8936;
+    --bg: #ffffff;
+    --bg-subtle: #f7fafc;
+    --text: #1a202c;
+    --text-muted: #4a5568;
+    --border: #e2e8f0;
+    --success: #38a169;
+    --danger: #e53e3e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    background: #1a202c;
+    color: var(--text);
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 48px 64px;
+    background: var(--bg);
+    position: absolute;
+    top: 0; left: 0;
+    overflow: hidden;
+  }
+
+  .slide.active { display: flex; flex-direction: column; }
+
+  /* Title slide */
+  .slide.title-slide {
+    background: linear-gradient(135deg, var(--primary) 0%, #2c5282 60%, var(--primary-light) 100%);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .slide.title-slide .subtitle { color: rgba(255,255,255,0.7); }
+
+  /* Section divider */
+  .slide.section-slide {
+    background: var(--primary);
+    color: white;
+    justify-content: center;
+    padding-left: 96px;
+  }
+  .slide.section-slide h2 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+  .slide.section-slide .section-num {
+    font-size: 120px;
+    font-weight: 900;
+    opacity: 0.15;
+    position: absolute;
+    right: 80px;
+    bottom: 40px;
+    line-height: 1;
+  }
+
+  /* Common */
+  h1 { font-size: 44px; font-weight: 700; letter-spacing: -1px; line-height: 1.3; }
+  h2 { font-size: 30px; font-weight: 700; color: var(--primary); margin-bottom: 24px; line-height: 1.4; }
+  h3 { font-size: 20px; font-weight: 600; color: var(--primary); margin-bottom: 12px; }
+  p { font-size: 18px; line-height: 1.7; color: var(--text-muted); }
+  .slide-header { margin-bottom: 32px; }
+  .slide-header h2 { border-bottom: 3px solid var(--accent); padding-bottom: 12px; display: inline-block; }
+  .slide-body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+  /* Stats */
+  .stats { display: flex; gap: 32px; justify-content: center; margin: 24px 0; }
+  .stat {
+    text-align: center;
+    padding: 28px 36px;
+    background: var(--bg-subtle);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    min-width: 200px;
+  }
+  .stat .number { font-size: 48px; font-weight: 900; color: var(--primary); line-height: 1.1; }
+  .stat .unit { font-size: 20px; font-weight: 600; color: var(--primary); }
+  .stat .label { font-size: 14px; color: var(--text-muted); margin-top: 8px; }
+
+  /* Cards */
+  .cards { display: flex; gap: 24px; flex-wrap: wrap; }
+  .card {
+    flex: 1;
+    min-width: 260px;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .card.highlight { border-color: var(--accent); border-width: 2px; background: #fffaf0; }
+  .card h3 { font-size: 18px; margin-bottom: 10px; }
+  .card p { font-size: 15px; line-height: 1.6; }
+  .card .tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .tag.red { background: #fed7d7; color: var(--danger); }
+  .tag.orange { background: #feebc8; color: #c05621; }
+  .tag.blue { background: #bee3f8; color: #2b6cb0; }
+  .tag.green { background: #c6f6d5; color: #276749; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  th {
+    background: var(--primary);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  tr:nth-child(even) td { background: var(--bg-subtle); }
+  .priority-high { color: var(--danger); font-weight: 700; }
+  .priority-mid { color: var(--accent); font-weight: 600; }
+
+  /* Flow diagram */
+  .flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .flow-box {
+    padding: 16px 24px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.4;
+    min-width: 140px;
+  }
+  .flow-box.muni { background: #ebf8ff; border: 2px solid #3182ce; color: #2b6cb0; }
+  .flow-box.design { background: #fefcbf; border: 2px solid #d69e2e; color: #975a16; }
+  .flow-box.construct { background: #f0fff4; border: 2px solid #38a169; color: #276749; }
+  .flow-box.cl { background: var(--primary); color: white; border: 2px solid var(--primary); min-width: 280px; padding: 20px 32px; }
+  .flow-arrow { font-size: 28px; color: var(--text-muted); font-weight: 300; }
+
+  /* Bullet list */
+  .bullets { list-style: none; padding: 0; }
+  .bullets li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+  .bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 16px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .bullets.small li { font-size: 15px; padding: 5px 0 5px 24px; }
+  .bullets.small li::before { top: 12px; width: 8px; height: 8px; }
+
+  /* Two column */
+  .two-col { display: flex; gap: 40px; }
+  .two-col > div { flex: 1; }
+
+  /* Phase timeline */
+  .timeline { display: flex; gap: 0; margin: 16px 0; }
+  .phase {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+    border-top: 4px solid var(--border);
+  }
+  .phase.p1 { border-color: var(--success); }
+  .phase.p2 { border-color: var(--accent); }
+  .phase.p3 { border-color: var(--primary-light); }
+  .phase h3 { font-size: 16px; margin-bottom: 8px; }
+  .phase p { font-size: 13px; line-height: 1.5; }
+  .phase .period { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+
+  /* Matrix */
+  .matrix-table th { font-size: 13px; padding: 10px 12px; }
+  .matrix-table td { font-size: 13px; padding: 9px 12px; }
+  .matrix-table .phase-header { background: var(--bg-subtle); font-weight: 700; color: var(--primary); text-align: center; }
+
+  /* Footer */
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: #a0aec0;
+    margin-top: auto;
+  }
+
+  /* Navigation */
+  .nav {
+    position: fixed;
+    bottom: 20px;
+    right: 24px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+  }
+  .nav button {
+    width: 44px; height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .nav button:hover { background: rgba(0,0,0,0.8); }
+
+  .page-indicator {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    color: rgba(0,0,0,0.3);
+    z-index: 100;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .slide.title-slide ~ .page-indicator,
+  .slide.section-slide ~ .page-indicator { color: rgba(255,255,255,0.3); }
+
+  /* Print */
+  @media print {
+    body { background: white; overflow: visible; }
+    .slide {
+      display: flex !important;
+      position: relative;
+      page-break-after: always;
+      height: 100vh;
+      width: 100vw;
+    }
+    .nav, .page-indicator { display: none; }
+  }
+
+  /* Emphasis */
+  .em { color: var(--accent); font-weight: 700; }
+  .em-blue { color: var(--primary-light); font-weight: 700; }
+  strong { font-weight: 700; }
+
+  .note {
+    font-size: 13px;
+    color: var(--text-muted);
+    background: var(--bg-subtle);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+    margin-top: 16px;
+  }
+
+  .big-quote {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary);
+    text-align: center;
+    padding: 24px;
+    border-left: 4px solid var(--accent);
+    background: var(--bg-subtle);
+    border-radius: 0 12px 12px 0;
+    margin: 20px 0;
+  }
+
+  .logo-area {
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.85;
+    margin-bottom: 24px;
+    letter-spacing: 2px;
+  }
+  .title-date {
+    font-size: 16px;
+    margin-top: 32px;
+    opacity: 0.6;
+  }
+
+  /* Compact helper */
+  .compact-table td { padding: 8px 12px; font-size: 14px; }
+  .compact-table th { padding: 8px 12px; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<!-- ============ SLIDE 1: TITLE ============ -->
+<div class="slide title-slide active" id="s1">
+  <div class="logo-area">MALME inc. &times; ITOCHU Corporation</div>
+  <h1 style="font-size:42px; margin-bottom:16px;">佐賀市 橋梁維持管理DX提案</h1>
+  <p style="font-size:22px; color:rgba(255,255,255,0.85); max-width:700px; margin: 0 auto;">
+    自治体 &times; 補修設計会社 &times; 地場建設会社<br>
+    3者をつなぐデータ基盤 CiviLink
+  </p>
+  <div class="title-date">2026年4月20日</div>
+  <p class="subtitle" style="font-size:14px; margin-top:8px;">株式会社マルメ</p>
+</div>
+
+<!-- ============ SLIDE 2: 佐賀市の現状 ============ -->
+<div class="slide" id="s2">
+  <div class="slide-header"><h2>佐賀市の橋梁維持管理の現状</h2></div>
+  <div class="slide-body">
+    <div class="stats">
+      <div class="stat">
+        <div class="number">2,842<span class="unit">橋</span></div>
+        <div class="label">管理橋梁数（橋長2m以上）</div>
+      </div>
+      <div class="stat">
+        <div class="number">900<span class="unit">橋</span></div>
+        <div class="label">自前点検（5年で1.1億円削減実績）</div>
+      </div>
+      <div class="stat">
+        <div class="number" style="font-size:40px;">~95<span class="unit">%</span></div>
+        <div class="label">コンクリート橋の割合</div>
+      </div>
+    </div>
+    <div class="stats" style="margin-top:16px;">
+      <div class="stat" style="min-width:280px;">
+        <div class="number" style="font-size:40px;">41<span class="unit">億円</span></div>
+        <div class="label">10年間の維持管理費用<br>（設計9.8億 + 修繕21.2億 + 点検10億）</div>
+      </div>
+      <div class="stat" style="min-width:280px;">
+        <div class="number" style="font-size:40px;">70<span class="unit">億円</span></div>
+        <div class="label">50年間のコスト縮減目標</div>
+      </div>
+    </div>
+    <div class="note" style="margin-top:24px; text-align:center;">
+      出典: 佐賀市橋りょう長寿命化修繕計画（令和4年策定） / 学識経験者: 佐賀大学 伊藤幸広 教授
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 3: 3つの壁 ============ -->
+<div class="slide" id="s3">
+  <div class="slide-header"><h2>地場建設会社が直面する 3つの壁</h2></div>
+  <div class="slide-body">
+    <div class="cards">
+      <div class="card">
+        <span class="tag red">壁 1</span>
+        <h3>2024年問題</h3>
+        <p>残業規制が建設業にも適用（月45h・年360h）。<strong>現場後の書類作成・写真整理が残業の温床</strong>。経営課題に直結。</p>
+      </div>
+      <div class="card">
+        <span class="tag red">壁 2</span>
+        <h3>技術者の高齢化</h3>
+        <p>就業者の<strong>37%が55歳以上</strong>、29歳以下はわずか12%。2035年には技術者約3.2万人が不足見込み。</p>
+      </div>
+      <div class="card">
+        <span class="tag red">壁 3</span>
+        <h3>i-Construction 2.0</h3>
+        <p><strong>2026年度から舗装工でICT施工原則化</strong>。電子納品拡大中。デジタル対応力＝受注競争力に。</p>
+      </div>
+    </div>
+    <div class="big-quote" style="margin-top:32px;">
+      「あの図面どこ？」「あの判断は○○さんしか知らない」<br>
+      これが<span class="em">日常</span>になっていませんか？
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 4: なぜ3者連携か ============ -->
+<div class="slide" id="s4">
+  <div class="slide-header"><h2>なぜ「3者連携」が必要なのか</h2></div>
+  <div class="slide-body">
+    <p style="font-size:17px; margin-bottom:20px;">橋梁の維持管理は <strong>自治体 → 補修設計会社 → 地場建設会社 → 自治体</strong> のサイクル。1社だけDX化しても、データが繋がらなければ効果は限定的です。</p>
+    <table>
+      <tr><th style="width:45%;">単独DXの限界</th><th style="width:55%;">3者連携で得られる効果</th></tr>
+      <tr>
+        <td>自治体だけDX化しても、<br>設計・施工の成果物がアナログだとデータが活きない</td>
+        <td>点検 → 設計 → 施工 → 次回点検へと<br><strong>データが「川のように流れる」</strong></td>
+      </tr>
+      <tr>
+        <td>建設会社だけDX化しても、<br>自治体がアナログだと結局紙で提出</td>
+        <td>自治体監督員のチェック業務も<br><strong>同時に効率化</strong></td>
+      </tr>
+      <tr>
+        <td>各社が個別にツール導入すると<br>重複・断絶が生まれる</td>
+        <td>CiviLinkが「<strong>共通言語（図面ベース）</strong>」になる</td>
+      </tr>
+    </table>
+    <div class="note">
+      佐賀市橋りょう長寿命化修繕計画の基本方針「データ管理方法の検討」「職員が円滑に維持管理できる体制構築」「技術継承の仕組みの構築」に合致
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 5: 技術カタログ ============ -->
+<div class="slide" id="s5">
+  <div class="slide-header"><h2>土木AI/DXの選択肢は52以上 ― 問題は「何を・どの順で」</h2></div>
+  <div class="slide-body">
+    <div class="two-col">
+      <div>
+        <table class="compact-table">
+          <tr><th>カテゴリ</th><th style="text-align:center;">技術数</th><th style="text-align:center;">地場適性◎</th></tr>
+          <tr><td>A. 点検・診断</td><td style="text-align:center;">20件</td><td style="text-align:center;"><strong class="em">6件</strong></td></tr>
+          <tr><td>B. 設計・積算</td><td style="text-align:center;">9件</td><td style="text-align:center;"><strong class="em">5件</strong></td></tr>
+          <tr><td>C. 施工</td><td style="text-align:center;">9件</td><td style="text-align:center;"><strong class="em">1件</strong></td></tr>
+          <tr><td>F. 制度・補助金</td><td style="text-align:center;">4件</td><td style="text-align:center;">-</td></tr>
+          <tr style="font-weight:700;">
+            <td>合計</td>
+            <td style="text-align:center;">52件</td>
+            <td style="text-align:center; color:var(--accent);">18件</td>
+          </tr>
+        </table>
+        <div class="note" style="margin-top:20px;">
+          ◎ = 中小建設会社でも即導入可能<br>
+          国交省 点検支援技術性能カタログ掲載、NETIS登録技術を優先選定
+        </div>
+      </div>
+      <div>
+        <h3>佐賀市POCで推奨する外部ツール</h3>
+        <ul class="bullets small">
+          <li><strong>ひびみっけ</strong>（富士フイルム）<br>
+            <span style="color:var(--text-muted); font-size:13px;">スマホだけでひび割れ自動検出。月額数万円。900橋の自前点検に直結</span></li>
+          <li><strong>みちログ</strong>（アイシン）<br>
+            <span style="color:var(--text-muted); font-size:13px;">走行データで路面異常を検出。佐賀市の道路フォーカスに合致</span></li>
+          <li><strong>工事写真台帳AI</strong>（Cheez等）<br>
+            <span style="color:var(--text-muted); font-size:13px;">台帳作成時間を9割以上削減。残業削減の即効薬</span></li>
+          <li><strong>工程表AI</strong>（NITACO）<br>
+            <span style="color:var(--text-muted); font-size:13px;">設計図書アップ→15分で工程表。2026/3製品版リリース済</span></li>
+          <li><strong>iPad LiDAR 点群取得</strong><br>
+            <span style="color:var(--text-muted); font-size:13px;">既存端末で体積自動算出。補修数量の検収に直結</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="big-quote" style="margin-top:16px; font-size:20px;">
+      マルメは市場を熟知した上で、佐賀市の文脈に最適な組合せを提案します
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 6: 3者連携モデル ============ -->
+<div class="slide" id="s6">
+  <div class="slide-header"><h2>提案：3者連携モデル ― CiviLinkが横串を通す</h2></div>
+  <div class="slide-body" style="justify-content:space-around;">
+    <div class="flow">
+      <div class="flow-box muni">
+        <strong>佐賀市</strong><br>
+        <span style="font-size:13px;">2,842橋の管理<br>900橋を自前点検<br>補修設計発注・監督</span>
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-box design">
+        <strong>補修設計会社</strong><br>
+        <span style="font-size:13px;">補修設計図面作成<br>数量計算書<br>照査対応・納品</span>
+      </div>
+      <div class="flow-arrow">&rarr;</div>
+      <div class="flow-box construct">
+        <strong>地場建設会社</strong><br>
+        <span style="font-size:13px;">補修工事実施<br>段階確認・打合簿<br>完成図書作成</span>
+      </div>
+    </div>
+    <div style="display:flex; justify-content:center;">
+      <div class="flow-box cl">
+        <div style="font-size:11px; opacity:0.8; margin-bottom:4px;">DATA PLATFORM</div>
+        <strong style="font-size:20px;">CiviLink</strong><br>
+        <span style="font-size:14px;">
+          点検データ → 設計データ → 施工データ → 完成図書 → 次回点検の起点<br>
+          + 蔵衛門 / LINE WORKS / Safie / クラウドサイン を横串連携
+        </span>
+      </div>
+    </div>
+    <div class="cards" style="gap:16px;">
+      <div class="card" style="text-align:center; padding:16px;">
+        <h3 style="font-size:16px; color:var(--primary-light);">3者が同じ図面を見る</h3>
+        <p style="font-size:13px;">図面ベースの「単一の真実」</p>
+      </div>
+      <div class="card" style="text-align:center; padding:16px;">
+        <h3 style="font-size:16px; color:var(--accent);">データが流れる</h3>
+        <p style="font-size:13px;">点検→設計→施工→完成図書が一気通貫</p>
+      </div>
+      <div class="card" style="text-align:center; padding:16px;">
+        <h3 style="font-size:16px; color:var(--success);">既存ツールを束ねる</h3>
+        <p style="font-size:13px;">使い慣れたツールと連携。新規開発不要</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 7: CiviLinkの価値 ============ -->
+<div class="slide" id="s7">
+  <div class="slide-header"><h2>CiviLinkがもたらす 3つの価値</h2></div>
+  <div class="slide-body">
+    <div class="cards" style="gap:28px;">
+      <div class="card highlight" style="flex:1;">
+        <span class="tag orange">価値 1</span>
+        <h3 style="font-size:22px;">探す時間をゼロにする</h3>
+        <ul class="bullets small">
+          <li>図面・書類・写真・指摘・承認履歴が<strong>全て図面に紐付いて一元管理</strong></li>
+          <li>「あの図面どこ？」がワンクリックで解決</li>
+          <li>過去の補修履歴・指摘履歴が検索可能</li>
+        </ul>
+      </div>
+      <div class="card highlight" style="flex:1;">
+        <span class="tag orange">価値 2</span>
+        <h3 style="font-size:22px;">承認待ちをなくす</h3>
+        <ul class="bullets small">
+          <li>自治体⇔施工会社の照査・承認を<strong>リアルタイム化</strong></li>
+          <li>紙・FAX・メールの往復、押印待ちを排除</li>
+          <li>段階確認・材料承認・打合簿が画面上で完結</li>
+        </ul>
+      </div>
+      <div class="card highlight" style="flex:1;">
+        <span class="tag orange">価値 3</span>
+        <h3 style="font-size:22px;">記録が勝手に残る</h3>
+        <ul class="bullets small">
+          <li>照査・承認の履歴が<strong>自動的に監査証跡として蓄積</strong></li>
+          <li>完成図書のベースデータが施工中に自然と完成</li>
+          <li>ベテランの判断ログが<strong>技術継承の資産</strong>に</li>
+        </ul>
+      </div>
+    </div>
+    <div class="big-quote" style="margin-top:28px; font-size:19px;">
+      「倉庫に図面を取りに行かなくていい」「雨の日に紙図面が濡れない」<br>
+      ― 現場の人に届く、シンプルな変化から
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 8: Phase 1 すぐ始められること ============ -->
+<div class="slide" id="s8">
+  <div class="slide-header"><h2>Phase 1：すぐ始められること</h2></div>
+  <div class="slide-body">
+    <p style="margin-bottom:20px; font-size:16px;">新しいものを開発するのではなく、<strong>既にある良いツールを組合せてすぐに効果を出す</strong>のが基本方針です。</p>
+    <table>
+      <tr><th>カテゴリ</th><th>推奨ツール</th><th>月額目安</th><th>効果</th></tr>
+      <tr>
+        <td><strong>チャット</strong></td>
+        <td>LINE WORKS</td>
+        <td>500〜800円/人</td>
+        <td>現場⇔事務所⇔自治体の連絡を集約</td>
+      </tr>
+      <tr>
+        <td><strong>写真アプリ</strong></td>
+        <td>蔵衛門</td>
+        <td>880円/人</td>
+        <td>工事写真の撮影・整理・台帳生成</td>
+      </tr>
+      <tr>
+        <td><strong>AI点検</strong></td>
+        <td>ひびみっけ</td>
+        <td>数万円/月</td>
+        <td>スマホでひび割れ自動検出</td>
+      </tr>
+      <tr>
+        <td><strong>遠隔臨場</strong></td>
+        <td>Safie Pocket</td>
+        <td>5,000〜10,000円/台</td>
+        <td>段階確認・遠隔確認</td>
+      </tr>
+      <tr>
+        <td><strong>電子契約</strong></td>
+        <td>クラウドサイン</td>
+        <td>10,000円/社</td>
+        <td>契約書・請求書の電子化</td>
+      </tr>
+      <tr style="background:#fffaf0;">
+        <td><strong style="color:var(--primary);">図面基盤</strong></td>
+        <td><strong style="color:var(--primary);">CiviLink</strong></td>
+        <td>10,000円/人</td>
+        <td><strong>上記すべてを図面で横串連携</strong></td>
+      </tr>
+    </table>
+    <div class="note">
+      Step 1（即日〜）写真+チャット → Step 2（1ヶ月〜）クラウド+電子契約 → Step 3（3ヶ月〜）AI点検+遠隔臨場 → Step 4（6ヶ月〜）GNSS測量・i-Con対応
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 9: 佐賀市に刺さるメニュー ============ -->
+<div class="slide" id="s9">
+  <div class="slide-header"><h2>佐賀市に特に価値がある CiviLinkメニュー</h2></div>
+  <div class="slide-body">
+    <p style="font-size:15px; margin-bottom:16px; color:var(--text-muted);">長寿命化計画の3つの方針と直結するメニューを優先提案します。</p>
+    <table>
+      <tr><th style="width:28%;">長寿命化計画の方針</th><th style="width:35%;">CiviLinkメニュー</th><th style="width:12%;">対象者</th><th style="width:25%;">想定効果</th></tr>
+      <tr>
+        <td rowspan="2"><strong>データ管理方法の検討</strong></td>
+        <td class="priority-high">補修工事の承認ワークフロー</td>
+        <td>自治体<br>建設会社</td>
+        <td>承認待ち時間 <strong>50%削減</strong></td>
+      </tr>
+      <tr>
+        <td>電子納品フォルダ構成チェック</td>
+        <td>建設会社<br>設計会社</td>
+        <td>納品準備工数 <strong>70%削減</strong></td>
+      </tr>
+      <tr>
+        <td rowspan="3"><strong>職員が円滑に維持管理<br>できる体制構築</strong></td>
+        <td class="priority-high">図面 ⇔ 数量計算書の整合性チェック (AI)</td>
+        <td>自治体<br>設計会社</td>
+        <td>内部チェック工数 <strong>50%削減</strong></td>
+      </tr>
+      <tr>
+        <td>出来形管理値の規格値チェック</td>
+        <td>自治体</td>
+        <td>監督員チェック負担軽減</td>
+      </tr>
+      <tr>
+        <td>チェックリストテンプレート</td>
+        <td>自治体</td>
+        <td>確認漏れゼロ化</td>
+      </tr>
+      <tr>
+        <td rowspan="2"><strong>技術継承の仕組みの<br>構築</strong></td>
+        <td class="priority-high">施工計画書の自動照査</td>
+        <td>自治体</td>
+        <td>照査業務 <strong>50%削減</strong></td>
+      </tr>
+      <tr>
+        <td>積算ミス検知</td>
+        <td>自治体</td>
+        <td>異常値の自動検出</td>
+      </tr>
+    </table>
+    <div class="note">
+      <strong style="color:var(--accent);">赤字</strong> = 特に効果インパクトの大きいメニュー。Phase 1〜2で優先的に導入・検証を推奨。
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 10: 3者×フェーズマトリクス ============ -->
+<div class="slide" id="s10">
+  <div class="slide-header"><h2>3者 &times; フェーズ 統合マトリクス</h2></div>
+  <div class="slide-body">
+    <table class="matrix-table">
+      <tr>
+        <th style="width:12%;"></th>
+        <th class="phase-header" style="background:#38a169; width:30%;">Phase 1（即導入）</th>
+        <th class="phase-header" style="background:var(--accent); width:30%;">Phase 2（3〜6ヶ月）</th>
+        <th class="phase-header" style="background:var(--primary-light); width:28%;">Phase 3（将来）</th>
+      </tr>
+      <tr>
+        <td rowspan="3" style="background:#ebf8ff; font-weight:700; color:#2b6cb0; text-align:center; writing-mode:vertical-rl; letter-spacing:4px;">自治体</td>
+        <td>
+          <strong>CL:</strong> 一元管理 + 閲覧<br>
+          <span style="color:var(--accent);">外部:</span> ひびみっけ / みちログ
+        </td>
+        <td>
+          <strong>CL:</strong> チェックリストTP<br>
+          <strong>CL:</strong> 出来形規格値チェック
+        </td>
+        <td>
+          <strong>CL:</strong> 仕様書ドラフトAI生成<br>
+          <strong>CL:</strong> 積算ミス検知
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>CL:</strong> 承認ワークフロー
+        </td>
+        <td>
+          <strong>CL:</strong> 電子納品構成チェック
+        </td>
+        <td>
+          <strong>CL:</strong> 施工計画書自動照査
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>CL:</strong> 打合簿デジタル化<br>
+          <span style="color:var(--accent);">外部:</span> Safie（遠隔臨場）
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="background:#fefcbf; font-weight:700; color:#975a16; text-align:center; writing-mode:vertical-rl; letter-spacing:4px;">設計会社</td>
+        <td>
+          <strong>CL:</strong> 照査 + 指摘管理<br>
+          <strong>CL:</strong> バージョン管理
+        </td>
+        <td>
+          <strong>CL:</strong> 数量整合チェック(AI)<br>
+          <span style="color:var(--accent);">外部:</span> 積算AI
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <strong>CL:</strong> 差分比較
+        </td>
+        <td>
+          <strong>CL:</strong> 電子納品自動構成
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="2" style="background:#f0fff4; font-weight:700; color:#276749; text-align:center; writing-mode:vertical-rl; letter-spacing:4px;">建設会社</td>
+        <td>
+          <strong>CL:</strong> クラウド管理 + 閲覧<br>
+          紙図面デジタル化支援<br>
+          <span style="color:var(--accent);">外部:</span> 蔵衛門 / LINE WORKS
+        </td>
+        <td>
+          <span style="color:var(--accent);">外部:</span> 工程表AI(NITACO)<br>
+          <span style="color:var(--accent);">外部:</span> 写真台帳AI(Cheez)<br>
+          <span style="color:var(--accent);">外部:</span> GNSS/RTK
+        </td>
+        <td>
+          <strong>CL:</strong> 施工計画書自動照査<br>
+          <span style="color:var(--accent);">外部:</span> 2D-MG
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <strong>CL:</strong> 承認WF<br>
+          補助金申請サポート
+        </td>
+        <td>
+          <span style="color:var(--accent);">外部:</span> iPad点群取得
+        </td>
+        <td></td>
+      </tr>
+    </table>
+    <div class="note" style="font-size:12px;">
+      <strong>CL</strong> = CiviLink機能 / <strong style="color:var(--accent);">外部</strong> = パートナー連携 or 導入支援する市場ツール
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 11: 補助金 ============ -->
+<div class="slide" id="s11">
+  <div class="slide-header"><h2>補助金活用で実質負担を最小化</h2></div>
+  <div class="slide-body">
+    <div class="two-col">
+      <div>
+        <h3>活用可能な補助金</h3>
+        <table class="compact-table">
+          <tr><th>補助金</th><th>補助率</th><th>上限</th></tr>
+          <tr>
+            <td><strong>佐賀県 建設DX加速化</strong></td>
+            <td style="color:var(--accent); font-weight:700;">2/3</td>
+            <td>ICT建機600万<br>ICT機器300万</td>
+          </tr>
+          <tr>
+            <td><strong>デジタル化・AI導入</strong><br>（旧IT導入補助金）</td>
+            <td style="color:var(--accent); font-weight:700;">1/2〜4/5</td>
+            <td>最大450万円<br>クラウド2年分可</td>
+          </tr>
+          <tr>
+            <td><strong>ものづくり補助金</strong></td>
+            <td style="color:var(--accent); font-weight:700;">1/2〜2/3</td>
+            <td>最大1,250万円</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3>シミュレーション</h3>
+        <div class="card" style="margin-bottom:16px; padding:18px;">
+          <span class="tag green">パッケージA: 最小構成</span>
+          <p style="font-size:14px;">
+            チャット + クラウド + 写真アプリ + 電子契約<br>
+            = <strong>月額 約3万円/社</strong><br>
+            → IT導入補助金で<span class="em">2年分カバー可能</span>
+          </p>
+        </div>
+        <div class="card" style="padding:18px;">
+          <span class="tag blue">パッケージB: 点検・測量強化</span>
+          <p style="font-size:14px;">
+            ドローン80万 + GNSS250万 + ソフト50万 = <strong>380万円</strong><br>
+            佐賀県補助(2/3) → 補助 <span class="em">約253万円</span><br>
+            自己負担: <strong>約127万円</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; gap:24px; margin-top:20px;">
+      <div class="stat" style="flex:1;">
+        <div class="label">Phase 1（1年目）</div>
+        <div class="number" style="font-size:32px;">~70<span class="unit">万円</span></div>
+        <div class="label">（投資200万 - 補助130万）</div>
+      </div>
+      <div class="stat" style="flex:1;">
+        <div class="label">Phase 2（2年目）</div>
+        <div class="number" style="font-size:32px;">~130<span class="unit">万円</span></div>
+        <div class="label">（投資400万 - 補助270万）</div>
+      </div>
+      <div class="stat" style="flex:1;">
+        <div class="label">Phase 3（3年目〜）</div>
+        <div class="number" style="font-size:28px; color:var(--success);">i-Con受注で回収</div>
+        <div class="label">デジタル対応力が受注競争力に</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 12: POC計画 ============ -->
+<div class="slide" id="s12">
+  <div class="slide-header"><h2>POC計画：1橋で3者一気通貫を実証</h2></div>
+  <div class="slide-body">
+    <div class="two-col" style="gap:32px;">
+      <div>
+        <h3>POC概要</h3>
+        <table class="compact-table">
+          <tr><td style="font-weight:600; width:30%;">期間</td><td>2026年5月〜2027年3月（11ヶ月）</td></tr>
+          <tr><td style="font-weight:600;">対象</td><td>Cランク以下の地場建設会社 1〜2社</td></tr>
+          <tr><td style="font-weight:600;">対象橋梁</td><td>補修工事予定の橋梁 数橋</td></tr>
+          <tr><td style="font-weight:600;">導入構成</td><td>写真アプリ + チャット + AI点検 + CiviLink</td></tr>
+        </table>
+
+        <h3 style="margin-top:24px;">KPI</h3>
+        <table class="compact-table">
+          <tr><th>領域</th><th>指標</th><th>目標</th></tr>
+          <tr><td>点検効率</td><td>調書作成時間</td><td class="priority-high">50%削減</td></tr>
+          <tr><td>設計効率</td><td>照査やり取り日数</td><td class="priority-mid">30%削減</td></tr>
+          <tr><td>施工効率</td><td>打合簿の往復時間</td><td class="priority-high">70%削減</td></tr>
+          <tr><td>全体</td><td>残業時間</td><td class="priority-mid">月20h削減</td></tr>
+          <tr><td>自治体</td><td>監督員チェック時間</td><td class="priority-mid">30%削減</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>段階スケジュール</h3>
+        <div class="timeline" style="flex-direction:column; gap:0;">
+          <div class="phase p1" style="border-top:none; border-left:4px solid var(--success); padding:14px 20px;">
+            <div class="period">2026年 5〜6月</div>
+            <h3 style="font-size:15px; color:var(--success);">既存ツールパッケージ導入</h3>
+            <p>チャット・写真アプリ・クラウドの導入支援<br>「写真整理が楽になった」を体感</p>
+          </div>
+          <div class="phase p1" style="border-top:none; border-left:4px solid var(--success); padding:14px 20px;">
+            <div class="period">2026年 7〜9月</div>
+            <h3 style="font-size:15px; color:var(--success);">点検フェーズでCiviLink活用</h3>
+            <p>損傷記録の図面紐付け<br>ひびみっけ連携テスト</p>
+          </div>
+          <div class="phase p2" style="border-top:none; border-left:4px solid var(--accent); padding:14px 20px;">
+            <div class="period">2026年 10〜12月</div>
+            <h3 style="font-size:15px; color:var(--accent);">設計フェーズで照査WF実証</h3>
+            <p>デジタル照査・指摘管理<br>数量整合チェックのテスト</p>
+          </div>
+          <div class="phase p3" style="border-top:none; border-left:4px solid var(--primary-light); padding:14px 20px;">
+            <div class="period">2027年 1〜3月</div>
+            <h3 style="font-size:15px; color:var(--primary-light);">施工フェーズで打合簿デジタル化</h3>
+            <p>承認WF・段階確認の検証<br>電子納品の自動構成テスト</p>
+          </div>
+        </div>
+        <div style="background:var(--primary); color:white; padding:12px 20px; border-radius:0 0 8px 8px; text-align:center; font-weight:600; font-size:14px;">
+          2027年4月〜 包括委託開始 → POC成果を全契約建設会社へ展開
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 13: 将来展望 ============ -->
+<div class="slide" id="s13">
+  <div class="slide-header"><h2>将来展望：AI活用とデータ蓄積</h2></div>
+  <div class="slide-body">
+    <p style="margin-bottom:20px; font-size:16px;">POCで蓄積したデータをもとに、段階的にAI機能を実装。手作業の自動化を進めます。</p>
+    <div class="two-col" style="gap:40px;">
+      <div>
+        <h3 style="color:var(--accent);">CiviLink AI ロードマップ</h3>
+        <table class="compact-table">
+          <tr><th>時期</th><th>AI機能</th><th>効果</th></tr>
+          <tr>
+            <td><span class="tag green" style="font-size:11px;">短期</span></td>
+            <td><strong>AI損傷検出</strong><br>(ひびみっけ連携)</td>
+            <td>損傷図を図面に<br>自動マッピング</td>
+          </tr>
+          <tr>
+            <td><span class="tag orange" style="font-size:11px;">中期</span></td>
+            <td><strong>図面⇔数量整合チェック</strong></td>
+            <td>AI+OCRで食い違い<br>を自動検出</td>
+          </tr>
+          <tr>
+            <td><span class="tag orange" style="font-size:11px;">中期</span></td>
+            <td><strong>出来形規格値チェック</strong></td>
+            <td>測定値→基準値の<br>自動OK/NG判定</td>
+          </tr>
+          <tr>
+            <td><span class="tag blue" style="font-size:11px;">長期</span></td>
+            <td><strong>施工計画書の自動照査</strong></td>
+            <td>必須記載事項の<br>網羅性チェック</td>
+          </tr>
+          <tr>
+            <td><span class="tag blue" style="font-size:11px;">長期</span></td>
+            <td><strong>積算ミス検知</strong></td>
+            <td>過去データとの比較<br>で異常値検出</td>
+          </tr>
+        </table>
+      </div>
+      <div>
+        <h3 style="color:var(--primary);">データ蓄積が生む価値</h3>
+        <div class="card" style="margin-bottom:16px;">
+          <h3 style="font-size:16px;">ベテランの知見をAIが学習</h3>
+          <p style="font-size:14px;">照査コメント・修正履歴・却下理由こそがAI再現の最重要データ。CiviLink上で蓄積した判断ログが、若手技術者の意思決定を支援。</p>
+        </div>
+        <div class="card" style="margin-bottom:16px;">
+          <h3 style="font-size:16px;">佐賀市の橋梁ナレッジ資産</h3>
+          <p style="font-size:14px;">2,842橋の点検・補修・指摘の履歴が、佐賀市固有の橋梁維持管理ナレッジとして蓄積。次世代への引継ぎ資料に。</p>
+        </div>
+        <div class="card">
+          <h3 style="font-size:16px;">FDE伴走（Layer 3）</h3>
+          <p style="font-size:14px;">マルメのエンジニアが現場に入り、AI定着・カスタマイズ・効果測定を伴走支援。IT人材不在の課題を外部で補完。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 14: 数字でのインパクト ============ -->
+<div class="slide" id="s14">
+  <div class="slide-header"><h2>数字で示すインパクト</h2></div>
+  <div class="slide-body">
+    <div class="stats" style="margin-bottom:28px;">
+      <div class="stat" style="min-width:320px;">
+        <div class="label">長寿命化計画 10年費用</div>
+        <div class="number" style="font-size:44px;">41<span class="unit">億円</span></div>
+        <div class="label">設計9.8億 + 修繕21.2億 + 点検10億</div>
+      </div>
+    </div>
+    <div class="cards" style="gap:20px;">
+      <div class="card highlight" style="text-align:center;">
+        <h3 style="color:var(--accent); font-size:16px;">設計発注の効率化</h3>
+        <div style="font-size:36px; font-weight:900; color:var(--primary);">~3,000<span style="font-size:18px;">万円</span></div>
+        <p style="font-size:13px;">/10年（設計費の3%相当）</p>
+      </div>
+      <div class="card highlight" style="text-align:center;">
+        <h3 style="color:var(--accent); font-size:16px;">監督業務の効率化</h3>
+        <div style="font-size:36px; font-weight:900; color:var(--primary);">~1<span style="font-size:18px;">億円</span></div>
+        <p style="font-size:13px;">/10年（工事管理費の5%相当）</p>
+      </div>
+      <div class="card highlight" style="text-align:center;">
+        <h3 style="color:var(--accent); font-size:16px;">建設会社の残業削減</h3>
+        <div style="font-size:36px; font-weight:900; color:var(--primary);">月20<span style="font-size:18px;">時間</span></div>
+        <p style="font-size:13px;">書類・写真整理の時間削減</p>
+      </div>
+    </div>
+    <div class="big-quote" style="margin-top:28px;">
+      50年間のコスト縮減目標 <span class="em">70億円</span> に対して、<br>DXによる効率化で <span class="em">年間1,300万円以上</span> のコスト削減効果を見込む
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 15: なぜマルメか ============ -->
+<div class="slide" id="s15">
+  <div class="slide-header"><h2>なぜマルメか</h2></div>
+  <div class="slide-body">
+    <div class="two-col" style="gap:40px;">
+      <div>
+        <h3>マルメの強み</h3>
+        <div class="card" style="margin-bottom:16px;">
+          <span class="tag blue">土木ドメイン</span>
+          <p style="font-size:15px;"><strong>土木技術者が約20名在籍</strong>。技術の言葉で現場と会話できる。ツール提供者ではなく、業務を理解したDXパートナー。</p>
+        </div>
+        <div class="card" style="margin-bottom:16px;">
+          <span class="tag orange">プロダクト力</span>
+          <p style="font-size:15px;"><strong>CiviLinkを自社開発・運用</strong>。現場のフィードバックを即座にプロダクトに反映。PoC→開発フェーズへの移行率ほぼ100%。</p>
+        </div>
+        <div class="card">
+          <span class="tag green">実績</span>
+          <p style="font-size:15px;">既存顧客で<strong>図面⇔数量チェックの自動化</strong>を実現。小野田ケミコ等、土木分野の導入実績あり。</p>
+        </div>
+      </div>
+      <div>
+        <h3>提供体制</h3>
+        <table class="compact-table">
+          <tr><th>役割</th><th>内容</th></tr>
+          <tr><td><strong>DXコンサル</strong></td><td>3者それぞれの現場に入り、業務分析→ツール選定</td></tr>
+          <tr><td><strong>ツールパッケージ</strong></td><td>1から開発せず、市場の良いツールを組合せ</td></tr>
+          <tr><td><strong>CiviLink提供</strong></td><td>3者を繋ぐ図面ベースのデータ基盤</td></tr>
+          <tr><td><strong>補助金サポート</strong></td><td>申請支援で実質負担を最小化</td></tr>
+          <tr><td><strong>FDE伴走</strong></td><td>エンジニアが現場常駐に近い形で定着支援</td></tr>
+        </table>
+
+        <h3 style="margin-top:24px;">伊藤忠商事との連携</h3>
+        <div class="card">
+          <p style="font-size:15px;">包括委託スキームの中核DXパートナーとして、<strong>長期視点</strong>で佐賀市を伴走。全国横展開のモデルケースを共創。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 16: Next Steps ============ -->
+<div class="slide" id="s16">
+  <div class="slide-header"><h2>Next Steps</h2></div>
+  <div class="slide-body" style="justify-content:center;">
+    <div style="max-width:800px; margin:0 auto;">
+      <table>
+        <tr><th style="width:10%;">#</th><th style="width:55%;">アクション</th><th style="width:35%;">時期</th></tr>
+        <tr>
+          <td style="text-align:center; font-weight:900; font-size:24px; color:var(--success);">1</td>
+          <td><strong>POC対象の建設会社・橋梁を選定</strong><br><span style="font-size:13px; color:var(--text-muted);">佐賀市側と協議。補修工事予定の橋梁から数橋を選定</span></td>
+          <td>2026年4〜5月</td>
+        </tr>
+        <tr>
+          <td style="text-align:center; font-weight:900; font-size:24px; color:var(--success);">2</td>
+          <td><strong>既存ツールパッケージの導入支援開始</strong><br><span style="font-size:13px; color:var(--text-muted);">チャット・写真アプリ・クラウドの導入。まず「体感」してもらう</span></td>
+          <td>2026年5〜6月</td>
+        </tr>
+        <tr>
+          <td style="text-align:center; font-weight:900; font-size:24px; color:var(--accent);">3</td>
+          <td><strong>CiviLink導入・点検フェーズ実証</strong><br><span style="font-size:13px; color:var(--text-muted);">損傷記録の図面紐付け、ひびみっけ連携テスト</span></td>
+          <td>2026年7〜9月</td>
+        </tr>
+        <tr>
+          <td style="text-align:center; font-weight:900; font-size:24px; color:var(--primary-light);">4</td>
+          <td><strong>設計・施工フェーズへ拡大</strong><br><span style="font-size:13px; color:var(--text-muted);">照査WF・打合簿デジタル化・承認WFの検証</span></td>
+          <td>2026年10月〜2027年3月</td>
+        </tr>
+        <tr>
+          <td style="text-align:center; font-weight:900; font-size:24px; color:var(--primary);">5</td>
+          <td><strong>包括委託本格運用へ</strong><br><span style="font-size:13px; color:var(--text-muted);">POC成果を全契約建設会社へ展開</span></td>
+          <td>2027年4月〜</td>
+        </tr>
+      </table>
+    </div>
+    <div class="big-quote" style="margin-top:36px;">
+      まずは<span class="em">1橋 &times; 3者</span>で、小さく始めて大きな変化を実証する
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>MALME inc.</span><span>佐賀市 橋梁維持管理DX提案</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 17: END ============ -->
+<div class="slide title-slide" id="s17">
+  <div class="logo-area">MALME inc. &times; ITOCHU Corporation</div>
+  <h1 style="font-size:36px; margin-bottom:12px;">ご清聴ありがとうございました</h1>
+  <p style="font-size:20px; color:rgba(255,255,255,0.85);">
+    佐賀市の橋梁維持管理を、3者の力で次のステージへ
+  </p>
+  <div style="margin-top:40px; font-size:16px; opacity:0.6;">
+    株式会社マルメ<br>
+    お問い合わせ: info@malme.co.jp
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="nav">
+  <button onclick="prevSlide()" aria-label="前へ">&#8249;</button>
+  <button onclick="nextSlide()" aria-label="次へ">&#8250;</button>
+</div>
+<div class="page-indicator" id="pageIndicator"></div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  const total = slides.length;
+
+  function updateIndicator() {
+    document.getElementById('pageIndicator').textContent = `${current + 1} / ${total}`;
+  }
+
+  function showSlide(n) {
+    slides[current].classList.remove('active');
+    current = (n + total) % total;
+    slides[current].classList.add('active');
+    updateIndicator();
+  }
+
+  function nextSlide() { showSlide(current + 1); }
+  function prevSlide() { showSlide(current - 1); }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+      e.preventDefault(); nextSlide();
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault(); prevSlide();
+    }
+    if (e.key === 'Home') { e.preventDefault(); showSlide(0); }
+    if (e.key === 'End') { e.preventDefault(); showSlide(total - 1); }
+  });
+
+  // Touch support
+  let touchStartX = 0;
+  document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+  document.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); }
+  });
+
+  updateIndicator();
+</script>
+</body>
+</html>

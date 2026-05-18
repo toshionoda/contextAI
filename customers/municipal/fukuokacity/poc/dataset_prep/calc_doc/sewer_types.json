@@ -1,0 +1,173 @@
+{
+  "drawing_info": {
+    "title": "那珂（那珂二丁目外）地区下水道築造工事 数量計算書",
+    "project_name": "那珂（那珂二丁目外）地区下水道築造工事",
+    "drawing_number": "B07GH-00-00-G0",
+    "issuer": "福岡市道路下水道局 建設部 東部下水道課",
+    "construction_type": "下水道改築（管更生工が主体）",
+    "schema_version": "0.1-draft",
+    "note": "Phase A Day 3 ドラフト（野田レビュー要）。配筋図PoC（rebar_types.json）の構造を下水道工事用に転用したもの。"
+  },
+  "sewer_types": [
+    {
+      "id": "ST001",
+      "name": "管更生工 φ250 更生管材",
+      "diameter": "φ250",
+      "method": "更生自立管",
+      "unit": "m",
+      "category": "管きょ更生工"
+    },
+    {
+      "id": "ST002",
+      "name": "管更生工 φ300 更生管材",
+      "diameter": "φ300",
+      "method": "更生自立管",
+      "unit": "m",
+      "category": "管きょ更生工"
+    },
+    {
+      "id": "ST003",
+      "name": "内面更生工 反転・引込工 硬化・形成工",
+      "diameter": "φ250-300",
+      "method": "反転・引込・硬化・形成",
+      "unit": "m",
+      "category": "管きょ更生工"
+    },
+    {
+      "id": "ST004",
+      "name": "更生付帯工 仮設備設置・撤去工",
+      "diameter": "-",
+      "method": "仮設備",
+      "unit": "回",
+      "category": "管きょ更生工"
+    },
+    {
+      "id": "ST005",
+      "name": "更生付帯工 本管口仕上工",
+      "diameter": "-",
+      "method": "本管口切断・仕上",
+      "unit": "箇所",
+      "category": "管きょ更生工"
+    },
+    {
+      "id": "ST006",
+      "name": "更生付帯工 取付管口せん孔仕上工",
+      "diameter": "-",
+      "method": "せん孔仕上",
+      "unit": "箇所",
+      "category": "管きょ更生工"
+    },
+    {
+      "id": "ST007",
+      "name": "換気工 換気設備工",
+      "diameter": "-",
+      "method": "換気設備",
+      "unit": "式",
+      "category": "管きょ更生工"
+    },
+    {
+      "id": "ST008",
+      "name": "管きょ更生水替工 揚泥車運転工",
+      "diameter": "-",
+      "method": "揚泥車",
+      "unit": "式",
+      "category": "管きょ更生工"
+    },
+    {
+      "id": "ST009",
+      "name": "管きょ更生水替工 反転・形成水替",
+      "diameter": "-",
+      "method": "反転・形成水替",
+      "unit": "式",
+      "category": "管きょ更生工"
+    },
+    {
+      "id": "ST010",
+      "name": "共通仮設費 準備費 管内洗浄工",
+      "diameter": "-",
+      "method": "管内洗浄",
+      "unit": "m",
+      "category": "管きょ更生工"
+    },
+    {
+      "id": "ST011",
+      "name": "共通仮設費 準備費 本管TV調査工",
+      "diameter": "-",
+      "method": "本管TV調査",
+      "unit": "m",
+      "category": "管きょ更生工"
+    },
+    {
+      "id": "ST012",
+      "name": "ます設置工 小口径汚水桝 T-14",
+      "diameter": "T-14",
+      "method": "ます設置",
+      "unit": "箇所",
+      "category": "取付管およびます工"
+    },
+    {
+      "id": "ST013",
+      "name": "ます設置工 小口径汚水桝 T-25",
+      "diameter": "T-25",
+      "method": "ます設置",
+      "unit": "箇所",
+      "category": "取付管およびます工"
+    },
+    {
+      "id": "ST014",
+      "name": "取付管布設工 取付管および支管取付工 3m未満",
+      "diameter": "φ150",
+      "method": "取付管布設",
+      "unit": "箇所",
+      "category": "取付管およびます工"
+    },
+    {
+      "id": "ST015",
+      "name": "人孔改築工 鋳鉄製マンホール蓋 φ600 T-14",
+      "diameter": "φ600 T-14",
+      "method": "マンホール蓋",
+      "unit": "組",
+      "category": "マンホール工"
+    },
+    {
+      "id": "ST016",
+      "name": "人孔改築工 足掛金物設置工 W=300（ステンレス製）",
+      "diameter": "W=300",
+      "method": "足掛金物",
+      "unit": "本",
+      "category": "マンホール工"
+    },
+    {
+      "id": "ST017",
+      "name": "人孔改築工 流動性特殊モルタル t=20～70mm",
+      "diameter": "t=20-70mm",
+      "method": "流動性モルタル",
+      "unit": "m3",
+      "category": "マンホール工"
+    },
+    {
+      "id": "ST018",
+      "name": "舗装撤去工 舗装版切断 t=15cm以下",
+      "diameter": "t≤15cm",
+      "method": "舗装版切断",
+      "unit": "m",
+      "category": "付帯工"
+    },
+    {
+      "id": "ST019",
+      "name": "舗装復旧工 仮復旧工 仮復旧A",
+      "diameter": "-",
+      "method": "仮復旧",
+      "unit": "m2",
+      "category": "付帯工"
+    },
+    {
+      "id": "ST020",
+      "name": "舗装復旧工 本復旧工 仮〜本復旧A",
+      "diameter": "-",
+      "method": "本復旧",
+      "unit": "m2",
+      "category": "付帯工"
+    }
+  ]
+}

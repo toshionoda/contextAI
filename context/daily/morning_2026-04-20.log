@@ -1,0 +1,268 @@
+=== Daily Morning Tasks: 2026-04-20 13:47 ===
+
+📰 ニュース取得中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+Both GOOGLE_API_KEY and GEMINI_API_KEY are set. Using GOOGLE_API_KEY.
+📰 ニュース取得開始 (2026-04-20)
+   対象期間: 過去1日
+
+📂 AI
+  - MIT Tech Review AI: 0件
+  - The Batch (deeplearning.ai): 0件
+  - OpenAI Blog: 0件
+  ✅ AI News (Google): 4件
+  ✅ ITmedia AI+: 8件
+  - AI News (Google JP): 0件
+
+📂 スタートアップ
+  ✅ TechCrunch Startups: 1件
+  - BRIDGE (日本): 0件
+  - Y Combinator Blog: 0件
+  ✅ スタートアップ (Google JP): 4件
+
+📂 土木・建設
+  - 建設通信新聞: 0件
+  - 日経クロステック 建設: 0件
+  - Construction Dive: 0件
+  - ENR (Engineering News-Record): 0件
+  ✅ 建設業界 (Google JP): 10件
+
+📂 建設スタートアップ
+  - ConTech (Google News): 0件
+  ✅ BuiltWorlds: 2件
+  - 建設テック (Google JP): 0件
+
+📂 BIM×AI
+  - BIM×AI (Google News): 0件
+  - BIM×AI 日本語: 0件
+  - Autodesk Blog: 0件
+
+📂 行政・研究機関 (BIM/CIM/AI)
+  - 国交省 BIM/CIM/AI (Google JP): 0件
+  - 国総研 BIM/CIM/AI (Google JP): 0件
+  ✅ 国交省動向 (Google JP): 5件
+  ✅ i-Construction (Google JP): 1件
+
+🌐 日本語翻訳中...
+  ✅ 35件を翻訳
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/news/2026-04-20.md
+✅ ニュース取得完了
+
+📋 Slackサマリー生成中...
+📋 Slackサマリー生成開始 (2026-04-20)
+   対象期間: 過去1日 (after:2026-04-19)
+   方式: Claude Code CLI + Slack MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/slack_summary/2026-04-20.md
+🗑  古いサマリー削除: 2026-03-16.md
+🗑  古いサマリー削除: 2026-03-17.md
+🗑  古いサマリー削除: 2026-03-13.md
+🗑  古いサマリー削除: 2026-03-18.md
+🗑  古いサマリー削除: 2026-03-19.md
+🗑  古いサマリー削除: 2026-03-14.md
+🗑  古いサマリー削除: 2026-03-20.md
+🗑  古いサマリー削除: 2026-03-21.md
+✅ Slackサマリー完了
+
+📓 Notionサマリー生成中...
+📓 Notionサマリー生成開始 (2026-04-20)
+   対象期間: 過去1日 (after:2026-04-19)
+   方式: Claude Code CLI + Notion MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/notion/2026-04-20.md
+🗑  古いサマリー削除: 2026-03-16.md
+🗑  古いサマリー削除: 2026-03-17.md
+🗑  古いサマリー削除: 2026-03-13.md
+🗑  古いサマリー削除: 2026-03-18.md
+🗑  古いサマリー削除: 2026-03-19.md
+🗑  古いサマリー削除: 2026-03-20.md
+🗑  古いサマリー削除: 2026-03-21.md
+✅ Notionサマリー完了
+
+📅 Calendarサマリー生成中...
+📅 カレンダーサマリー生成開始 (2026-04-20)
+   方式: Claude Code CLI + Google Calendar MCP
+
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/calendar/summary_2026-04-20.md
+🗑  古いサマリー削除: summary_2026-03-13.md
+🗑  古いサマリー削除: summary_2026-03-17.md
+🗑  古いサマリー削除: summary_2026-03-16.md
+🗑  古いサマリー削除: summary_2026-03-19.md
+🗑  古いサマリー削除: summary_2026-03-18.md
+🗑  古いサマリー削除: summary_2026-03-21.md
+🗑  古いサマリー削除: summary_2026-03-20.md
+✅ Calendarサマリー完了
+
+💬 Slack同期中...
+📡 組織全体のチャンネル: 135件
+✅ 134チャンネルに自動参加しました
+📨 メッセージ取得対象: 135チャンネル
+✅ #random: 8件
+✅ #営業: 8件
+✅ #general: 6件
+✅ #講習会: 1件
+✅ #fondesk: 7件
+✅ #pjm_dynamo: 1件
+✅ #guest-marimari: 1件
+✅ #it01_情シス君_事務連絡: 1件
+✅ #it03_情シス君_itサポート窓口: 1件
+✅ #it02_情シス君_pjt00_pcキッティング: 1件
+✅ #team-デザイン: 1件
+✅ #proj-tokyo戦略イノベ助成金: 1件
+✅ #newデザインチーム: 1件
+✅ #team-バックオフィス窓口: 1件
+✅ #corp-bo窓口_bimcim: 2件
+✅ #corp-全体定例: 1件
+✅ #proj-hp作成追い込み: 1件
+✅ #proj-事業開発: 1件
+✅ #temp-中村様: 1件
+✅ #temp-横浜様: 1件
+✅ #corp-労務総務窓口: 1件
+✅ #要削除_オリエンタルコンサルタンツ_砂防堰堤モデル内製化支援: 1件
+✅ #設計_見積り依頼: 1件
+✅ #施工_見積り依頼: 1件
+✅ #顧客ニーズ情報共有: 1件
+✅ #corp-勤怠_test: 1件
+✅ #corp-災害時連絡: 1件
+✅ #bim-cim-hub: 2件
+✅ #tech-blog: 1件
+✅ #satomi_malme: 1件
+✅ #dp_083_パパシフィックコンサルタンツ_aipj: 1件
+✅ #proj-civilink: 5件
+✅ #dp_027_ア旭化成建材_aiチャットボット開発: 1件
+✅ #dp_030_ヨ横河ブリッジ_技術提案書ai: 1件
+✅ #growth新宿-受付通知: 7件
+✅ #モンハン_仮: 1件
+✅ #デザイン_大井様: 1件
+✅ #p_ト東京コンサルタンツ_令和6年度橋場交差点詳細設計外業務: 1件
+✅ #team-ai関係情報共有: 1件
+✅ #dp_063_セセントラルc_景観シミュレーション: 1件
+✅ #temp_矢作採用デジマ支援: 1件
+✅ #team-pionero-malme: 1件
+✅ #dp_064_ヘ平成測量_調査省力化ツール: 1件
+✅ #企業インタビュー記事作成: 1件
+✅ #hr-採用マーケ: 3件
+✅ #team_hctech_malme: 1件
+✅ #sp_タ武田測量_6災天保島_急傾斜地災害復旧工事_測量_業務委託: 1件
+✅ #intern-原隆惟: 1件
+✅ #alert-growth: 1件
+✅ #alert-structuralengine: 1件
+✅ #dp_025-119_中央c東京_予備設計ai: 1件
+✅ #bimcimlive: 1件
+✅ #dp_070_中央c本社_モデル作成mcp: 1件
+✅ #学生intern: 1件
+✅ #sp_ナ鳴海組_令和7年度木曽川水系本谷砂防堰堤施設改築工事: 1件
+✅ #mail-civilink-cs: 7件
+✅ #corp-情シス窓口: 4件
+✅ #dev-civilink-backend-notification: 3件
+✅ #dp_072_ケ建設技術研究所_ai: 1件
+✅ #corp-mg相談ごと: 1件
+✅ #dp_071_チ中央c_土量算出dynamo: 1件
+✅ #dp_074_日本工営河川構造物設計省力化: 1件
+✅ #team-ai-sora-malme: 1件
+✅ #dp_078_ニ日本工営_dynamo開発: 1件
+✅ #team-unity-sora-malme: 1件
+✅ #team-webapp-sora-malme: 1件
+✅ #team-cad-sora-malme: 1件
+✅ #dp_080_ト東北開発c_設計省力化: 1件
+✅ #dev-civilink-graphrag: 1件
+✅ #dp_078_二日本工営事業監理調査資料作成委託: 1件
+✅ #ask-civilink: 4件
+✅ #dp_084_スペースデータ_ブラジルデジタルツイン: 1件
+✅ #alert-civilink-mixpanel: 8件
+✅ #dev-civilink-report-findy-team: 3件
+✅ #dev-malme-sora-歩掛集計システム: 1件
+✅ #test-taskalart: 1件
+✅ #erp内製pj: 1件
+✅ #team-ai-engineer: 4件
+✅ #開発-日報: 8件
+✅ #dp_090_パパシフィックコンサルタンツ_鉄道モデル自動化: 1件
+✅ #dp_092_二日本工営図面認識ai: 1件
+✅ #dp_093_カ川田工業ai活用: 1件
+✅ #test_daily_report: 1件
+✅ #dp_094_ヤヤマウ_設計省力化: 1件
+✅ #bimcimhub内製化: 1件
+✅ #dp_098_ト東鉄工業_積算省力化: 1件
+✅ #dev-照査ai: 2件
+✅ #dp_095_ドドーコン_図面照査ai: 1件
+✅ #mixpanel-hook: 1件
+✅ #team-開発プリセールス: 1件
+✅ #dp_100_フ復建調査設計_設計dx: 1件
+✅ #corp-セキュリティ事象-報告: 1件
+✅ #dev-civilink-pr-diff: 7件
+✅ #dp_108_モ望月鉄工所_ai開発: 1件
+✅ #バイブコーディング選手権: 1件
+✅ #dp_098_パパシフィックコンサルタンツ_線形省力化: 1件
+✅ #dp_111_ニ日本工営九州_河川設計省力化: 1件
+✅ #biz_セントラルコンサルタント: 1件
+✅ #biz_東海サンユーテクノス: 1件
+✅ #biz_四国建設コンサルタント: 1件
+✅ #dp_116_オリエンタルコンサルタンツ_地下構造物モデル自動化: 1件
+✅ #dp_114_pckk_道路排水検討省力化: 1件
+✅ #biz_三井共同建設コンサルタント: 1件
+✅ #koyama-hikitsugi: 1件
+✅ #dp_115_応用地質_土質データ活用: 2件
+✅ #biz_中央コンサルタンツ: 1件
+✅ #team-iconpj-sora-malme: 1件
+✅ #biz-建設技術研究所: 1件
+✅ #biz_復建調査設計: 1件
+✅ #cs-日本シビックコンサル: 1件
+✅ #dp_120_東京水道_照査ai: 1件
+✅ #dp_121_中央c_技術提案書生成ai: 1件
+✅ #team-ai-tools-status: 13件
+✅ #dp_127_創研コンサルタント_報告書等の生成ツール開発: 1件
+✅ #00経費: 1件
+✅ #cs-契約関連: 1件
+✅ #proj-jre-malme-ai設計審査: 1件
+✅ #cs-議事録承認: 1件
+✅ #biz_戸田建設: 1件
+✅ #dp_130_日本エンジニアリング_河川照査: 1件
+✅ #proj_typeless: 1件
+✅ #t_26fde技術部トライ: 1件
+✅ #biz_ニュージェック: 1件
+✅ #dp_140_ケンテック_割付自動化: 1件
+✅ #biz_清水建設: 1件
+✅ #offshore-newit: 1件
+✅ #biz_ウエスコ: 1件
+✅ #dev-civilink-bug-bash: 3件
+✅ #tech定例: 9件
+✅ #proj-structuraleengine-yec: 1件
+✅ #co-malme-oskdoro3: 1件
+✅ #shared_malme_am: 1件
+
+📊 同期完了: 132/135 チャンネル（直近3日分）
+✅ Slack同期完了
+
+📅 Calendar生データ同期中...
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/nodatoshio/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:237: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+An error occurred: module 'importlib.metadata' has no attribute 'packages_distributions'
+✅ Calendar同期完了: 27件（7日分）
+✅ Calendar同期完了
+
+📊 案件集約レポート生成中...
+📊 案件集約開始 (2026-04-20)
+   対象期間: 直近3日
+   方式: Claude Code CLI
+
+   📂 コンテキスト収集中...
+   📊 収集データ: 22,505文字
+   🤖 案件集約レポート生成中...
+💾 保存: /Users/nodatoshio/Documents/contextAI/context/cases/2026-04-20.md
+
+✅ 案件集約完了
+✅ 案件集約完了
+
+=== 完了: 13:57 ===

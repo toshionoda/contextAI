@@ -1,0 +1,506 @@
+{
+  "step1": {
+    "session_overview": {
+      "duration_min": 90,
+      "participants": [
+        "Kumiko Kiyomiya（UXリサーチャー/進行役、テストユーザー：管理者役）",
+        "Shinji Kawabata（UXリサーチャー/進行役）",
+        "Koushiro Tabei（テストユーザー：指摘者）",
+        "Shiho Sakai（テストユーザー：修正者）"
+      ],
+      "session_phases": [
+        {
+          "phase": "導入・テスト概要説明",
+          "time_range": "00:00:00〜00:06:03",
+          "description": "セッションの目的、進め方、タスク内容の説明。参加者の経験レベル確認。"
+        },
+        {
+          "phase": "田部井さんテスト（指摘タスク）",
+          "time_range": "00:06:04〜00:38:46",
+          "description": "テストユーザー田部井が図面の問題点を特定し、指摘を作成・送信するタスクを実施。"
+        },
+        {
+          "phase": "酒井さんテスト（指摘確認・修正版アップロードタスク）",
+          "time_range": "00:38:47〜00:53:50",
+          "description": "テストユーザー酒井が通知メールから指摘を確認し、修正版図面をアップロードするタスクを実施。"
+        },
+        {
+          "phase": "清宮さんテスト（差分確認・承認完了タスク）",
+          "time_range": "00:53:51〜01:17:30",
+          "description": "テストユーザー清宮（Kumiko Kiyomiya）が差分結果を確認し、指摘を承認完了するタスクを実施。"
+        },
+        {
+          "phase": "全体振り返り・改善提案",
+          "time_range": "01:17:31〜01:36:55",
+          "description": "各テストユーザーからのフィードバック、UXリサーチャーからの所見、具体的な改善提案の議論。"
+        }
+      ]
+    },
+    "workflows": [
+      {
+        "id": "WF-01",
+        "name": "指摘作成と送信",
+        "time_range": "00:06:04〜00:38:46",
+        "start_sec": 364,
+        "end_sec": 2326,
+        "operator": "Koushiro Tabei",
+        "abcd": "B",
+        "abcd_reason": "長方形の描画・編集操作、吹き出しの位置調整、Ctrl+C/V操作、@メンション機能、指摘送信など、多くの箇所で操作に迷いや困惑が見られ、独力での再現が危うい。また、意図しない画面リロードや指摘の複数回送信が必要なバグらしき挙動も発生している。",
+        "friction_points": [
+          {
+            "timestamp": "00:08:03",
+            "timestamp_sec": 483,
+            "description": "長方形の描画および拡大・移動操作に戸惑い。",
+            "severity": "high",
+            "evidence": "「これボイで拡大できない」「あ、これで形を変えられる。あれ場所が違う。」",
+            "needs_video_check": true,
+            "video_check_reason": "長方形の描画、拡大縮小、移動操作の具体的な挙動と試行回数を確認したい。"
+          },
+          {
+            "timestamp": "00:12:44",
+            "timestamp_sec": 764,
+            "description": "吹き出しの位置（矢印の向き）が変更できないことへの不満。",
+            "severity": "medium",
+            "evidence": "「ああ、この位置こっちに置いた時に青み変えらんない。」",
+            "needs_video_check": true,
+            "video_check_reason": "吹き出しの位置調整のマウス操作の試行回数と軌跡を確認したい。"
+          },
+          {
+            "timestamp": "00:14:00",
+            "timestamp_sec": 840,
+            "description": "スクロールでの拡大縮小操作が通常のCADと異なることに違和感。",
+            "severity": "medium",
+            "evidence": "「スクロールで拡大拡証できたら嬉しいみたい。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "00:18:20",
+            "timestamp_sec": 1100,
+            "description": "指摘のコピー&ペースト（Ctrl+C/V）ができないことへの戸惑い。",
+            "severity": "high",
+            "evidence": "「あれ、今できた。あ、違う。今は多分自分の下から消せないですね。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "00:20:24",
+            "timestamp_sec": 1224,
+            "description": "@メンションを入力しても反応しない/リストが表示されない。",
+            "severity": "high",
+            "evidence": "「え、メア出てこない。ダメす。え、なんかスペースが出てきた。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "00:24:35",
+            "timestamp_sec": 1475,
+            "description": "意図しない画面リロードが発生し、操作が中断された。",
+            "severity": "high",
+            "evidence": "「急に今何もせずにリロードされました。」",
+            "needs_video_check": true,
+            "video_check_reason": "リロード直前の操作と、その後のユーザーの反応・再試行の様子を確認したい。"
+          },
+          {
+            "timestamp": "00:29:42",
+            "timestamp_sec": 1782,
+            "description": "指摘のコピー&ペースト（Ctrl+C/V）がクリップボードの許可設定でブロックされていた。",
+            "severity": "high",
+            "evidence": "「今できないですよね。できないですね。」「クリップボード許可してもらいます。」",
+            "needs_video_check": true,
+            "video_check_reason": "クリップボード許可のポップアップが表示されていたか、ユーザーが気づいていたかを確認したい。"
+          },
+          {
+            "timestamp": "00:33:00",
+            "timestamp_sec": 1980,
+            "description": "ズームイン/アウトのマウスホイール操作での倍率変化が小さく、操作がしづらい。",
+            "severity": "medium",
+            "evidence": "「ズomインズomアウトの一発がすごいちっちゃいような気がするんですけど、こんなもんなんですか？」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "00:35:50",
+            "timestamp_sec": 2150,
+            "description": "指摘の送信が一度で完了せず、複数回送信が必要だった。",
+            "severity": "high",
+            "evidence": "「今味噌送りきれなかったっすよね。多分1発で全部行かなかったんすよ。発なんで嘘。バグだな、これ多分。」",
+            "needs_video_check": true,
+            "video_check_reason": "送信ボタンを押した回数と、指摘が残っている状態を動画で確認したい。"
+          }
+        ],
+        "positive_reactions": [
+          {
+            "timestamp": "00:17:12",
+            "quote": "「おお、ありがたいす。まあまあめっちゃありがたい。」",
+            "value_recognized": "ホイールズーム設定のON機能"
+          }
+        ],
+        "negative_reactions": [
+          {
+            "timestamp": "00:08:03",
+            "quote": "「え?あ、隠れた。です。あ、あばば。」",
+            "issue": "操作中の予期せぬ挙動"
+          },
+          {
+            "timestamp": "00:18:20",
+            "quote": "「あれ、今できた。あ、違う。今は多分自分の下から消せないですね。」",
+            "issue": "コピー＆ペースト操作の失敗"
+          },
+          {
+            "timestamp": "00:20:24",
+            "quote": "「え、メア出てこない。ダメす。」",
+            "issue": "@メンションの機能不全"
+          },
+          {
+            "timestamp": "00:24:35",
+            "quote": "「急に今何もせずにリロードされました。」",
+            "issue": "意図しない画面リロード"
+          },
+          {
+            "timestamp": "00:35:50",
+            "quote": "「今味噌送りきれなかったっすよね。多分1発で全部行かなかったんすよ。発なんで嘘。」",
+            "issue": "指摘送信の失敗"
+          }
+        ],
+        "improvement_proposals": [
+          "スクロールでの拡大縮小を可能にしてほしい。",
+          "指摘や図形をCtrl+C/Vでコピー&ペーストできるようにしてほしい。",
+          "長方形などの描画は、クリックで開始し、ドラッグでサイズを決め、クリックで確定する操作感にしてほしい。",
+          "吹き出しの矢印（出る口）の向きを変更できるようにしてほしい。",
+          "ズームイン/アウトの倍率を10%刻みなど、もう少し大きくしてほしい。",
+          "指摘を保存した際に右下に「送信」ボタンを表示し、ワンクリックで更新・送信できるようにしてほしい。",
+          "送信前に確認画面で、どの指摘が誰に送られるかを表示し、送信成功ウィンドウを表示してほしい。"
+        ]
+      },
+      {
+        "id": "WF-02",
+        "name": "指摘確認と修正版図面アップロード",
+        "time_range": "00:38:47〜00:53:50",
+        "start_sec": 2327,
+        "end_sec": 3230,
+        "operator": "Shiho Sakai",
+        "abcd": "B",
+        "abcd_reason": "メールからの遷移で必要な情報を見落としたり、差分表示の色の視認性が低いなど、操作に迷いや困惑が見られたため。",
+        "friction_points": [
+          {
+            "timestamp": "00:44:00",
+            "timestamp_sec": 2640,
+            "description": "差分比較が有効になっているかどうかが分かりづらい。",
+            "severity": "medium",
+            "evidence": "「今サ分比較がされている状態か分からないです。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "00:45:04",
+            "timestamp_sec": 2704,
+            "description": "差分表示の色（ピンク）が見づらい。",
+            "severity": "medium",
+            "evidence": "「あとはの色がピンクだからくい。ああ、確かに。デフォルトの色がピンクじゃなきゃいい。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "00:46:00",
+            "timestamp_sec": 2760,
+            "description": "コメントを送信する度に「送信」ボタンを押したくなる（現在の挙動と異なる）。",
+            "severity": "medium",
+            "evidence": "「毎回送信したくなりますね。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "00:50:30",
+            "timestamp_sec": 3030,
+            "description": "メールからの遷移で「ファイルを確認する」を反射的にクリックし、その下の「指摘を一覧で確認する」を見落とした。",
+            "severity": "high",
+            "evidence": "「ファイルを確認するに落ちてります」「思わなかったです？」「その下にある指摘を一覧で確認するしたらどうなると思います？」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          }
+        ],
+        "positive_reactions": [],
+        "negative_reactions": [
+          {
+            "timestamp": "00:45:04",
+            "quote": "「あとはの色がピンクだからくい。」",
+            "issue": "差分表示の色の視認性"
+          },
+          {
+            "timestamp": "00:46:00",
+            "quote": "「毎回送信したくなりますね。」",
+            "issue": "送信プロセスの分かりにくさ"
+          },
+          {
+            "timestamp": "00:49:08",
+            "quote": "「誰にも通知が行ってないですよ。」",
+            "issue": "@メンションがない場合の挙動への疑問"
+          }
+        ],
+        "improvement_proposals": [
+          "差分表示のデフォルト色を、より視認性の高いもの（ピンク以外）に変更してほしい。",
+          "メールの件名にプロジェクト名を含めるなど、どの通知が重要か分かりやすくしてほしい。"
+        ]
+      },
+      {
+        "id": "WF-03",
+        "name": "指摘の差分確認と承認完了",
+        "time_range": "00:53:51〜01:17:30",
+        "start_sec": 3231,
+        "end_sec": 4650,
+        "operator": "Kumiko Kiyomiya",
+        "abcd": "A",
+        "abcd_reason": "目的の指摘を特定するのに非常に苦労し、リサーチャーの助けが必要だったため。図面上の指摘とリストの紐付け、コメントの確認方法、バージョン管理など、多くの点で迷子になり、タスクを独力でスムーズに完了できなかった。",
+        "friction_points": [
+          {
+            "timestamp": "00:56:40",
+            "timestamp_sec": 3400,
+            "description": "酒井さんの指摘がどれか、また図面上のどこを指しているか特定できない。",
+            "severity": "high",
+            "evidence": "「さんから指摘もらっているのがどれかっていうのが知りたかったんですけど、どこ触ればそれが分かるかがちょっとわかんない。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "00:58:49",
+            "timestamp_sec": 3529,
+            "description": "図面上の指摘とリスト上の指摘が紐付いていないため、関連する指摘を特定できない。",
+            "severity": "high",
+            "evidence": "「このどの指摘が図面上のどこを指るかが分からないです。」",
+            "needs_video_check": true,
+            "video_check_reason": "マウスのカーソルとリストの選択の連動、ユーザーの視線移動を確認したい。"
+          },
+          {
+            "timestamp": "01:00:20",
+            "timestamp_sec": 3620,
+            "description": "他のコメントを見るために、現在開いている指摘を一度閉じなければならない。",
+            "severity": "high",
+            "evidence": "「で、他のコメン、酒井さんのコメントを見たい場合はこれを1回閉じなきゃいけないんですかね。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "01:04:00",
+            "timestamp_sec": 3840,
+            "description": "@メンションがないと、メールでどの指摘に対応すれば良いか分からない。",
+            "severity": "high",
+            "evidence": "「この中でいっぱいあるけど結局何に対応すればいいかっていうのがうん。このって判断するしかないよ。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "01:05:29",
+            "timestamp_sec": 3929,
+            "description": "差分表示で変更箇所が光るが、その光り方が非常に弱く、変更が分かりづらい。",
+            "severity": "high",
+            "evidence": "「色変えてくれると色変えてほしい。これですよっていうのが1目両略。うん。うん。あの、今若干それが光っはい。弱いした。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "01:06:50",
+            "timestamp_sec": 4010,
+            "description": "自分が作業した内容がどのバージョンに反映されているのか、バージョン管理の仕組みが不明。",
+            "severity": "high",
+            "evidence": "「今これ何したやつ？ 今、えっと、私が作業してたやつって反映されてるのかな？」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "01:12:00",
+            "timestamp_sec": 4320,
+            "description": "差分比較画面でコメントが見づらい/非表示にする方法が分からない。",
+            "severity": "medium",
+            "evidence": "「コメントすると今ちょっとマウスがでっかいからなんですけどコメントが見づらいんですね。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          },
+          {
+            "timestamp": "01:18:27",
+            "timestamp_sec": 4707,
+            "description": "指摘の個別画面に入ってしまうと、前の画面に戻る方法（戻る矢印）が分かりにくい。",
+            "severity": "medium",
+            "evidence": "「コ々コの指摘の中に入っちゃった時に戻るやり方私閉じて開き直したりしてたんですけど…戻るの矢印が上にあったのでそれでいいんだっていうことで気がついた。」",
+            "needs_video_check": false,
+            "video_check_reason": ""
+          }
+        ],
+        "positive_reactions": [
+          {
+            "timestamp": "01:33:27",
+            "quote": "「これがいい。うん。」",
+            "value_recognized": "指摘にコメントを表示する設定"
+          }
+        ],
+        "negative_reactions": [
+          {
+            "timestamp": "00:56:40",
+            "quote": "「どこ触ればそれが分かるかがちょっとわかんない。」",
+            "issue": "指摘特定の困難さ"
+          },
+          {
+            "timestamp": "00:58:49",
+            "quote": "「このどの指摘が図面上のどこを指るかが分からないです。」",
+            "issue": "図面上の指摘とリストの紐付けの分かりにくさ"
+          },
+          {
+            "timestamp": "01:06:50",
+            "quote": "「今これ何したやつ？ 今、えっと、私が作業してたやつって反映されてるのかな？」",
+            "issue": "バージョン管理の複雑さ"
+          }
+        ],
+        "improvement_proposals": [
+          "図面上の指摘とリストの指摘を紐付ける表現を明確にする（色分け、強調表示など）。",
+          "完了した指摘を非表示にしたり、薄く表示したりする機能が欲しい。",
+          "自分のTo-Do（メンションされた指摘）と、他の人のTo-Doを分離して表示できる機能が欲しい。",
+          "図形付き指摘と普通の指摘でアイコンの形を統一してほしい。",
+          "指摘メニューから「四角」や「図形」は不要で、指摘付き長方形がデフォルトで良い。",
+          "「長方形」は「テキスト」の隣など、カテゴリーが近い場所に配置してほしい。",
+          "全てのアイコンを選択した時にデフォルトで指摘が立ち上がるようにし、指摘なしの選択肢はプルダウンで選べるようにする。",
+          "指摘のバルーンの中に番号や記号を入れられ、一覧とも紐付くようにしてほしい。",
+          "指摘一覧は残った状態で個別のコメントを見れるようにする（Slackのようなイメージ）。"
+        ]
+      }
+    ],
+    "user_requests": [],
+    "video_check_segments": [
+      {
+        "start_sec": 483,
+        "end_sec": 500,
+        "reason": "長方形の描画、拡大縮小、移動操作の具体的な挙動と試行回数を確認",
+        "related_wf": "WF-01",
+        "priority": "high"
+      },
+      {
+        "start_sec": 1475,
+        "end_sec": 1490,
+        "reason": "意図しないリロード直前の操作と、その後のユーザーの反応・再試行の様子を確認",
+        "related_wf": "WF-01",
+        "priority": "high"
+      },
+      {
+        "start_sec": 1782,
+        "end_sec": 1820,
+        "reason": "クリップボード許可のポップアップが表示されていたか、ユーザーが気づいていたかを確認",
+        "related_wf": "WF-01",
+        "priority": "high"
+      },
+      {
+        "start_sec": 2150,
+        "end_sec": 2200,
+        "reason": "送信ボタンを押した回数と、指摘が残っている状態を動画で確認",
+        "related_wf": "WF-01",
+        "priority": "high"
+      },
+      {
+        "start_sec": 3529,
+        "end_sec": 3580,
+        "reason": "図面上の指摘とリストの選択の連動、ユーザーの視線移動を確認",
+        "related_wf": "WF-03",
+        "priority": "high"
+      },
+      {
+        "start_sec": 764,
+        "end_sec": 780,
+        "reason": "吹き出しの位置調整のマウス操作の試行回数と軌跡を確認",
+        "related_wf": "WF-01",
+        "priority": "medium"
+      }
+    ],
+    "overall_impression": {
+      "adoption_willingness": "low",
+      "key_value_recognized": [
+        "ホイールズーム設定のON",
+        "差分比較機能（機能自体は評価されるが、UIの改善は必要）",
+        "メンションによる通知",
+        "指摘にコメントを表示する設定"
+      ],
+      "key_concerns": [
+        "操作方法の複雑さ・分かりにくさ（特に指摘作成、図面との紐付け、バージョン管理、送信フロー）",
+        "UI表現の不統一、視認性の低さ（差分色、アイコン、光る表示の弱さ）",
+        "通知過多と必要な情報へのアクセス性の低さ",
+        "迷子になった際のリカバリー導線がない（ガードレール設計の不足）",
+        "デフォルト設定の適切さ（例：ホイールズーム、指摘作成モード）"
+      ]
+    }
+  },
+  "step2_verifications": [
+    {
+      "related_wf": "PDFアノテーション",
+      "original_severity": "high",
+      "verified_severity": "high",
+      "abcd_update": null,
+      "findings": "ユーザーは長方形を描画しようと、07:50から07:55にかけて3回、08:21から08:33にかけて13回以上クリック&ドラッグを試みたが、常に消失する線が描画されるのみで、長方形を完成させることができなかった。これは意図したタスクの完全なブロックであり、ユーザーの混乱（C）と時間浪費（D）を引き起こしている。",
+      "mouse_behavior": "07:47と08:19に「図形」アイコン、07:48と08:20に「矩形」サブアイコンを正確にクリック。その後、ドキュメント上で描画操作を試みる際のカーソル移動は、直線を描く動きとしては正確だが、長方形を形成する挙動ではない。",
+      "additional_friction": "描画された線はマウスを離すとすぐに消え、持続的な図形として残らない。これは長方形描画ツールとしての期待される動作と大きく異なり、機能上の問題またはUI/UX上の深刻な不整合である。",
+      "ui_observations": "ツールアイコンの視認性は良い。しかし、描画中の視覚的フィードバック（例えば長方形の枠が一時的に表示されるなど）が不十分であり、マウスリリース時に描画が消えるため、ユーザーは意図した動作をしているのか判断しにくい。"
+    },
+    {
+      "related_wf": "PDF閲覧・操作",
+      "original_severity": "medium",
+      "verified_severity": "medium",
+      "abcd_update": null,
+      "findings": "ユーザーは08:05頃にマウスホイールを使って拡大縮小を試みたが、機能しなかった。この操作のブロック（B）により、ユーザーは上部のズームボタン（+, -, 100%）を使用して拡大縮小を行う必要があり、時間浪費（D）が生じた。",
+      "mouse_behavior": "マウスホイール操作時はカーソルがドキュメント上にあった。ズームボタン操作時は、カーソルが正確に各ボタンに移動しクリックされた。",
+      "additional_friction": "マウスホイールによる拡大縮小は一般的な操作であり、これが機能しないことでユーザーは手間と、期待されるインタラクションとの不一致によるわずかな混乱を経験する。",
+      "ui_observations": "N/A（マウスホイール操作は特定のUI要素への直接的なクリックではないため、UI要素の視認性に関する観察は該当しない）"
+    },
+    {
+      "related_wf": "Annotation/Comment Positioning (吹き出しの位置調整)",
+      "original_severity": "medium",
+      "verified_severity": "medium",
+      "abcd_update": "A",
+      "findings": "ユーザーは吹き出し（付箋）を目的の位置に配置するため、12:50から13:07までの間に少なくとも9回ドラッグ&ドロップを試行した。しかし、吹き出しがマウスカーソルの動きに滑らかに追従せず、離散的なステップで移動する挙動が見られたため、正確な位置調整が困難であった。",
+      "mouse_behavior": "マウスカーソルは吹き出しのドラッグ可能な領域に留まっており、操作対象の認識に問題はなかった。しかし、ユーザーが吹き出しを微調整しようとすると、吹き出しが意図しない大きな間隔でジャンプしたり、特定の場所にスナップしたりするように見えた。このため、ユーザーは何度もドラッグをやり直すことで目的の位置に近づけようと試行しており、広範囲を探索する動きではなく、要素の正確な制御に苦慮している様子が伺えた。",
+      "additional_friction": null,
+      "ui_observations": "ドラッグ中の吹き出しの動きに関して、グリッド線やスナップポイントのハイライトといった視覚的なガイドは提供されていなかった。これにより、ユーザーは吹き出しの最終的な位置を予測しづらく、直感的な操作が阻害されていた。UI要素（吹き出し、ドラッグカーソル）自体の視認性には問題なかった。"
+    },
+    {
+      "related_wf": "Annotation/Point creation workflow",
+      "original_severity": "high",
+      "verified_severity": "high",
+      "abcd_update": null,
+      "findings": "At 24:14, clicking the '新規項目を作成' (Create new item) button unexpectedly triggered a full page reload of the PDF document. The user visibly reacted with surprise and confusion, asking aloud, 'あれ？こんなことあったっけ？' (Huh? Was it like this?). The loading screen persisted for approximately 14 seconds (from 24:15 to 24:29) before the PDF reappeared. Another participant (Shinji Kawabata) verbally confirmed this as '意図しない挙動' (unintended behavior).",
+      "mouse_behavior": "The mouse cursor moved directly and accurately to the '新規項目を作成' button for the initial click. During the 14-second loading period, the cursor remained largely static. After the reload, the user quickly re-oriented, moving the cursor to examine the drawing, then proceeding to interact with the right-hand sidebar for annotation management.",
+      "additional_friction": "This unexpected full page reload caused a significant disruption, introducing a delay and resetting the user's immediate context within the document. The button's label suggests creating an item or annotation directly, not initiating a full page reload, leading to cognitive friction.",
+      "ui_observations": "The '新規項目を作成' button is clearly visible, appropriately sized, and has a distinct label. The issue is functional; its interaction triggers a system behavior (full page reload) that is inconsistent with user expectations for an 'item creation' action within a document viewer."
+    },
+    {
+      "related_wf": null,
+      "original_severity": "high",
+      "verified_severity": "high",
+      "abcd_update": null,
+      "findings": "動画の29:12〜30:50の範囲で、クリップボード許可のポップアップは一度も表示されませんでした。したがって、ユーザーがそれに気づかなかったという状況は発生していません。ユーザーは選択したアノテーション（四角形と立ち上げ線）をCtrl+C+Vでコピー＆ペーストしようと複数回試みましたが（例: 29:44, 30:00, 30:20）、いずれも複製は作成されませんでした。インストラクターの「ならないやつね」という発言は、この機能が特定の状況下では動作しないこと、またはツール側の制限であることを示唆しています。実際の摩擦はクリップボード許可のポップアップではなく、コピー＆ペースト機能自体の不動作にありました。",
+      "mouse_behavior": "ユーザーはアノテーション要素を正確に選択し、キーボード操作でコピー＆ペーストを試みました。30:19では、指示通り「指定」アイコンをクリックした上で再度Ctrl+C+Vを試行しています。マウスカーソルが特定の場所で長時間停止したり、広範囲を探し回るような行動は見られませんでした。",
+      "additional_friction": "ユーザーは基本的なコピー＆ペースト機能が期待通りに動作しないことに混乱し、複数回試行を繰り返しました。これは生産性を著しく阻害する摩擦であり、ツールの挙動に対するユーザーの理解を妨げました。",
+      "ui_observations": "クリップボード許可のポップアップは表示されませんでした。コピー操作が成功したかどうかの視覚的なフィードバック（例: 「コピーしました」メッセージ）や、ペースト失敗時のエラーメッセージも表示されませんでした。選択した要素はCtrl+C+V操作時に一瞬表示が消えたり、点滅するような挙動を示しましたが、複製は生成されませんでした。UI要素として、コピー＆ペーストのボタンなどは存在せず、キーボードショートカットのみでの試行でした。"
+    },
+    {
+      "related_wf": "Comments Management/Sending",
+      "original_severity": "high",
+      "verified_severity": "high",
+      "abcd_update": null,
+      "findings": "ユーザーは未送信の指摘が適切に処理されたか確信が持てず、繰り返し「未送信」フィルターを操作（オン/オフを切り替える）して状態を確認する必要があった。Shinji Kawabata氏は「未送信、送りきれなかったっすよね。多分、一発で全部いかなかったと。」と発言し、Koushiro Tabei氏も「この2つだけ残って、もう1回送りました。」と状況を説明。一連の動作が完了したかどうかのフィードバックが不足している。",
+      "mouse_behavior": "Shinji Kawabata氏は36:10, 36:13, 36:19に、Koushiro Tabei氏は36:50, 36:51, 36:52, 36:53, 37:00に、サイドバー右上の「未送信」フィルターにカーソルを移動し、繰り返しクリックしてリストの状態を確認していた。これは、システムが期待通りの状態になっていないことへの疑念と、その確認作業に時間を要していることを示している。",
+      "additional_friction": "Shinji Kawabata氏が「バグだな、これ多分。」と明言するほど、この挙動はユーザーの理解と期待に反していた。完了したはずの作業（コメントの送信）が、システム上では完了していないかのように見えることが、ユーザーの信頼と効率性を著しく損なっている。",
+      "ui_observations": "「未送信」フィルターのボタン自体は視認性が高く、クリックも正確に行われている。しかし、そのフィルター機能が、コメントの「送信完了」ステータスを明確に示さない、または状態の更新が遅延するため、ユーザーはフィルターを何度も操作してリストの項目が消えたことを確認しようとしていた。明確な「送信」や「状態更新」ボタンが見当たらず、フィルターがその役割の一部を担っているかのような誤解を生んでいる可能性がある。"
+    },
+    {
+      "related_wf": "WF-XX",
+      "original_severity": "high",
+      "verified_severity": "high",
+      "abcd_update": null,
+      "findings": "ユーザーはリストの項目（例: 酒井さんの指摘）をクリックしても、図面上の対応する指摘がハイライトされたり、表示が切り替わったりしないため、リストと図面上の指摘の連動が不明確であると認識している。複数ある指摘の中から、リストで選択されたものがどれなのか視覚的に特定できず、何度もマウスで異なる指摘を指し示しながら確認を試みている。最終的に「どの指摘が図面上のどこを指しているかが分からないです」と明確に問題点を指摘している。",
+      "mouse_behavior": "リストの項目をクリックした後、図面上の複数の指摘（赤い丸、オレンジ色の四角）をマウスカーソルで指し示し、該当するものを探し回っている（例: 58:36-58:43, 59:14-59:16）。リストと図面の間で視線移動が頻繁に見られる。",
+      "additional_friction": "特になし。メインの摩擦点に集約される。",
+      "ui_observations": "リストの項目が選択されると青い背景でハイライトされるが、図面上の対応する指摘には視覚的な連動（ハイライト、ズーム、スクロールなど）がない。複数の指摘がある場合、どれがリストで選択されたものと一致するのか、ユーザーは直感的に判断できない。"
+    }
+  ],
+  "metadata": {
+    "product_name": "CiviLink",
+    "customer": "社内テスト（田部井・酒井・清宮）",
+    "model": "gemini-2.5-flash",
+    "timestamp": "2026-03-17 22:42"
+  }
+}

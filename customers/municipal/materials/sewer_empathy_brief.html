@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>下水道工事 設計・積算業務の共通課題 — 政令市・中核市向け業務診断ブリーフ</title>
+<style>
+  :root {
+    --bg: #f8f7f4;
+    --bg-card: #ffffff;
+    --ink: #1a1a1a;
+    --ink-soft: #4b4b4b;
+    --muted: #6b7280;
+    --line: #e5e3dd;
+    --accent: #1a3a5c;        /* 落ち着いた紺 — 自治体向け */
+    --accent-soft: #e8eef5;
+    --warning: #b54708;
+    --warning-soft: #fef3e0;
+    --highlight: #fef9c3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+                 "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "palt";
+  }
+
+  .container { max-width: 880px; margin: 0 auto; padding: 0 32px; }
+
+  /* ─────── ヘッダー ─────── */
+  header.top {
+    padding: 28px 0 20px;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+  }
+  header.top .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .brand {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  /* ─────── ヒーロー ─────── */
+  .hero {
+    padding: 96px 0 80px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 6px 14px;
+    border-radius: 99px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+  }
+  .hero h1 .accent {
+    background: linear-gradient(transparent 65%, var(--highlight) 65%);
+  }
+  .hero .lead {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 720px;
+    line-height: 1.85;
+  }
+  .hero .signature {
+    margin-top: 40px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* ─────── セクション共通 ─────── */
+  section {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-num {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  h2.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    letter-spacing: -0.005em;
+  }
+  .section-sub {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 40px;
+    max-width: 700px;
+  }
+
+  /* ─────── 福岡市の現場シーン ─────── */
+  .scene {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 36px 40px;
+    position: relative;
+  }
+  .scene::before {
+    content: "現場";
+    position: absolute;
+    top: -10px;
+    left: 28px;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    padding: 4px 12px;
+    font-weight: 600;
+  }
+  .scene .city-tag {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+  .scene h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.55;
+  }
+  .scene p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .scene p:last-child { margin-bottom: 0; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px dashed var(--line);
+  }
+  .stat .num {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .stat .num small {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-left: 2px;
+  }
+  .stat .label {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* ─────── あるあるリスト（共感ポイント） ─────── */
+  .check-list {
+    display: grid;
+    gap: 14px;
+  }
+  .check-item {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 24px 28px 24px 64px;
+    position: relative;
+    transition: border-color 0.15s ease;
+  }
+  .check-item::before {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 28px;
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--accent);
+    border-radius: 4px;
+    background: white;
+  }
+  .check-item::after {
+    content: "✓";
+    position: absolute;
+    left: 27px;
+    top: 24px;
+    font-size: 18px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .check-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.55;
+  }
+  .check-item p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .check-item .quote {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+    margin-top: 10px;
+    padding-left: 12px;
+    border-left: 2px solid var(--line);
+  }
+
+  /* ─────── 構造的理由 ─────── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 8px;
+  }
+  .why-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px;
+  }
+  .why-card .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--warning);
+    background: var(--warning-soft);
+    padding: 3px 10px;
+    border-radius: 99px;
+    margin-bottom: 14px;
+  }
+  .why-card h4 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.55;
+  }
+  .why-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+
+  /* ─────── マルメの取り組み（軽く） ─────── */
+  .approach {
+    background: var(--accent-soft);
+    border-radius: 4px;
+    padding: 36px 40px;
+  }
+  .approach h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--accent);
+  }
+  .approach p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  .approach .principle {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(26, 58, 92, 0.15);
+  }
+  .approach .principle-row {
+    display: flex;
+    gap: 16px;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  .approach .principle-row .label {
+    flex: 0 0 100px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .approach .principle-row .body {
+    color: var(--ink-soft);
+    flex: 1;
+  }
+
+  /* ─────── 対話のお願い（CTA） ─────── */
+  .cta {
+    background: var(--ink);
+    color: white;
+    padding: 64px 0;
+    text-align: left;
+  }
+  .cta h2 {
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  .cta p {
+    color: rgba(255,255,255,0.78);
+    font-size: 15px;
+    line-height: 1.85;
+    max-width: 680px;
+    margin-bottom: 12px;
+  }
+  .cta .topics {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .cta .topics-title {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  .cta .topics ul { list-style: none; }
+  .cta .topics li {
+    font-size: 14px;
+    color: rgba(255,255,255,0.88);
+    padding: 8px 0 8px 22px;
+    position: relative;
+  }
+  .cta .topics li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: rgba(255,255,255,0.4);
+  }
+  .cta .contact {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.85;
+  }
+  .cta .contact strong {
+    color: white;
+    font-weight: 600;
+  }
+
+  /* ─────── フッター ─────── */
+  footer {
+    padding: 32px 0 48px;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.7;
+  }
+  footer .container { max-width: 700px; }
+
+  /* ─────── レスポンシブ ─────── */
+  @media (max-width: 720px) {
+    .hero { padding: 56px 0 48px; }
+    .hero h1 { font-size: 28px; line-height: 1.5; }
+    .hero .lead { font-size: 15px; }
+    section { padding: 48px 0; }
+    h2.section-title { font-size: 22px; }
+    .scene { padding: 28px 22px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; }
+    .check-item { padding: 22px 22px 22px 56px; }
+    .check-item::before { left: 18px; }
+    .check-item::after { left: 21px; }
+    .approach { padding: 28px 22px; }
+    .approach .principle-row { flex-direction: column; gap: 4px; }
+    .approach .principle-row .label { flex: none; }
+    .cta { padding: 48px 0; }
+  }
+
+  @media print {
+    body { background: white; }
+    section, .hero { page-break-inside: avoid; border-bottom: 1px solid #ccc; }
+    .cta { background: white; color: var(--ink); border-top: 2px solid var(--ink); }
+    .cta h2, .cta p, .cta .topics li { color: var(--ink); }
+    .cta .topics-title, .cta .contact { color: var(--muted); }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="container">
+    <div class="brand">株式会社マルメ ／ CiviLink</div>
+    <div class="meta">業務診断ブリーフ ／ 2026.05</div>
+  </div>
+</header>
+
+<!-- ─────── HERO ─────── -->
+<div class="hero">
+  <div class="container">
+    <span class="eyebrow">政令市・中核市 上下水道局／道路下水道局 ご担当者さま</span>
+    <h1>
+      下水道工事の図面から数量を拾う作業、<br>
+      <span class="accent">いまも若手職員が手で進めていませんか。</span>
+    </h1>
+    <p class="lead">
+      管更生工事の発注は年々増えるのに、設計コンサルからの図面と数量計算書の整合を取るのは
+      結局のところ職員の目視作業。同じパターンの工事を繰り返しているのに、若手の時間が単純作業に吸われていく。
+      <br><br>
+      この資料は、福岡市の現場で実際にうかがった課題を起点に、
+      <strong>同じ構造の悩みを抱えているであろう自治体に、まずは「お話を聞かせていただきたい」</strong>
+      という対話のお誘いです。製品の売り込みではなく、業務診断としてお読みいただければ幸いです。
+    </p>
+    <p class="signature">
+      株式会社マルメ ／ CiviLink チーム
+    </p>
+  </div>
+</div>
+
+<!-- ─────── 01. 福岡市の現場 ─────── -->
+<section>
+  <div class="container">
+    <div class="section-num">01 ／ 現場で実際にうかがったこと</div>
+    <h2 class="section-title">福岡市 道路下水道局・設計部門で起きていたこと</h2>
+    <p class="section-sub">
+      2026年5月、福岡市の下水道部門の方からうかがった、ある一日の業務風景です。
+      御市の現場と重なる部分があるか、ご覧ください。
+    </p>
+
+    <div class="scene">
+      <div class="city-tag">福岡市 ／ 道路下水道局 設計部門（東部・中部・西部）</div>
+      <h3>「ほぼ同じパターンの工事なのに、毎回同じ手作業で読み取り直している」</h3>
+      <p>
+        市内の下水道管路は老朽化が進み、管更生工事を <strong>年間数百億円規模で発注</strong>している。
+        設計部局には約60〜70名の職員が東部・中部・西部に分かれて在籍。
+      </p>
+      <p>
+        業務フローはほぼ定型で、設計コンサルタントが図面と数量計算書を作成 →
+        市職員が図面と数量の整合性を目視で確認 →
+        <strong>積算システム（日立 CITEL／サイディーン）へ手入力</strong>して設計書を作成、という流れ。
+      </p>
+      <p>
+        図面は標準化されており、管径は250／300／450／600とバリエーションは限られる。
+        設計図は10〜20枚で内容は基本的に同一パターン。
+        にもかかわらず、若手職員は <strong>「同じパターンの単純作業」に時間を取られ続けている</strong>。
+      </p>
+      <p>
+        加えて、予算額に応じてA〜Dランクに工事を分類するため、
+        金額調整のために数量計算書や図面を <strong>修正し直す手戻り</strong>も日常的に発生する。
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="num">数百<small>億円/年</small></div>
+          <div class="label">管更生工事の発注規模</div>
+        </div>
+        <div class="stat">
+          <div class="num">60-70<small>名</small></div>
+          <div class="label">設計部局の職員数（3部署計）</div>
+        </div>
+        <div class="stat">
+          <div class="num">10-20<small>枚</small></div>
+          <div class="label">1案件あたりの設計図</div>
+        </div>
+        <div class="stat">
+          <div class="num">A〜D<small>ランク</small></div>
+          <div class="label">予算に応じた修正・手戻り</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── 02. 共感ポイント ─────── -->
+<section>
+  <div class="container">
+    <div class="section-num">02 ／ もしかして、御市でも</div>
+    <h2 class="section-title">こんな状況に心当たりはありませんか</h2>
+    <p class="section-sub">
+      福岡市以外の政令市・中核市の方とお話しする中で、繰り返し出てくる「あるある」を整理しました。
+      ひとつでも当てはまるものがあれば、ぜひ後半の「対話のお願い」までお進みください。
+    </p>
+
+    <div class="check-list">
+      <div class="check-item">
+        <h4>図面と数量計算書の整合性チェックを、いまも職員が目視でやっている</h4>
+        <p>
+          数量総括表 → 数量計算書 → 図面、を行ったり来たりしながら、
+          延長・管径・勾配の数字をひとつずつ突き合わせる。差し戻しが多いほど、若手の残業が増えていく。
+        </p>
+        <p class="quote">「鉛筆と電卓を、結局いまも使っている」</p>
+      </div>
+
+      <div class="check-item">
+        <h4>積算システムへの数値入力が、結局は手入力で残っている</h4>
+        <p>
+          日立 CITEL／サイディーン、あるいは積算王・APRO・ARES・頂・ランド2000など、
+          積算システム自体は導入済みでも、<strong>図面から数量を拾って入力する部分は自動化されていない</strong>。
+        </p>
+        <p class="quote">「システムは入っているけど、入り口がアナログ」</p>
+      </div>
+
+      <div class="check-item">
+        <h4>同じパターンの工事の繰り返しなのに、毎回ゼロから図面を読み直している</h4>
+        <p>
+          管更生・推進・開削・布設替——典型パターンの工事が大半を占めるのに、
+          過去案件のナレッジが現場に残らず、図面の読み取りスキルは個人依存。
+          若手育成にも時間を取られる。
+        </p>
+        <p class="quote">「ベテラン1人で支えているけど、退職したらどうなるか不安」</p>
+      </div>
+
+      <div class="check-item">
+        <h4>予算ランクの調整で、数量・図面を後から修正する作業が常態化している</h4>
+        <p>
+          発注金額をA〜Dランクに収めるために、数量計算書や図面を切り直す。
+          本来は設計の意思決定であるはずが、<strong>調整作業として下流の現場に降りてくる</strong>。
+        </p>
+        <p class="quote">「ランク調整のための再計算に、半日溶ける」</p>
+      </div>
+
+      <div class="check-item">
+        <h4>設計コンサルからの納品物の品質が、案件・担当者によってばらつく</h4>
+        <p>
+          書式・記載粒度・数量の出し方に差があり、受け取り側の市職員が
+          <strong>毎回フォーマットを読み解くところから始めなければならない</strong>。
+          検収の負荷が消えない。
+        </p>
+        <p class="quote">「コンサルが変わると、また書式が変わる」</p>
+      </div>
+
+      <div class="check-item">
+        <h4>i-Construction 2.0 や数量算出自動化の方針はあるが、現場で動けていない</h4>
+        <p>
+          国交省は2026年マイルストーンで数量算出自動化を推進している。
+          方針は分かるが、<strong>下水道領域に特化したツールが市場に少なく、現場の動きに繋がっていない</strong>。
+        </p>
+        <p class="quote">「方針は知っているけど、何を採用すればいいかが分からない」</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── 03. なぜ全国で同じ構造 ─────── -->
+<section>
+  <div class="container">
+    <div class="section-num">03 ／ なぜ、全国の自治体で同じ構造の悩みが起きているのか</div>
+    <h2 class="section-title">「自治体ごとの個別問題」に見えて、実は共通構造の問題です</h2>
+    <p class="section-sub">
+      ヒアリングを重ねるなかで見えてきた、構造的な理由を4つにまとめました。
+    </p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="tag">構造1</span>
+        <h4>図面と数量計算書をつなぐ「最初の一マイル」が、市場で空白地帯</h4>
+        <p>
+          積算ソフト（積算王・APRO・ARES・頂など）は B 段階（数量入力 → 設計書）が主戦場で、
+          <strong>A 段階（図面 → 数量計算書ドラフト）に踏み込んでいる製品はごく少数</strong>。
+          結果として、もっとも人手依存の工程が温存され続けています。
+        </p>
+      </div>
+
+      <div class="why-card">
+        <span class="tag">構造2</span>
+        <h4>書式は実は標準化されているのに、自治体ごとの単価コード体系で「個別問題」化している</h4>
+        <p>
+          日本下水道事業団（JS）の「下水道施設CAD製図基準」は全国97pの標準仕様を定め、
+          レイヤ命名規則・図面種別CODE BOOKまで統一されています。
+          にもかかわらず、自治体ごとの単価コード体系で <strong>「うちは特殊」と見なされ、汎用ツールが入りにくい</strong>。
+        </p>
+      </div>
+
+      <div class="why-card">
+        <span class="tag">構造3</span>
+        <h4>管路更新の需要は、これから30年で爆発する</h4>
+        <p>
+          全管路を更新するのに150年かかる低更新率。改築需要は今後30年で増え続ける。
+          一方で、設計部局の人員は増えない。
+          <strong>「同じ人数で2倍3倍の案件をさばく」が、ほぼ全自治体で構造的に確定している未来</strong>です。
+        </p>
+      </div>
+
+      <div class="why-card">
+        <span class="tag">構造4</span>
+        <h4>政令市・中核市の調達文化が、PoCを通しにくくしている</h4>
+        <p>
+          年度予算サイクル・既存ベンダーとの関係・調達ルール——
+          現場が「これは良い」と感じても、 <strong>採用までに2〜3年かかる構造</strong>がある。
+          だからこそ、いま声を上げる自治体が早く恩恵を受けることになります。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── 04. マルメの取り組み（軽く） ─────── -->
+<section>
+  <div class="container">
+    <div class="section-num">04 ／ いま、マルメが取り組んでいること</div>
+    <h2 class="section-title">福岡市と一緒に、下水道領域の「A 段階」の自動化を検討しています</h2>
+    <p class="section-sub">
+      売り込みではなく、現時点でどこまで形になっているかの率直な共有です。
+    </p>
+
+    <div class="approach">
+      <h3>取り組みの骨子</h3>
+      <p>
+        図面PDFを投入すると、数量計算書のドラフトと数量総括表が自動生成される——
+        <strong>そんな「自治体ごとの書式に依存しない」汎用抽出エンジン</strong>を、
+        福岡市の管更生工事を題材に検証中です。
+      </p>
+      <p>
+        社内にはすでに、図面PDFの構造化・レイアウト検出・章立て解析・表抽出・
+        図面と計算書のクロス整合性確認（F1=74.9%、再現率95.5%の実証あり）といった
+        要素技術が <strong>6本のリポジトリに分散して蓄積</strong>されており、これらを組み合わせて MVP を作っています。
+      </p>
+
+      <div class="principle">
+        <div class="principle-row">
+          <div class="label">原則1</div>
+          <div class="body">
+            <strong>自治体ごとのスキーマ・テンプレを持たない</strong>。
+            Vision LLM で図面を直接読み、JS共通工種体系で正規化する。
+          </div>
+        </div>
+        <div class="principle-row">
+          <div class="label">原則2</div>
+          <div class="body">
+            自治体ごとの差は <strong>出力フォーマッタでだけ吸収</strong>する。
+            書式差ごとに開発するのではなく、ひとつの抽出ロジックで全国に展開できる構造を狙う。
+          </div>
+        </div>
+        <div class="principle-row">
+          <div class="label">原則3</div>
+          <div class="body">
+            <strong>完全自動化は目指さない</strong>。AI が出すのはあくまでドラフト、
+            根拠書類化は人が行う、という業界の共通認識を踏まえた設計にする。
+          </div>
+        </div>
+        <div class="principle-row">
+          <div class="label">原則4</div>
+          <div class="body">
+            既存の積算システム（日立 CITEL／積算王／APRO 等）の <strong>置き換えではなく、入り口を補完</strong>するレイヤーとして設計する。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────── 05. 対話のお願い（CTA） ─────── -->
+<div class="cta">
+  <div class="container">
+    <div class="section-num" style="color: rgba(255,255,255,0.6);">05 ／ 対話のお願い</div>
+    <h2>御市の現場で、いま何が起きているかを<br>30分だけ聞かせていただけませんか。</h2>
+    <p>
+      この資料の目的は、製品を売り込むことではなく、 <strong>「同じ構造の悩みが、どこまで全国共通か」を確かめること</strong>です。
+      いただいたお話は、福岡市と進めている検討にも反映させ、御市にとってもより使いやすい形に近づけていきたいと考えています。
+    </p>
+    <p>
+      30分のオンラインで構いません。資料の準備も不要です。
+      御市の業務のなかで「ここがしんどい」と感じている部分を、率直にお聞かせいただければ十分です。
+    </p>
+
+    <div class="topics">
+      <div class="topics-title">対話で伺いたいこと（例）</div>
+      <ul>
+        <li>年間の下水道工事 発注件数と、1件あたりの積算工数</li>
+        <li>現在お使いの積算システム（日立／積算王／APRO／ARES／頂／ランド2000など）</li>
+        <li>図面 → 数量計算書 の作成は、人手かシステム支援か</li>
+        <li>整合性チェック差し戻しで発生する手戻りの実感値</li>
+        <li>i-Construction 2.0 への対応方針と、現場感とのギャップ</li>
+        <li>「こうなったら助かる」を、3つだけ</li>
+      </ul>
+    </div>
+
+    <div class="contact">
+      <strong>株式会社マルメ ／ CiviLink チーム</strong><br>
+      担当：野田 敏雄（カスタマーサクセス兼Civilエンジニア）<br>
+      Email：toshio.noda@malme.co.jp<br>
+      <br>
+      ご紹介経由でも、直接ご連絡いただく形でも、どちらでも歓迎です。
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    本資料は、福岡市 道路下水道局 関連部署および mirai@（未来アット）DX担当者からのヒアリング内容を起点に、
+    政令市・中核市の上下水道／下水道部門の方々への対話依頼として作成したものです。<br>
+    記載内容は2026年5月時点の検討状況であり、製品仕様・スケジュール等は今後変動する可能性があります。
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  font-family: 'Meiryo', Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header {
+  background: #FFFFFF; padding: 12pt 30pt;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 3px solid #C2706B;
+}
+.header h2 { color: #3C3838; font-size: 22pt; margin: 0; font-weight: bold; }
+.logo { height: 28pt; }
+.content { margin: 14pt 25pt; flex: 1; display: flex; flex-direction: column; }
+h3 { color: #333333; font-size: 14pt; margin: 0 0 8pt 0; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+th { background: #3C3838; color: #FFFFFF; padding: 6pt 7pt; text-align: left; font-weight: bold; vertical-align: top; }
+td { padding: 6pt 7pt; border-bottom: 1px solid #E0D8D8; color: #333333; vertical-align: top; line-height: 1.4; }
+tr:nth-child(even) td { background: #F5F0F0; }
+td.phase { font-weight: bold; color: #C2706B; font-size: 10pt; }
+td.civilink { background: #EACED0 !important; font-weight: bold; }
+.note { color: #555555; font-size: 9.5pt; margin: 8pt 0 0 0; line-height: 1.5; }
+.note b { color: #C2706B; }
+</style>
+</head>
+<body>
+<div class="header"><h2>調査・設計・施工 DXマトリクス</h2><img class="logo" src="assets/malme-logo.png"></div>
+<div class="content">
+  <h3>各フェーズで「既存ツール」と「CiviLinkの役割」を一覧化</h3>
+  <table>
+    <tr>
+      <th style="width: 11%;">フェーズ</th>
+      <th style="width: 22%;">DX対象業務</th>
+      <th style="width: 25%;">既存ツール</th>
+      <th style="width: 42%;">CiviLinkの役割</th>
+    </tr>
+    <tr>
+      <td class="phase">① 調査<br>（点検）</td>
+      <td>近接目視点検、損傷記録、点検調書作成</td>
+      <td>ひびみっけ（AI損傷検出）<br>ドローン外注<br>蔵衛門（写真管理）</td>
+      <td class="civilink">点検写真・損傷図を橋梁図面に紐付け一元管理／現場タブレットで図面+過去履歴を即時閲覧／損傷箇所を図面上にマーキング・コメント／自治体担当者と直接共有</td>
+    </tr>
+    <tr>
+      <td class="phase">② 設計<br>（補修設計）</td>
+      <td>補修設計図面の照査、数量計算書との整合、設計変更管理</td>
+      <td>CADツール<br>クラウドストレージ</td>
+      <td class="civilink">デジタル照査・指摘管理（赤黄チェックの代替）／図面バージョン管理・差分可視化／設計変更の承認ワークフロー／図面⇔数量整合チェック（将来AI）</td>
+    </tr>
+    <tr>
+      <td class="phase">③ 施工<br>（補修工事）</td>
+      <td>施工計画書、工事打合簿、段階確認、材料承認、出来形管理、工事写真、電子納品</td>
+      <td>LINE WORKS（チャット）<br>蔵衛門（工事写真）<br>Safie（遠隔臨場）<br>クラウドサイン（契約）</td>
+      <td class="civilink">工事打合簿のデジタル化（図面上のコメント＋承認）／段階確認の写真・図面紐付け／材料承認ワークフロー／出来形管理値の規格値チェック（将来AI）／電子納品フォルダの自動構成</td>
+    </tr>
+  </table>
+  <p class="note"><b>横串の価値</b>： 調査の損傷データ → 設計の入力 → 施工の作業基準、というデータ受け渡しが現状はExcel・メール・紙で分断。CiviLinkが図面ベースで集約することで「データが流れる」維持管理サイクルを実現</p>
+</div>
+</body>
+</html>

@@ -14,6 +14,12 @@ context/*.apps.googleusercontent.com.json
 .DS_Store
 Thumbs.db
 
+# 大容量メディア（GitHub 100MB制限超過のため除外）
+*.mp4
+*.mov
+*.avi
+*.mkv
+
 # Python
 __pycache__/
 *.py[cod]

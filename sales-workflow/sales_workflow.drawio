@@ -1,0 +1,308 @@
+<mxfile host="app.diagrams.net" modified="2026-04-13" agent="Claude" type="device">
+  <diagram id="sales-workflow" name="フロント営業→FDEハンドオフ">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== スイムレーン（プール） ===== -->
+        <mxCell id="pool" value="CiviLink 営業ワークフロー：フロント営業 → FDE ハンドオフ" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;fontSize=14;fillColor=#1a1a2e;fontColor=#ffffff;strokeColor=#16213e;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="1500" height="1080" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1: フロント営業 -->
+        <mxCell id="lane1_row" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;top=0;left=0;right=0;bottom=1;strokeColor=#16213e;" vertex="1" parent="pool">
+          <mxGeometry y="30" width="1500" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="lane1_header" value="フロント営業" style="shape=partialRectangle;connectable=0;fillColor=#0f3460;top=0;left=0;bottom=0;right=1;fontStyle=1;overflow=hidden;whiteSpace=wrap;fontSize=13;fontColor=#ffffff;strokeColor=#16213e;align=center;verticalAlign=middle;" vertex="1" parent="lane1_row">
+          <mxGeometry width="140" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="lane1_body" value="" style="shape=partialRectangle;connectable=0;fillColor=#e8eaf6;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=#16213e;" vertex="1" parent="lane1_row">
+          <mxGeometry x="140" width="1360" height="250" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2: Biz／戦略 -->
+        <mxCell id="lane2_row" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;top=0;left=0;right=0;bottom=1;strokeColor=#16213e;" vertex="1" parent="pool">
+          <mxGeometry y="280" width="1500" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="lane2_header" value="Biz／戦略" style="shape=partialRectangle;connectable=0;fillColor=#533483;top=0;left=0;bottom=0;right=1;fontStyle=1;overflow=hidden;whiteSpace=wrap;fontSize=13;fontColor=#ffffff;strokeColor=#16213e;align=center;verticalAlign=middle;" vertex="1" parent="lane2_row">
+          <mxGeometry width="140" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="lane2_body" value="" style="shape=partialRectangle;connectable=0;fillColor=#f3e5f5;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=#16213e;" vertex="1" parent="lane2_row">
+          <mxGeometry x="140" width="1360" height="250" as="geometry" />
+        </mxCell>
+
+        <!-- Row 3: FDEチーム -->
+        <mxCell id="lane3_row" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;top=0;left=0;right=0;bottom=1;strokeColor=#16213e;" vertex="1" parent="pool">
+          <mxGeometry y="530" width="1500" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lane3_header" value="FDEチーム" style="shape=partialRectangle;connectable=0;fillColor=#e94560;top=0;left=0;bottom=0;right=1;fontStyle=1;overflow=hidden;whiteSpace=wrap;fontSize=13;fontColor=#ffffff;strokeColor=#16213e;align=center;verticalAlign=middle;" vertex="1" parent="lane3_row">
+          <mxGeometry width="140" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lane3_body" value="" style="shape=partialRectangle;connectable=0;fillColor=#fce4ec;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=#16213e;" vertex="1" parent="lane3_row">
+          <mxGeometry x="140" width="1360" height="260" as="geometry" />
+        </mxCell>
+
+        <!-- Row 4: CS -->
+        <mxCell id="lane4_row" value="" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;top=0;left=0;right=0;bottom=0;strokeColor=#16213e;" vertex="1" parent="pool">
+          <mxGeometry y="790" width="1500" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lane4_header" value="CS" style="shape=partialRectangle;connectable=0;fillColor=#0a9396;top=0;left=0;bottom=0;right=1;fontStyle=1;overflow=hidden;whiteSpace=wrap;fontSize=13;fontColor=#ffffff;strokeColor=#16213e;align=center;verticalAlign=middle;" vertex="1" parent="lane4_row">
+          <mxGeometry width="140" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="lane4_body" value="" style="shape=partialRectangle;connectable=0;fillColor=#e0f2f1;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=#16213e;" vertex="1" parent="lane4_row">
+          <mxGeometry x="140" width="1360" height="260" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================ -->
+        <!-- ===== フロント営業レーン ノード ===== -->
+        <!-- ============================================ -->
+
+        <!-- 開始 -->
+        <mxCell id="start" value="" style="ellipse;fillColor=#0f3460;strokeColor=#16213e;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="210" y="140" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- リード獲得 -->
+        <mxCell id="f1" value="リード獲得&#xa;（mirai@・紹介&#xa;・展示会等）" style="rounded=1;whiteSpace=wrap;fillColor=#0f3460;fontColor=#ffffff;strokeColor=#16213e;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="290" y="115" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 初回アプローチ -->
+        <mxCell id="f2" value="初回アプローチ&#xa;（電話・メール&#xa;・訪問）" style="rounded=1;whiteSpace=wrap;fillColor=#0f3460;fontColor=#ffffff;strokeColor=#16213e;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="480" y="115" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ヒアリング -->
+        <mxCell id="f3" value="ヒアリング&#xa;（課題・体制&#xa;・予算確認）" style="rounded=1;whiteSpace=wrap;fillColor=#0f3460;fontColor=#ffffff;strokeColor=#16213e;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="670" y="115" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- 判断分岐: SaaS or FDE -->
+        <mxCell id="d1" value="ニーズ&#xa;判定" style="rhombus;whiteSpace=wrap;fillColor=#f39c12;fontColor=#1a1a2e;strokeColor=#e67e22;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="110" width="100" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- SaaS提案 -->
+        <mxCell id="f4" value="SaaSデモ&#xa;＋提案" style="rounded=1;whiteSpace=wrap;fillColor=#0f3460;fontColor=#ffffff;strokeColor=#16213e;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="85" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- SaaS契約 -->
+        <mxCell id="f5" value="SaaS契約" style="rounded=1;whiteSpace=wrap;fillColor=#27ae60;fontColor=#ffffff;strokeColor=#1e8449;fontSize=11;arcSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="85" width="110" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- FDE案件化ラベル -->
+        <mxCell id="f_fde_label" value="FDE案件化" style="text;fontColor=#e94560;fontSize=11;fontStyle=3;align=center;" vertex="1" parent="1">
+          <mxGeometry x="890" y="200" width="80" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Mazrica登録 -->
+        <mxCell id="f6" value="Mazrica&#xa;案件登録" style="rounded=1;whiteSpace=wrap;fillColor=#0f3460;fontColor=#ffffff;strokeColor=#16213e;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="200" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================ -->
+        <!-- ===== Biz／戦略レーン ノード ===== -->
+        <!-- ============================================ -->
+
+        <!-- ターゲット選定 -->
+        <mxCell id="b1" value="ターゲット自治体&#xa;選定・ランク付け&#xa;（S/A/B）" style="rounded=1;whiteSpace=wrap;fillColor=#533483;fontColor=#ffffff;strokeColor=#4a235a;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="290" y="380" width="150" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- 提案戦略策定 -->
+        <mxCell id="b2" value="提案戦略策定&#xa;（随契枠・PoC&#xa;パッケージ設計）" style="rounded=1;whiteSpace=wrap;fillColor=#533483;fontColor=#ffffff;strokeColor=#4a235a;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="670" y="380" width="160" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- PoC提案書作成 -->
+        <mxCell id="b3" value="PoC提案書作成&#xa;（¥1.98M&#xa;随契パッケージ）" style="rounded=1;whiteSpace=wrap;fillColor=#533483;fontColor=#ffffff;strokeColor=#4a235a;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="880" y="380" width="160" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- FDEスコープ定義 -->
+        <mxCell id="b4" value="FDEスコープ定義&#xa;（サービスメニュー&#xa;41項目から選定）" style="rounded=1;whiteSpace=wrap;fillColor=#533483;fontColor=#ffffff;strokeColor=#4a235a;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="380" width="160" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- ハンドオフ判定 -->
+        <mxCell id="d2" value="ハンドオフ&#xa;判定" style="rhombus;whiteSpace=wrap;fillColor=#f39c12;fontColor=#1a1a2e;strokeColor=#e67e22;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="370" width="110" height="85" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================ -->
+        <!-- ===== FDEチームレーン ノード ===== -->
+        <!-- ============================================ -->
+
+        <!-- FDE受入 -->
+        <mxCell id="e1" value="FDE受入&#xa;（スコープ&#xa;・工数確認）" style="rounded=1;whiteSpace=wrap;fillColor=#e94560;fontColor=#ffffff;strokeColor=#c0392b;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="480" y="640" width="140" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- PoC実施 -->
+        <mxCell id="e2" value="PoC実施&#xa;（積算チェック&#xa;・照査支援等）" style="rounded=1;whiteSpace=wrap;fillColor=#e94560;fontColor=#ffffff;strokeColor=#c0392b;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="670" y="640" width="160" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- 成果報告 -->
+        <mxCell id="e3" value="成果報告&#xa;＋効果検証" style="rounded=1;whiteSpace=wrap;fillColor=#e94560;fontColor=#ffffff;strokeColor=#c0392b;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="880" y="640" width="140" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- 本契約判定 -->
+        <mxCell id="d3" value="本契約&#xa;判定" style="rhombus;whiteSpace=wrap;fillColor=#f39c12;fontColor=#1a1a2e;strokeColor=#e67e22;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="633" width="100" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- 本契約・FDE展開 -->
+        <mxCell id="e4" value="本契約&#xa;FDE本格展開" style="rounded=1;whiteSpace=wrap;fillColor=#27ae60;fontColor=#ffffff;strokeColor=#1e8449;fontSize=11;arcSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="640" width="130" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- 失注/保留 -->
+        <mxCell id="e_lost" value="保留／&#xa;再アプローチ" style="rounded=1;whiteSpace=wrap;fillColor=#95a5a6;fontColor=#ffffff;strokeColor=#7f8c8d;fontSize=10;arcSize=20;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="740" width="110" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================ -->
+        <!-- ===== CSレーン ノード ===== -->
+        <!-- ============================================ -->
+
+        <!-- オンボーディング -->
+        <mxCell id="c1" value="オンボーディング&#xa;（無料CS標準提供）" style="rounded=1;whiteSpace=wrap;fillColor=#0a9396;fontColor=#ffffff;strokeColor=#005f73;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="670" y="895" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- 定期フォロー -->
+        <mxCell id="c2" value="定期フォロー&#xa;（利用状況&#xa;モニタリング）" style="rounded=1;whiteSpace=wrap;fillColor=#0a9396;fontColor=#ffffff;strokeColor=#005f73;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="880" y="890" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- アップセル判定 -->
+        <mxCell id="d4" value="追加ニーズ&#xa;判定" style="rhombus;whiteSpace=wrap;fillColor=#f39c12;fontColor=#1a1a2e;strokeColor=#e67e22;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="885" width="100" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Pro Services提案 -->
+        <mxCell id="c3" value="有料Pro Services&#xa;提案" style="rounded=1;whiteSpace=wrap;fillColor=#0a9396;fontColor=#ffffff;strokeColor=#005f73;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="870" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 継続利用 -->
+        <mxCell id="c4" value="継続利用&#xa;（チャーン防止）" style="rounded=1;whiteSpace=wrap;fillColor=#0a9396;fontColor=#ffffff;strokeColor=#005f73;fontSize=11;arcSize=20;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="940" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- 終了 -->
+        <mxCell id="end" value="" style="ellipse;fillColor=#1a1a2e;strokeColor=#16213e;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="905" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================ -->
+        <!-- ===== 矢印（フロー接続） ===== -->
+        <!-- ============================================ -->
+
+        <!-- フロント営業レーン内 -->
+        <mxCell id="a_s_f1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0f3460;strokeWidth=2;" edge="1" source="start" target="f1" parent="1" />
+        <mxCell id="a_f1_f2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0f3460;strokeWidth=2;" edge="1" source="f1" target="f2" parent="1" />
+        <mxCell id="a_f2_f3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0f3460;strokeWidth=2;" edge="1" source="f2" target="f3" parent="1" />
+        <mxCell id="a_f3_d1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0f3460;strokeWidth=2;" edge="1" source="f3" target="d1" parent="1" />
+
+        <!-- SaaSルート -->
+        <mxCell id="a_d1_f4" value="SaaS" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#27ae60;strokeWidth=2;fontColor=#27ae60;fontSize=10;fontStyle=1;" edge="1" source="d1" target="f4" parent="1" />
+        <mxCell id="a_f4_f5" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#27ae60;strokeWidth=2;" edge="1" source="f4" target="f5" parent="1" />
+
+        <!-- FDEルート -->
+        <mxCell id="a_d1_f6" value="FDE" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#e94560;strokeWidth=2;fontColor=#e94560;fontSize=10;fontStyle=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" source="d1" target="f6" parent="1" />
+
+        <!-- Biz戦略レーン -->
+        <mxCell id="a_b1_f1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#533483;strokeWidth=1.5;dashed=1;" edge="1" source="b1" target="f1" parent="1" />
+        <mxCell id="a_f3_b2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#533483;strokeWidth=1.5;dashed=1;" edge="1" source="f3" target="b2" parent="1" />
+        <mxCell id="a_b2_b3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#533483;strokeWidth=2;" edge="1" source="b2" target="b3" parent="1" />
+        <mxCell id="a_b3_b4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#533483;strokeWidth=2;" edge="1" source="b3" target="b4" parent="1" />
+        <mxCell id="a_b4_d2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#533483;strokeWidth=2;" edge="1" source="b4" target="d2" parent="1" />
+
+        <!-- ハンドオフ → FDE受入 -->
+        <mxCell id="a_d2_e1" value="GO" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#e94560;strokeWidth=2.5;fontColor=#e94560;fontSize=10;fontStyle=1;" edge="1" source="d2" target="e1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1365" y="570" />
+              <mxPoint x="440" y="570" />
+              <mxPoint x="440" y="673" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- FDEレーン内 -->
+        <mxCell id="a_e1_e2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#e94560;strokeWidth=2;" edge="1" source="e1" target="e2" parent="1" />
+        <mxCell id="a_e2_e3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#e94560;strokeWidth=2;" edge="1" source="e2" target="e3" parent="1" />
+        <mxCell id="a_e3_d3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#e94560;strokeWidth=2;" edge="1" source="e3" target="d3" parent="1" />
+
+        <!-- 本契約 or 保留 -->
+        <mxCell id="a_d3_e4" value="受注" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#27ae60;strokeWidth=2;fontColor=#27ae60;fontSize=10;fontStyle=1;" edge="1" source="d3" target="e4" parent="1" />
+        <mxCell id="a_d3_lost" value="保留" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#95a5a6;strokeWidth=1.5;dashed=1;fontColor=#95a5a6;fontSize=10;" edge="1" source="d3" target="e_lost" parent="1" />
+
+        <!-- SaaS契約 → CS -->
+        <mxCell id="a_f5_c1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0a9396;strokeWidth=1.5;dashed=1;" edge="1" source="f5" target="c1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1275" y="250" />
+              <mxPoint x="1450" y="250" />
+              <mxPoint x="1450" y="850" />
+              <mxPoint x="750" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- FDE本契約 → CS -->
+        <mxCell id="a_e4_c1" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0a9396;strokeWidth=1.5;dashed=1;" edge="1" source="e4" target="c1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1285" y="850" />
+              <mxPoint x="750" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- CSレーン内 -->
+        <mxCell id="a_c1_c2" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0a9396;strokeWidth=2;" edge="1" source="c1" target="c2" parent="1" />
+        <mxCell id="a_c2_d4" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0a9396;strokeWidth=2;" edge="1" source="c2" target="d4" parent="1" />
+        <mxCell id="a_d4_c3" value="あり" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0a9396;strokeWidth=2;fontColor=#0a9396;fontSize=10;fontStyle=1;" edge="1" source="d4" target="c3" parent="1" />
+        <mxCell id="a_d4_c4" value="なし" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0a9396;strokeWidth=1.5;fontColor=#7f8c8d;fontSize=10;" edge="1" source="d4" target="c4" parent="1" />
+
+        <!-- CS → 終了 -->
+        <mxCell id="a_c3_end" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0a9396;strokeWidth=1.5;" edge="1" source="c3" target="end" parent="1" />
+        <mxCell id="a_c4_end" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#0a9396;strokeWidth=1.5;" edge="1" source="c4" target="end" parent="1" />
+
+        <!-- Mazrica → Biz b3連携 -->
+        <mxCell id="a_f6_b3" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#533483;strokeWidth=1.5;dashed=1;" edge="1" source="f6" target="b3" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1105" y="280" />
+              <mxPoint x="960" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================ -->
+        <!-- ===== KPIラベル ===== -->
+        <!-- ============================================ -->
+        <mxCell id="kpi1" value="KPI: リード→ヒアリング転換率" style="text;fontColor=#7f8c8d;fontSize=9;fontStyle=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="470" y="190" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kpi2" value="KPI: PoC受注率" style="text;fontColor=#7f8c8d;fontSize=9;fontStyle=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="870" y="450" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kpi3" value="KPI: PoC→本契約転換率" style="text;fontColor=#7f8c8d;fontSize=9;fontStyle=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="720" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kpi4" value="KPI: チャーン率 / アップセル率" style="text;fontColor=#7f8c8d;fontSize=9;fontStyle=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="970" width="170" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
